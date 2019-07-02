@@ -5,7 +5,11 @@ class App extends React.Component{
     super()
   }
   render(){
-    return(<div>hi</div>)
+    return(
+      <div>
+        <h2>Dynamic Content</h2>
+      </div>
+    )
   }
 }
 
