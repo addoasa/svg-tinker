@@ -8,6 +8,8 @@ class App extends React.Component{
     return(
       <div>
         <h2>Dynamic Content</h2>
+        <h2>Dynamic Content</h2>
+
       </div>
     )
   }

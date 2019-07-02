@@ -10,7 +10,8 @@ module.exports = {
     path: '/Users/Lazarus-Kwadwo/Desktop/devStuff/codesmith/svg-tinker/build',
     filename: 'bundle.js',
   },
-  mode: 'production',
+  //this environmental variable will either be assigned value of 'production' or 'development' based on which script we run in the package.json
+  mode: process.env.NODE_ENV,
   module: {
     //rules is an array that lets me specifiy each case in which a new file type needs to be understood by webpack  
     rules:[
