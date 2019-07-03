@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Scape from './Scape'
 class App extends React.Component{
   constructor(){
     super()
@@ -9,6 +9,7 @@ class App extends React.Component{
       <div>
         <h2>Dynamic Content</h2>
         <h2>Dynamic Content</h2>
+        <Scape />
 
       </div>
     )

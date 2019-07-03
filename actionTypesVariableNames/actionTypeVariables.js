@@ -1,0 +1,4 @@
+//set the action types to variables before importing them into my reducer files 
+//This is done so that possible typos on the action type will throw a visible typo error
+
+const ADD_LETTER = "ADD_LETTER";
