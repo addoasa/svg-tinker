@@ -38,6 +38,11 @@ module.exports = {
           {loader: "css-loader"},
           {loader: "sass-loader"},
         ]
+      },
+      {
+        test:/\.css$/,
+        exclude: /(node_modules)/,
+        use:[ "style-loader", "css-loader"]
       }
     ]   
   }

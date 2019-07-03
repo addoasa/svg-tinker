@@ -1,16 +1,19 @@
 import React from 'react';
-import Scape from './Scape'
+import Scape from './Scape';
+import Workspace from './Workspace';
+import Tools from './Tools';
 class App extends React.Component{
   constructor(){
     super()
   }
   render(){
     return(
-      <div>
-        <h2>Dynamic Content</h2>
-        <h2>Dynamic Content</h2>
+      <div className = "start">
+        <h2>This is from react</h2>
+        <h3>Click here to add a B</h3>
         <Scape />
-
+        <Tools />
+        <Workspace />
       </div>
     )
   }

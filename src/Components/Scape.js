@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 const mapStateToProps = store => ({
-  currentLetter : store.letters.currentLetter
+  currentLetter : store.tinker.currentLetter
 })
 const mapDispatchToProps = dispatch => ({
   addLetter: ()=> dispatch(addLetter())

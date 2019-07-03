@@ -6,7 +6,7 @@ import testReducer from './testReducer';
 //this will combine all reducers
 const reducers = combineReducers({
   //if i had more reducers they would go in here
-  letters : testReducer,
+  tinker : testReducer,
 })
 
 export default reducers
