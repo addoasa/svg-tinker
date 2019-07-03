@@ -3,7 +3,7 @@ import * as types from '../actionTypesVariableNames/actionTypeVariables';
 
 const initialState = {
   currentLetter: 'A',
-  workspaceHeight:100,
+  workspaceHeight:200,
   workspaceWidth:200,
   range1x:50,
   range1y:50,
@@ -11,6 +11,8 @@ const initialState = {
   range2y:50,
   range3x:50,
   range3y:100,
+  range4x:100,
+  range4y:100,
 
 }
 //set the starting state 
@@ -29,6 +31,8 @@ function testReducer(state=initialState, action){
   let range2y = state.range2y;
   let range3x = state.range3x;
   let range3y = state.range3y;
+  let range4x = state.range4x;
+  let range4y = state.range4y;
 
   //then set conditionals of how i want to change state based on the action type i pick
   //Often people seem to use switch statements here
@@ -51,6 +55,96 @@ function testReducer(state=initialState, action){
       return {
         ...state,
         workspaceHeight,
+      };
+
+// --------------------------------------------------------------------------    
+
+    case types.SET_WIDTH:
+      workspaceWidth = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        workspaceWidth,
+      };
+
+// --------------------------------------------------------------------------    
+
+    case types.SET_RANGE1X:
+        range1x = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range1x,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE1Y:
+        range1y = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range1y,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE2X:
+        range2x = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range2x,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE2Y:
+        range2y = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range2y,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE3X:
+        range3x = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range3x,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE3Y:
+        range3y = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range3y,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE4X:
+        range4x = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range4x,
+      };
+
+// --------------------------------------------------------------------------    
+ 
+    case types.SET_RANGE4Y:
+        range4y = action.payload;
+    console.log(action.payload)
+      return {
+        ...state,
+        range4y,
       };
 
 // --------------------------------------------------------------------------    

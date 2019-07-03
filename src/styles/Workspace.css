@@ -1,5 +1,7 @@
 #workspace{
-  /* height:500px;
-  width:500px; */
+  transition:0.3s;
   border: solid black 1pt;
+}
+path{
+  transition: 0.3s;
 }
