@@ -1,6 +1,6 @@
 import React from 'react';
 //import the action you want to use
-import { addLetter } from '../../actions'
+import { addSVG } from '../../actions'
 import { connect } from 'react-redux';
 
 
@@ -8,7 +8,7 @@ const mapStateToProps = store => ({
   currentLetter : store.tinker.currentLetter
 })
 const mapDispatchToProps = dispatch => ({
-  addLetter: ()=> dispatch(addLetter())
+  addSVG: ()=> dispatch(addSVG())
 })
 
 
@@ -20,7 +20,7 @@ class Scape extends React.Component{
   }
   
   handleClick(){
-    this.props.addLetter();
+    this.props.addSVG();
   }
 
   render(){

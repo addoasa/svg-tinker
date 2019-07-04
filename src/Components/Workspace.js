@@ -17,6 +17,8 @@ const mapStateToProps = store => ({
   range3y : store.tinker.range3y,
   range4x : store.tinker.range4x,
   range4y : store.tinker.range4y,
+  activeSVGs : store.tinker.activeSVGs,
+
 
 })
 
@@ -43,7 +45,15 @@ class Workspace extends React.Component{
     console.log('setting width to',this.props.workspaceWidth)
   }
   render(){
-    let item = <path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} />
+    const allSVGs = this.props.activeSVGs.map((SVG, index)=>{
+      return( 
+        <React.Fragment>
+          <path d={`M${this.props.activeSVGs[index].range1x} ${this.props.activeSVGs[index].range1y} L${this.props.activeSVGs[index].range2x} ${this.props.activeSVGs[index].range2y} L${this.props.activeSVGs[index].range3x} ${this.props.activeSVGs[index].range3y} L${this.props.activeSVGs[index].range4x} ${this.props.activeSVGs[index].range4y} Z`} />
+          <div>&lt;path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} /></div>
+        </React.Fragment> 
+      )
+    })
+    // let item = <path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} />
     // let visibleCode = &lt;path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} />
 
     return(
@@ -53,9 +63,8 @@ class Workspace extends React.Component{
         <label htmlFor= 'width'>Width</label>
         <input onChange ={this.handleWidthChange} name= "width" type='text'></input>
         <svg id="workspace" height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
-        {item}
+        {allSVGs}
         </svg>
-        <div>&lt;path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} /></div>
 
       </div>
     )
