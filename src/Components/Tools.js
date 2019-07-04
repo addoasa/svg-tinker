@@ -7,6 +7,7 @@ import { setRange3x } from '../../actions';
 import { setRange3y } from '../../actions';
 import { setRange4x } from '../../actions';
 import { setRange4y } from '../../actions';
+import { removeSVG } from '../../actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = store => ({
@@ -22,6 +23,7 @@ const mapDispatchToProps = dispatch => ({
   setRange3y : (event, classId)=> dispatch(setRange3y(event, classId)),
   setRange4x : (event, classId)=> dispatch(setRange4x(event, classId)),
   setRange4y : (event, classId)=> dispatch(setRange4y(event, classId)),
+  removeSVG : (SVG, classId)=> dispatch(removeSVG(SVG, classId)),
 })
 
 
@@ -36,8 +38,9 @@ class Tools extends React.Component{
     this.handleRange3y = this.handleRange3y.bind(this);
     this.handleRange4x = this.handleRange4x.bind(this);
     this.handleRange4y = this.handleRange4y.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-
+//------------------------------------------------------------------------------------
   handleRange1x(event){
     this.props.setRange1x(event.target.value, event.target.className )
     // console.log(event.target.className)
@@ -63,6 +66,11 @@ class Tools extends React.Component{
   handleRange4y(event){
     this.props.setRange4y(event.target.value, event.target.className)
   }
+  //------------------------------------------------------------------------------------
+
+  handleClick(event){
+    this.props.removeSVG(event.target.value, event.target.className)
+  }
  
 
   render(){
@@ -77,6 +85,7 @@ class Tools extends React.Component{
           <input className = {index} onChange= {this.handleRange3y} type="range" max="1000" min="0"></input>
           <input className = {index} onChange= {this.handleRange4x} type="range" max="1000" min="0"></input>
           <input className = {index} onChange= {this.handleRange4y} type="range" max="1000" min="0"></input>
+          <button className = {index} onClick ={this.handleClick} type="button">Remove</button>
         </div>
         )
     })

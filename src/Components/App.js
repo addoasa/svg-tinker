@@ -10,7 +10,7 @@ class App extends React.Component{
     return(
       <div className = "start">
         <h2>This is from react</h2>
-        <h3>Click here to add a B</h3>
+        <h3>Click here</h3>
         <Scape />
         <Tools />
         <Workspace />

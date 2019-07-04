@@ -65,6 +65,15 @@ function testReducer(state=initialState, action){
     };
     //return the new state
 // --------------------------------------------------------------------------    
+    case types.REMOVE_SVG:
+      activeSVGs.splice(action.payload, 1);
+    console.log(activeSVGs)
+      return {
+        ...state,
+        activeSVGs,
+      };
+
+// --------------------------------------------------------------------------    
     case types.SET_HEIGHT:
       workspaceHeight = action.payload;
     console.log(action.payload)
