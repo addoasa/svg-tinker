@@ -43,7 +43,27 @@ module.exports = {
         test:/\.css$/,
         exclude: /(node_modules)/,
         use:[ "style-loader", "css-loader"]
-      }
+      },
+      { 
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+         { loader: 'file-loader',
+           options:{
+            outputPath: 'assests',
+
+           }
+         },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, 
+              disable: true, 
+            }
+          },
+        ]
+      },
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+
     ]   
   }
 }

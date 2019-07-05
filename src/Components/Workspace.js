@@ -56,15 +56,14 @@ class Workspace extends React.Component{
     
     return(
       <div className = "workspace-container">
-        <label htmlFor="height">Height</label>
-        <input onChange ={this.handleHeightChange} name = 'height' type='text' maxLength="3"></input>
-        <label htmlFor= 'width'>Width</label> 
-        <input onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
+        <label className="size-input1" htmlFor="height">Height</label>
+        <input className="size-input" onChange ={this.handleHeightChange} name = 'height' type='text' maxLength="3"></input>
+        <label  className="size-input2" htmlFor= 'width'>Width</label> 
+        <input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
         <br />
         <svg id="workspace" className={this.props.activeSVGs.length !== 0 ? 'fine' : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
         {this.props.activeSVGs ? allSVGs : emptyMessage}  
         </svg>
-        {this.props.activeSVGs ? 'working' : emptyMessage}  
 
       </div>
     )

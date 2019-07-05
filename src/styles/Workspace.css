@@ -1,10 +1,11 @@
 .workspace-container{
-  border:solid 1px blue;
   margin-left: 40px;
 }
 #workspace{
   transition:0.3s;
-  border: solid black 1pt;
+  background-color: whitesmoke;
+  margin-top: 15px;
+  border: solid rgba(0,0,0,0.1) 4pt;
 }
 path{
   transition: 0.3s;
@@ -12,4 +13,24 @@ path{
 .empty-workspace{
   background-color: rgba(0,0,0,0.1);
   transition:5s;
+}
+.size-input{
+  margin-left: 10px;
+  padding-left: 10px;
+  /* border-radius: 3px; */
+  background-color: none;
+  outline: none;
+  width:30px;
+  border:none;
+  font-family: helvetica;
+  border-bottom:solid rgba(0,0,0,0.5) 1pt;;
+}
+.size-input1{
+  margin-left: 45px; 
+}
+.size-input2{
+  margin-left: 120px;
+}
+label{
+  font-family: helvetica;
 }

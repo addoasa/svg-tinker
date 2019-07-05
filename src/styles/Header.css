@@ -9,3 +9,8 @@
 .fa-cogs{
   font-size: 50pt;
 }
+.logo{
+  /* background-image: url('../../assets/2.png'); */
+  height:50px;
+  width:50px;
+}

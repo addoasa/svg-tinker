@@ -17,8 +17,10 @@ class Header extends React.Component{
   render(){
     return(
       <div className="header">
-        <h1>SVG-Tinker</h1>
-        <i class="fas fa-cogs"></i>
+        <div className="logo">
+        <img src={require('../../assets/2.png')} />
+        </div>
+        {/* <i class="fas fa-cogs"></i> */}
       </div>
     )
   }

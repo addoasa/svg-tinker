@@ -16,10 +16,10 @@ body{
 @keyframes slidein{
   0%{
     opacity:0;
-    margin-top: 15px;
+    /* margin-top: 15px; */
   }
   100%{
     opacity: 1;
-    margin-top: 0;
+    /* margin-top: 0; */
   }
 }
