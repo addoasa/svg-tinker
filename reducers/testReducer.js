@@ -3,19 +3,19 @@ import * as types from '../actionTypesVariableNames/actionTypeVariables';
 
 const initialState = {
   currentLetter: 'A',
-  workspaceHeight:200,
-  workspaceWidth:200,
+  workspaceHeight:400,
+  workspaceWidth:400,
   
   activeSVGs: [ 
     {
-      range1x:50,
-      range1y:50,
-      range2x:100,
-      range2y:50,
-      range3x:50,
-      range3y:100,
-      range4x:100,
-      range4y:100,
+      range1x:75,
+      range1y:75,
+      range2x:125,
+      range2y:75,
+      range3x:75,
+      range3y:125,
+      range4x:125,
+      range4y:125,
     }
   ]
 

@@ -1,7 +1,15 @@
+.workspace-container{
+  border:solid 1px blue;
+  margin-left: 40px;
+}
 #workspace{
   transition:0.3s;
   border: solid black 1pt;
 }
 path{
   transition: 0.3s;
+}
+.empty-workspace{
+  background-color: rgba(0,0,0,0.1);
+  transition:5s;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+// import "../../server/mong.js"
 import { setRange1x } from '../../actions';
 import { setRange1y } from '../../actions';
 import { setRange2x } from '../../actions';
@@ -9,6 +10,7 @@ import { setRange4x } from '../../actions';
 import { setRange4y } from '../../actions';
 import { removeSVG } from '../../actions';
 import { connect } from 'react-redux';
+import '../styles/Tools.css';
 
 const mapStateToProps = store => ({
   currentLetter : store.tinker.currentLetter,
@@ -74,25 +76,61 @@ class Tools extends React.Component{
  
 
   render(){
+    // console.log(mong.getSVGCollection())
     const allSliders = this.props.activeSVGs.map((SVG, index)=>{
         return (
-        <div>
-          <input className = {index} onChange= {this.handleRange1x} type="range" max='1000' min="0"></input>
-          <input className = {index} onChange= {this.handleRange1y} type="range" max="1000" min="0"></input>
-          <input className = {index} onChange= {this.handleRange2x} type="range" max="1000" min="0"></input>
-          <input className = {index} onChange= {this.handleRange2y} type="range" max="1000" min="0"></input>
-          <input className = {index} onChange= {this.handleRange3x} type="range" max="1000" min="0"></input>
-          <input className = {index} onChange= {this.handleRange3y} type="range" max="1000" min="0"></input>
-          <input className = {index} onChange= {this.handleRange4x} type="range" max="1000" min="0"></input>
-          <input className = {index} onChange= {this.handleRange4y} type="range" max="1000" min="0"></input>
-          <button className = {index} onClick ={this.handleClick} type="button">Remove</button>
+        
+        <div className = "a-single-slider-container">
+          <div className ="shape-caption">
+            <h1>Shape:{index + 1}</h1>
+            <i className={`fas fa-minus-circle ${index}`} onClick ={this.handleClick}></i>
+          </div>
+          <h3 className="corner-caption">Corner 1</h3>
+           <div className = "slider-labels">
+            <p>x-axis</p>
+            <p>y-axis</p>
+            </div>
+          <div className = "verticies corner1">
+            <input className = {index} onChange= {this.handleRange1x} type="range" max='1000' min="0"></input>
+            <input className = {index} onChange= {this.handleRange1y} type="range" max="1000" min="0"></input>
+          </div>
+          <h3 className="corner-caption">Corner 2</h3>
+           <div className = "slider-labels">
+            <p>x-axis</p>
+            <p>y-axis</p>
+            </div>
+
+          <div className = "verticies corner2">
+            <input className = {index} onChange= {this.handleRange2x} type="range" max="1000" min="0"></input>
+            <input className = {index} onChange= {this.handleRange2y} type="range" max="1000" min="0"></input>
+          </div>
+          <h3 className="corner-caption">Corner 3</h3>
+            <div className = "slider-labels">
+            <p>x-axis</p>
+            <p>y-axis</p>
+            </div>
+
+          <div className = "verticies corner3">
+            <input className = {index} onChange= {this.handleRange3x} type="range" max="1000" min="0"></input>
+            <input className = {index} onChange= {this.handleRange3y} type="range" max="1000" min="0"></input>
+          </div>
+          <h3 className="corner-caption">Corner 4</h3>
+            <div className = "slider-labels">
+            <p>x-axis</p>
+            <p>y-axis</p>
+            </div>
+
+          <div className = "verticies corner4">
+            <input className = {index} onChange= {this.handleRange4x} type="range" max="1000" min="0"></input>
+            <input className = {index} onChange= {this.handleRange4y} type="range" max="1000" min="0"></input>
+          </div>
         </div>
         )
     })
     return(
-      <div>
+      <section className = "entire-slider-container">
         {allSliders}
-      </div>
+      </section>
     )
   }
 }

@@ -48,23 +48,23 @@ class Workspace extends React.Component{
     const allSVGs = this.props.activeSVGs.map((SVG, index)=>{
       return( 
         <React.Fragment>
-          <path d={`M${this.props.activeSVGs[index].range1x} ${this.props.activeSVGs[index].range1y} L${this.props.activeSVGs[index].range2x} ${this.props.activeSVGs[index].range2y} L${this.props.activeSVGs[index].range3x} ${this.props.activeSVGs[index].range3y} L${this.props.activeSVGs[index].range4x} ${this.props.activeSVGs[index].range4y} Z`} />
-          <div>&lt;path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} /></div>
+          <path  d={`M${this.props.activeSVGs[index].range1x} ${this.props.activeSVGs[index].range1y} L${this.props.activeSVGs[index].range2x} ${this.props.activeSVGs[index].range2y} L${this.props.activeSVGs[index].range3x} ${this.props.activeSVGs[index].range3y} L${this.props.activeSVGs[index].range4x} ${this.props.activeSVGs[index].range4y} Z`} />
         </React.Fragment> 
       )
     })
-    // let item = <path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} />
-    // let visibleCode = &lt;path d={`M${this.props.range1x} ${this.props.range1y} L${this.props.range2x} ${this.props.range2y} L${this.props.range3x} ${this.props.range3y} L${this.props.range4x} ${this.props.range4y} Z`} />
-
+   const emptyMessage = <h2>Add a shape</h2>
+    
     return(
-      <div>
+      <div className = "workspace-container">
         <label htmlFor="height">Height</label>
-        <input onChange ={this.handleHeightChange} name = 'height' type='text'></input>
-        <label htmlFor= 'width'>Width</label>
-        <input onChange ={this.handleWidthChange} name= "width" type='text'></input>
-        <svg id="workspace" height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
-        {allSVGs}
+        <input onChange ={this.handleHeightChange} name = 'height' type='text' maxLength="3"></input>
+        <label htmlFor= 'width'>Width</label> 
+        <input onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
+        <br />
+        <svg id="workspace" className={this.props.activeSVGs.length !== 0 ? 'fine' : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
+        {this.props.activeSVGs ? allSVGs : emptyMessage}  
         </svg>
+        {this.props.activeSVGs ? 'working' : emptyMessage}  
 
       </div>
     )

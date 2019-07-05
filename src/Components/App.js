@@ -2,6 +2,10 @@ import React from 'react';
 import Scape from './Scape';
 import Workspace from './Workspace';
 import Tools from './Tools';
+import LiveCode from './LiveCode';
+import Header from './Header';
+import "../styles/App.css";
+
 class App extends React.Component{
   constructor(){
     super()
@@ -9,11 +13,13 @@ class App extends React.Component{
   render(){
     return(
       <div className = "start">
-        <h2>This is from react</h2>
-        <h3>Click here</h3>
+        <Header />
         <Scape />
-        <Tools />
-        <Workspace />
+        <main className ="main-layout">
+          <Tools />
+          <Workspace />
+          <LiveCode />
+        </main>
       </div>
     )
   }
