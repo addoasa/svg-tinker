@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   entry: './src/index.js',
   devServer: {
@@ -49,7 +51,7 @@ module.exports = {
         use: [
          { loader: 'file-loader',
            options:{
-            outputPath: 'assests',
+            outputPath: 'assets',
 
            }
          },
@@ -62,7 +64,8 @@ module.exports = {
           },
         ]
       },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+      { test: /\.(jpe?g|png|gif|svg)$/i,
+        include : path.join(__dirname, 'assets'), },
 
     ]   
   }

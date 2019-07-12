@@ -4,7 +4,7 @@ import * as types from '../actionTypesVariableNames/actionTypeVariables';
 const initialState = {
   currentLetter: 'A',
   workspaceHeight:400,
-  workspaceWidth:400,
+  workspaceWidth:700,
   
   activeSVGs: [ 
     {

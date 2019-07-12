@@ -1,3 +1,4 @@
+
 .workspace-container{
   margin-left: 40px;
 }
@@ -5,7 +6,8 @@
   transition:0.3s;
   background-color: whitesmoke;
   margin-top: 15px;
-  border: solid rgba(0,0,0,0.1) 4pt;
+  border: solid rgba(0,0,0,0.15) 4pt;
+  border-radius: 2px;
 }
 path{
   transition: 0.3s;

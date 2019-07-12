@@ -1,16 +1,33 @@
 .header{
   width:100vw;
-  height:80px;
+  height:115px;
   box-shadow: 0 5px 6px rgba(0,0,0,0.2);
-  background-color: rgba(255,255,255, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.87); */
   font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(rgb(255, 255, 255), rgba(0,0,0,0.1));
+  background-image: linear-gradient(rgb(252, 252, 252), rgba(0, 0, 0, 0.1));
 }
 .fa-cogs{
-  font-size: 50pt;
+  font-size: 40pt;
+  margin-left: 30px;
+}
+.logo-container{
+  /* background-image: url('../../assets/2.png'); */
+  height:80px;
+  width:100px;
+  padding-left: 100px;
+  padding-top: 10px;
 }
 .logo{
-  /* background-image: url('../../assets/2.png'); */
-  height:50px;
-  width:50px;
+  width:205px;
+  margin-left: 50px;
+}
+#tinkertitle{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 20pt;
+}
+#SVGtitle{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 24pt;
 }

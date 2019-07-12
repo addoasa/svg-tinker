@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/Header.css'
 import { connect } from 'react-redux';
 
-
+// const something = require('../../public/assets/logo2.png');
 
 
 class Header extends React.Component{
@@ -18,9 +18,10 @@ class Header extends React.Component{
     return(
       <div className="header">
         <div className="logo">
-        <img src={require('../../assets/2.png')} />
+          <span id="SVGtitle">SVG</span><span id="tinkertitle">-Tinker</span>
+        {/* <img src={require('../../public/assets/2.png')} /> */}
+        <i class="fas fa-cogs"></i>
         </div>
-        {/* <i class="fas fa-cogs"></i> */}
       </div>
     )
   }

@@ -2,6 +2,7 @@
   overflow: auto;
   height:500px;
   width:300px;
+  padding-top: 25px;
 }
 .corner-caption{
   font-family: helvetica;
