@@ -1,16 +1,18 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
-  devServer: {
-    publicPath: '/build/',
-    proxy: {
-        '/api': 'http://localhost:3000'
-    }
-  },
+  entry: path.join(__dirname,'/src/index.js'),
   output: {
-    path: '/Users/Lazarus-Kwadwo/Desktop/devStuff/codesmith/svg-tinker/build',
+    path: path.join(__dirname,'/build'),
     filename: 'bundle.js',
+  },
+    devServer: {
+    publicPath: '/build/',
+    contentBase: path.resolve(__dirname, 'public'),
+    proxy: {
+        '/api': 'http://localhost:3000/build/bundle.js'
+    },
+    port:9000
   },
   //this environmental variable will either be assigned value of 'production' or 'development' based on which script we run in the package.json
   mode: process.env.NODE_ENV,
