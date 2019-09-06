@@ -23,3 +23,9 @@
 #####  -blur effects
 #####  -filters   
 #### [✖] Implement color selection for shapes
+#### [✖] Implement Undo/Redo changes made
+#### [✖] Implement copy and paste || or Duplicate shape feature
+#### [✖] Enable shape layer heirachy
+#### [✖] Refactor and refine UI
+
+
