@@ -2,8 +2,24 @@
 
 ![alt text](http://i64.tinypic.com/30sxav8.png)
 
-#####  An app for fiddling around with SVG format files.
+###  A tool for creating and manipulating SVG vectors.
 
 ### Overview
-###### This app is a simple tool that can be used to fiddle around with svg inputs. The code for SVG html elements can be quite daunting to decipher.(Even with the simplest of vector images)
+#### SVGs are one of the coolest formats out there. The amount of flexiblility and customization that SVGs offer provide us an endless amount creative possiblities. ...But have you ever looked at SVG HTML code? It's quiet daunting to say the least. (Even with the simplest of vector images)
 
+#### Hence the focus of this tool is for it to not only act as canvas for creative ideas but also as a compelling educaional tool for engineers who want to learn about the anatomy of SVG.
+
+### Planned features
+#### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
+#### [✖] Add and removal of Path vertices (Each shape has 4 currently)
+#### [✖] Enable support for SVG: 
+#####  -lines 
+#####  -circles
+#####  -elipses
+#####  -polygons
+#####  -polylines
+#####  -text
+#####  -dropshadows
+#####  -blur effects
+#####  -filters   
+#### [✖] Implement color selection for shapes
