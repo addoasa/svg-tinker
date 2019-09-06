@@ -13,7 +13,6 @@ import { connect } from 'react-redux';
 import '../styles/Tools.css';
 
 const mapStateToProps = store => ({
-  currentLetter : store.tinker.currentLetter,
   activeSVGs : store.tinker.activeSVGs
 })
 const mapDispatchToProps = dispatch => ({
@@ -71,7 +70,8 @@ class Tools extends React.Component{
   //------------------------------------------------------------------------------------
 
   handleClick(event){
-    this.props.removeSVG(event.target.value, event.target.className)
+    console.log(event.target.className.split(" ")[2], "Yoohoo")
+    this.props.removeSVG(event.target.value, event.target.className.split(" ")[2])
   }
  
 

@@ -1,6 +1,6 @@
 .entire-slider-container{
   overflow: auto;
-  height:500px;
+  height:60vh;
   width:300px;
   padding-top: 25px;
 }
@@ -45,5 +45,5 @@
 }
 .verticies input{
   width:115px;
-margin-left: 10px;;
+  margin-left: 10px;;
 }

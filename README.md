@@ -1,7 +1,7 @@
-#  :gear: SVG-Tinker :gear:
 
 ![alt text](https://svgtinkerassets.s3.amazonaws.com/svgtinkerbannerlogolargewhite2.png)
 
+#  :gear: SVG-Tinker :gear:
 ###  A tool for creating and manipulating SVG vectors.
 
 ### Overview
@@ -27,5 +27,10 @@
 #### [✖] Implement copy and paste || or Duplicate shape feature
 #### [✖] Enable shape layer heirachy
 #### [✖] Refactor and refine UI
+#### [✖] Enable user to store SVGs in DB /Save Progress 
+#### [✖] Enable user to import and render svg code
+#### [✖] Enable user to live code SVG
+
+
 
 

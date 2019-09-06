@@ -10,14 +10,14 @@ const initialState = {
   //Currently, every shape created will be initialized with 4 corners (each with an x position and a y position)
   activeSVGs: [ 
     {
-      range1x:75,
-      range1y:75,
-      range2x:125,
-      range2y:75,
-      range3x:75,
-      range3y:125,
-      range4x:125,
-      range4y:125,
+      range1x:275,
+      range1y:175,
+      range2x:225,
+      range2y:175,
+      range3x:325,
+      range3y:225,
+      range4x:375,
+      range4y:225,
     }
   ]
 
@@ -41,14 +41,14 @@ function testReducer(state=initialState, action){
     case types.ADD_SVG: //checking if the passed in action.type = the value of the ADD_LETTER variable from the actionTypesVAriable file. In this case that literally equals "ADD_SVG"
       // if action type is ADD_SVG, create a new SVG object with values...
       const newSVG = {
-        range1x:50,
-        range1y:50,
-        range2x:100,
-        range2y:50,
-        range3x:50,
-        range3y:100,
-        range4x:100,
-        range4y:100,
+        range1x:275,
+        range1y:175,
+        range2x:225,
+        range2y:175,
+        range3x:325,
+        range3y:225,
+        range4x:375,
+        range4y:225,
       }
       // ...push this new SVG object into clone of array of SVG objects
       activeSVGs.push(newSVG)
@@ -62,8 +62,9 @@ function testReducer(state=initialState, action){
 // ---------------------------------------------------------    
     case types.REMOVE_SVG:
       // The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
-      activeSVGs.splice(action.payload, 1); // Remove one item from activeSVG array with the index specified in the payload
+      activeSVGs.splice(action.payload.classId, 1); // Remove one item from activeSVG array with the index specified in the payload
       console.log(activeSVGs)
+      console.log(action.payload.classId, "payload")
       return {
         ...state,
         activeSVGs,

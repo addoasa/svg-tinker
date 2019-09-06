@@ -1,10 +1,11 @@
 .header{
   width:100vw;
-  height:115px;
+  height:5rem;
   box-shadow: 0 5px 6px rgba(0,0,0,0.2);
   /* background-color: rgba(0, 0, 0, 0.87); */
   font-family: Arial, Helvetica, sans-serif;
   background-image: linear-gradient(rgb(252, 252, 252), rgba(0, 0, 0, 0.1));
+  
 }
 .fa-cogs{
   font-size: 40pt;
@@ -18,8 +19,15 @@
   padding-top: 10px;
 }
 .logo{
-  width:205px;
-  margin-left: 50px;
+  width:100px;
+  /* background-color: black; */
+  /* height: 150px; */
+  /* margin-left: 50px; */
+}
+.logo-img{
+  width:11rem;
+  /* height: 150px; */
+  margin-left: 45px;
 }
 #tinkertitle{
   font-family:Arial, Helvetica, sans-serif;
