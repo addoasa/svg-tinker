@@ -1,6 +1,6 @@
 #  :gear: SVG-Tinker :gear:
 
-![alt text](http://i64.tinypic.com/30sxav8.png)
+![alt text](https://svgtinkerassets.s3.amazonaws.com/svgtinkerbannerlogolarge.png)
 
 ###  A tool for creating and manipulating SVG vectors.
 
