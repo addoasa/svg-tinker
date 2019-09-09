@@ -9,17 +9,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = store => ({
   workspaceHeight : store.tinker.workspaceHeight,
   workspaceWidth : store.tinker.workspaceWidth,
-  range1x : store.tinker.range1x,
-  range1y : store.tinker.range1y,
-  range2x : store.tinker.range2x,
-  range2y : store.tinker.range2y,
-  range3x : store.tinker.range3x,
-  range3y : store.tinker.range3y,
-  range4x : store.tinker.range4x,
-  range4y : store.tinker.range4y,
   activeSVGs : store.tinker.activeSVGs,
-
-
 })
 
 const mapDispatchToProps = dispatch =>({
@@ -33,19 +23,21 @@ class Workspace extends React.Component{
     this.handleHeightChange = this.handleHeightChange.bind(this);
     this.handleWidthChange = this.handleWidthChange.bind(this);
   }
+  // The two functions below (handleHeightChange and handleWidthChange) are used to control the height and width of the work area
+ 
   handleHeightChange(event){
     this.props.setWorkspaceHeight(event.target.value)
-    // console.log(event.target.value)
     console.log('setting height to',this.props.workspaceHeight)
   }
 
   handleWidthChange(event){
     this.props.setWorkspaceWidth(event.target.value)
-    // console.log(event.target.value)
     console.log('setting width to',this.props.workspaceWidth)
   }
+
   render(){
     const allSVGs = this.props.activeSVGs.map((SVG, index)=>{
+      // create a 4 cornered path element based on each SVG object that exists in the activeSVGs array in redux state
       return( 
         <React.Fragment>
           <path  d={`M${this.props.activeSVGs[index].range1x} ${this.props.activeSVGs[index].range1y} L${this.props.activeSVGs[index].range2x} ${this.props.activeSVGs[index].range2y} L${this.props.activeSVGs[index].range3x} ${this.props.activeSVGs[index].range3y} L${this.props.activeSVGs[index].range4x} ${this.props.activeSVGs[index].range4y} Z`} />
@@ -53,7 +45,7 @@ class Workspace extends React.Component{
       )
     })
    const emptyMessage = <h2>Add a shape</h2>
-    
+    // Render all path elements from newly made allSVGs array inside svg tag
     return(
       <div className = "workspace-container">
         <label className="size-input1" htmlFor="height">Height</label>

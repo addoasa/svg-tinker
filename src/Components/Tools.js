@@ -70,7 +70,6 @@ class Tools extends React.Component{
   //------------------------------------------------------------------------------------
 
   handleClick(event){
-    console.log(event.target.className.split(" ")[2], "Yoohoo")
     this.props.removeSVG(event.target.value, event.target.className.split(" ")[2])
   }
  

@@ -2,8 +2,6 @@ import React from "react";
 import '../styles/Header.css'
 import { connect } from 'react-redux';
 
-// const something = require('../../public/assets/logo2.png');
-
 
 class Header extends React.Component{
   constructor(){

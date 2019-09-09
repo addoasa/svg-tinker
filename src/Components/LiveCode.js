@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = store => ({
   activeSVGs : store.tinker.activeSVGs,
-
-
 })
 
 class LiveCode extends React.Component{
@@ -16,7 +14,7 @@ class LiveCode extends React.Component{
   }
  
   render(){
-   
+    //Below we build a 4 cornered path element and render it as a string 
     const liveCode = this.props.activeSVGs.map((SVG, index)=>{
       return( 
         <React.Fragment>

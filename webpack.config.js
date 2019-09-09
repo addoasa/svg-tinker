@@ -68,7 +68,6 @@ module.exports = {
       },
       { test: /\.(jpe?g|png|gif|svg)$/i,
         include : path.join(__dirname, 'assets'), },
-
     ]   
   }
 }
