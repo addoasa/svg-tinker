@@ -17,7 +17,8 @@ class Header extends React.Component{
       <div className="header">
         <div className="logo">
           {/* <span id="SVGtitle">SVG</span><span id="tinkertitle">-Tinker</span> */}
-        <img className="logo-img" src= 'https://svgtinkerassets.s3.amazonaws.com/svgtinkerbannerlogolarge.png' />
+        <img className="logo-img" src= 'https://svgtinkerassets.s3.amazonaws.com/svgtinkerbannerlogolargewhite2.png' />
+        <p>Currently in Alpha (version 0.2.0)</p>
         {/* <i class="fas fa-cogs"></i> */}
         </div>
       </div>

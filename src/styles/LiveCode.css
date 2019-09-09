@@ -5,8 +5,8 @@
   transition: 0.3s;
   margin-left: 40px;
   margin-right: 40px;
-
 }
+
 #live-code-title{
   font-family: helvetica;
   font-weight: 700;
@@ -31,6 +31,22 @@
   background-color: rgba(0,0,0,0.9);
   margin-left: 25px;
   border-radius: 5px;
+}
+#live-code::-webkit-scrollbar{
+  width:0.2rem;
+  height: 0.2rem;
+  background-color:transparent;
+}
+#live-code::-webkit-scrollbar-thumb{
+  background-color:rgb(58, 56, 56);
+  border-radius:10px;
+}
+#live-code::-webkit-scrollbar-thumb:hover{
+  background-color:rgb(114, 111, 111);
+}
+#live-code::-webkit-scrollbar-thumb:active{
+  background-color:rgb(80, 77, 77);
+  border:1px solid #333333;
 }
 .code{
   font-family: helvetica;
