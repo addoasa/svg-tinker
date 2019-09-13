@@ -24,12 +24,11 @@ const initialState = {
 }
 
 // create reducer function
-function testReducer(state=initialState, action){
+function pathReducer(state=initialState, action){
   // this is where all of my logic for changing state will go
   // golden rule is to never directly alter that initial state above.
   // so we make a copy of the items in state
   // For arrays, we use slice() because slice() will return a new array containing the elements of the old array
-  let currentLetter = state.currentLetter;
   let workspaceHeight = state.workspaceHeight;
   let workspaceWidth = state.workspaceWidth;
   let activeSVGs = state.activeSVGs.slice();
@@ -38,7 +37,7 @@ function testReducer(state=initialState, action){
   //Often people seem to use switch statements here
   //check if the action object's type property equals a specific value
   switch(action.type){
-    case types.ADD_SVG: //checking if the passed in action.type = the value of the ADD_LETTER variable from the actionTypesVAriable file. In this case that literally equals "ADD_SVG"
+    case types.ADD_SVG: //checking if the passed in action.type = the value of the ADD_SVG variable from the actionTypesVAriable file. In this case that literally equals "ADD_SVG"
       // if action type is ADD_SVG, create a new SVG object with values...
       const newSVG = {
         range1x:275,
@@ -52,8 +51,8 @@ function testReducer(state=initialState, action){
       }
       // ...push this new SVG object into clone of array of SVG objects
       activeSVGs.push(newSVG)
-      console.log(state.activeSVGs)
-
+      // console.log(state.activeSVGs)
+      // ***Possible future feature with this action could be allowing the user to specify the dimensions of a new shape by utilizing a payload
       return {
         ...state,
         activeSVGs,
@@ -194,4 +193,4 @@ function testReducer(state=initialState, action){
   //if no match actiontypes then return state anyway
   }
 };
-export default testReducer;
+export default pathReducer;

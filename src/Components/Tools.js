@@ -70,6 +70,7 @@ class Tools extends React.Component{
   //------------------------------------------------------------------------------------
 
   handleClick(event){
+    // used split() here because event.target.className gives you all classes associated with an element as a long string.
     this.props.removeSVG(event.target.value, event.target.className.split(" ")[2])
   }
  
