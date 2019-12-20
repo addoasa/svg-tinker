@@ -1,3 +1,6 @@
+//--------------------------------------------------
+// Server will serve the bundled app for browsers
+//--------------------------------------------------
 const express = require('express');
 const app = express();
 const path = require('path');

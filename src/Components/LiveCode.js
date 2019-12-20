@@ -15,10 +15,27 @@ class LiveCode extends React.Component{
  
   render(){
     //Below we build a 4 cornered path element and render it as a string 
+    let finalCodeString = ""
     const liveCode = this.props.activeSVGs.map((SVG, index)=>{
+      finalCodeString = "<path d="
+      // extract all ranges in an svg object and store in array
+      const extractedRanges = [];
+      for(let key in SVG){
+        extractedRanges.push(SVG[key]);
+      }
+      console.log(extractedRanges);
+      for(let i = 0; i < extractedRanges.length; i++){
+        if(i === 0){
+          finalCodeString += `M${extractedRanges[i]}`
+        }else if(i % 2 === 0){
+          finalCodeString += ` L${extractedRanges[i]}`
+        }else{
+          finalCodeString += ` ${extractedRanges[i]}`
+        }
+      }
       return( 
         <React.Fragment>
-          <h2 className="code">&lt;path d={`M${this.props.activeSVGs[index].range1x} ${this.props.activeSVGs[index].range1y} L${this.props.activeSVGs[index].range2x} ${this.props.activeSVGs[index].range2y} L${this.props.activeSVGs[index].range3x} ${this.props.activeSVGs[index].range3y} L${this.props.activeSVGs[index].range4x} ${this.props.activeSVGs[index].range4y} Z`} /></h2>
+          <h2 className="code">{finalCodeString}/></h2>
         </React.Fragment> 
       )
     })

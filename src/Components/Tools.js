@@ -83,7 +83,8 @@ class Tools extends React.Component{
         <div className = "a-single-slider-container">
           <div className ="shape-caption">
             <h1>Shape:{index + 1}</h1>
-            <i className={`fas fa-minus-circle ${index}`} onClick ={this.handleClick}></i>
+            <i className={`fas fa-times  ${index}`} onClick ={this.handleClick}></i>
+              {/* <i className={`fas fa-minus-circle ${index}`} onClick ={this.handleClick}></i> */}
           </div>
           <h3 className="corner-caption">Corner 1</h3>
            <div className = "slider-labels">
@@ -94,7 +95,7 @@ class Tools extends React.Component{
             <input className = {index} onChange= {this.handleRange1x} type="range" max='1000' min="0"></input>
             <input className = {index} onChange= {this.handleRange1y} type="range" max="1000" min="0"></input>
           </div>
-          <h3 className="corner-caption">Corner 2</h3>
+          {/* <h3 className="corner-caption">Corner 2</h3>
            <div className = "slider-labels">
             <p>x-axis</p>
             <p>y-axis</p>
@@ -123,7 +124,8 @@ class Tools extends React.Component{
           <div className = "verticies corner4">
             <input className = {index} onChange= {this.handleRange4x} type="range" max="1000" min="0"></input>
             <input className = {index} onChange= {this.handleRange4y} type="range" max="1000" min="0"></input>
-          </div>
+          </div> */}
+          <button className = "add-vertice-btn" onClick ={this.handleClick}>Add new vertice</button>
         </div>
         )
     })

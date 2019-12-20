@@ -14,10 +14,10 @@ const initialState = {
       range1y:175,
       range2x:225,
       range2y:175,
-      range3x:325,
-      range3y:225,
-      range4x:375,
-      range4y:225,
+      // range3x:325,
+      // range3y:225,
+      // range4x:375,
+      // range4y:225,
     }
   ]
 
@@ -44,10 +44,10 @@ function pathReducer(state=initialState, action){
         range1y:175,
         range2x:225,
         range2y:175,
-        range3x:325,
-        range3y:225,
-        range4x:375,
-        range4y:225,
+        // range3x:325,
+        // range3y:225,
+        // range4x:375,
+        // range4y:225,
       }
       // ...push this new SVG object into clone of array of SVG objects
       activeSVGs.push(newSVG)
@@ -101,6 +101,7 @@ function pathReducer(state=initialState, action){
 // --------------------------------------------------------------------------    
 
     case types.SET_RANGE1X:
+      // find the specific index i activeSVGs array and change its value
       activeSVGs[action.payload.classId].range1x = action.payload.range1x;
       console.log(action.payload.classId)
       console.log(state.activeSVGs)
@@ -143,47 +144,47 @@ function pathReducer(state=initialState, action){
       };
 // ---------------------------------------------------------    
  
-    case types.SET_RANGE3X:
-      activeSVGs[action.payload.classId].range3x = action.payload.range3x;
-      console.log(action.payload.classId)
-      console.log(state.activeSVGs)
-      return {
-        ...state,
-        activeSVGs,
-      };
+//     case types.SET_RANGE3X:
+//       activeSVGs[action.payload.classId].range3x = action.payload.range3x;
+//       console.log(action.payload.classId)
+//       console.log(state.activeSVGs)
+//       return {
+//         ...state,
+//         activeSVGs,
+//       };
 
-// ---------------------------------------------------------      
+// // ---------------------------------------------------------      
  
-    case types.SET_RANGE3Y:
-      activeSVGs[action.payload.classId].range3y = action.payload.range3y;
-      console.log(action.payload.classId)
-      console.log(state.activeSVGs)
-      return {
-        ...state,
-        activeSVGs,
-      };
+//     case types.SET_RANGE3Y:
+//       activeSVGs[action.payload.classId].range3y = action.payload.range3y;
+//       console.log(action.payload.classId)
+//       console.log(state.activeSVGs)
+//       return {
+//         ...state,
+//         activeSVGs,
+//       };
 
-// ---------------------------------------------------------     
+// // ---------------------------------------------------------     
  
-    case types.SET_RANGE4X:
-      activeSVGs[action.payload.classId].range4x = action.payload.range4x;
-      console.log(action.payload.classId)
-      console.log(state.activeSVGs)
-      return {
-        ...state,
-        activeSVGs,
-      };
+//     case types.SET_RANGE4X:
+//       activeSVGs[action.payload.classId].range4x = action.payload.range4x;
+//       console.log(action.payload.classId)
+//       console.log(state.activeSVGs)
+//       return {
+//         ...state,
+//         activeSVGs,
+//       };
 
-// ---------------------------------------------------------      
+// // ---------------------------------------------------------      
  
-    case types.SET_RANGE4Y:
-      activeSVGs[action.payload.classId].range4y = action.payload.range4y;
-      console.log(action.payload.classId)
-      console.log(state.activeSVGs)
-      return {
-        ...state,
-        activeSVGs,
-      };
+//     case types.SET_RANGE4Y:
+//       activeSVGs[action.payload.classId].range4y = action.payload.range4y;
+//       console.log(action.payload.classId)
+//       console.log(state.activeSVGs)
+//       return {
+//         ...state,
+//         activeSVGs,
+//       };
 
 // ---------------------------------------------------------      
 
