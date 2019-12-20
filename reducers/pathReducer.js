@@ -14,10 +14,10 @@ const initialState = {
       range1y:175,
       range2x:225,
       range2y:175,
-      // range3x:325,
-      // range3y:225,
-      // range4x:375,
-      // range4y:225,
+      range3x:325,
+      range3y:225,
+      range4x:375,
+      range4y:225,
     }
   ]
 

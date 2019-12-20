@@ -1,64 +1,80 @@
-import React from 'react';
-import '../styles/Workspace.css';
-import { setWorkspaceHeight } from '../../actions';
-import { setWorkspaceWidth } from '../../actions';
-import { connect } from 'react-redux';
+import React from "react";
+import "../styles/Workspace.css";
+import { setWorkspaceHeight } from "../../actions";
+import { setWorkspaceWidth } from "../../actions";
+import { connect } from "react-redux";
 
 // import alterRange
 
 const mapStateToProps = store => ({
-  workspaceHeight : store.tinker.workspaceHeight,
-  workspaceWidth : store.tinker.workspaceWidth,
-  activeSVGs : store.tinker.activeSVGs,
-})
+	workspaceHeight : store.tinker.workspaceHeight,
+	workspaceWidth : store.tinker.workspaceWidth,
+	activeSVGs : store.tinker.activeSVGs,
+});
 
 const mapDispatchToProps = dispatch =>({
-  setWorkspaceHeight: (event)=> dispatch(setWorkspaceHeight(event)),
-  setWorkspaceWidth: (event)=> dispatch(setWorkspaceWidth(event)),
-})
+	setWorkspaceHeight: (event)=> dispatch(setWorkspaceHeight(event)),
+	setWorkspaceWidth: (event)=> dispatch(setWorkspaceWidth(event)),
+});
 
 class Workspace extends React.Component{
-  constructor(){
-    super()
-    this.handleHeightChange = this.handleHeightChange.bind(this);
-    this.handleWidthChange = this.handleWidthChange.bind(this);
-  }
-  // The two functions below (handleHeightChange and handleWidthChange) are used to control the height and width of the work area
+	constructor(){
+		super();
+		this.handleHeightChange = this.handleHeightChange.bind(this);
+		this.handleWidthChange = this.handleWidthChange.bind(this);
+	}
+	// The two functions below (handleHeightChange and handleWidthChange) are used to control the height and width of the work area
  
-  handleHeightChange(event){
-    this.props.setWorkspaceHeight(event.target.value)
-    console.log('setting height to',this.props.workspaceHeight)
-  }
+	handleHeightChange(event){
+		this.props.setWorkspaceHeight(event.target.value);
+		console.log("setting height to",this.props.workspaceHeight);
+	}
 
-  handleWidthChange(event){
-    this.props.setWorkspaceWidth(event.target.value)
-    console.log('setting width to',this.props.workspaceWidth)
-  }
+	handleWidthChange(event){
+		this.props.setWorkspaceWidth(event.target.value);
+		console.log("setting width to",this.props.workspaceWidth);
+	}
 
-  render(){
-    const allSVGs = this.props.activeSVGs.map((SVG, index)=>{
-      // create a 4 cornered path element based on each SVG object that exists in the activeSVGs array in redux state
-      return( 
-        <React.Fragment>
-          <path  d={`M${this.props.activeSVGs[index].range1x} ${this.props.activeSVGs[index].range1y} L${this.props.activeSVGs[index].range2x} ${this.props.activeSVGs[index].range2y} L${this.props.activeSVGs[index].range3x} ${this.props.activeSVGs[index].range3y} L${this.props.activeSVGs[index].range4x} ${this.props.activeSVGs[index].range4y} Z`} />
-        </React.Fragment> 
-      )
-    })
-   const emptyMessage = <h2>Add a shape</h2>
-    // Render all path elements from newly made allSVGs array inside svg tag
-    return(
-      <div className = "workspace-container">
-        <label className="size-input1" htmlFor="height">Height</label>
-        <input className="size-input" onChange ={this.handleHeightChange} name = 'height' type='text' maxLength="3"></input>
-        <label  className="size-input2" htmlFor= 'width'>Width</label> 
-        <input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
-        <br />
-        <svg id="workspace" className={this.props.activeSVGs.length !== 0 ? 'fine' : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
-        {this.props.activeSVGs ? allSVGs : emptyMessage}  
-        </svg>
+	render(){
+		let renderString = "";
+		const allSVGs = this.props.activeSVGs.map((SVG, index)=>{
+			// create a 4 cornered path element based on each SVG object that exists in the activeSVGs array in redux state
+      renderString = "";
+      const extractedRanges = [];
+			for(let key in SVG){
+				extractedRanges.push(SVG[key]);
+      }
+      for(let i = 0; i < extractedRanges.length; i++){
+				if(i === 0){
+					renderString += `M${extractedRanges[i]}`;
+				}else if(i % 2 === 0){
+					renderString += ` L${extractedRanges[i]}`;
+				}else{
+					renderString += ` ${extractedRanges[i]}`;
+				}
+      }
+      console.log(renderString);
+			return( 
+				<React.Fragment key = {index}>
+					<path  d={renderString + " Z"} />
+				</React.Fragment> 
+			);
+		});
+		const emptyMessage = <h2>Add a shape</h2>;
+		// Render all path elements from newly made allSVGs array inside svg tag
+		return(
+			<div className = "workspace-container">
+				<label className="size-input1" htmlFor="height">Height</label>
+				<input className="size-input" onChange ={this.handleHeightChange} name = 'height' type='text' maxLength="3"></input>
+				<label  className="size-input2" htmlFor= 'width'>Width</label> 
+				<input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
+				<br />
+				<svg id="workspace" className={this.props.activeSVGs.length !== 0 ? "fine" : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
+					{this.props.activeSVGs ? allSVGs : emptyMessage}  
+				</svg>
 
-      </div>
-    )
-  }
+			</div>
+		);
+	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Workspace);
