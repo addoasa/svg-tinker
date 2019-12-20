@@ -52,3 +52,7 @@ export const removeSVG = (SVG, classId)=>({
   type:types.REMOVE_SVG,
   payload: {SVG, classId},
 })
+export const addVertices = (classId)=>({
+	type:types.ADD_VERTICES,
+	payload: classId,
+});

@@ -14,4 +14,5 @@ export const SET_RANGE4X = "SET_RANGE4X";
 export const SET_RANGE4Y = "SET_RANGE4Y";
 export const ADD_SVG = "ADD_SVG";
 export const REMOVE_SVG = "REMOVE_SVG";
+export const ADD_VERTICES = "ADD_VERTICES";
 //🐣

@@ -35,8 +35,8 @@ class LiveCode extends React.Component{
 				}
 			}
 			return( 
-				<React.Fragment key="index">
-					<h2 className="code">{finalCodeString}/></h2>
+				<React.Fragment key={index}>
+					<h2 className="code">{finalCodeString + " Z"}/></h2>
 				</React.Fragment> 
 			);
 		});
