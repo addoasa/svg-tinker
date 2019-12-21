@@ -61,29 +61,19 @@ function pathReducer(state=initialState, action){
 		// we have access to the specific object we want to add vertices to
 		console.log(activeSVGs[action.payload]);
 		// turn the state object into an array inorder to find the length
-		const turnObjToArr =[];
+		const turnObjToArr = [];
 		for(let key in activeSVGs[action.payload]){
 			turnObjToArr.push(key);
 		}
-		let newVertice;
-		console.log("lolz",turnObjToArr.length);
-		// for(let i = 0; i < 2; i++){
-		console.log("fop")
-		newVertice = 'slider';
+
+		let newVertice = "slider";
 		if(turnObjToArr.length % 2 === 0){
 			newVertice= newVertice + "X" + turnObjToArr.length;
-      activeSVGs[action.payload][newVertice] = 300;
-      newVertice = 'slider';
-      newVertice= newVertice + "Y" + (turnObjToArr.length + 1);
 			activeSVGs[action.payload][newVertice] = 300;
-		// }else{
-		// 	newVertice= newVertice + "Y" + turnObjToArr.length;
-    //   activeSVGs[action.payload][newVertice] = 300;
-    //   newVertice = 'slider';
-    //   newVertice= newVertice + "X" + turnObjToArr.length;
-    //   activeSVGs[action.payload][newVertice] = 300;
+			newVertice = "slider";
+			newVertice= newVertice + "Y" + (turnObjToArr.length + 1);
+			activeSVGs[action.payload][newVertice] = 300;
 		}
-		// }
 		return {
 			...state,
 			activeSVGs,
@@ -130,27 +120,7 @@ function pathReducer(state=initialState, action){
 		// specific shape's vertices
 		// --------------------------------------------------------------------------    
 
-		// case types.SET_RANGE1X:
-		// 	// find the specific index i activeSVGs array and change its value
-		// 	activeSVGs[action.payload.classId].range1x = action.payload.range1x;
-		// 	console.log(action.payload.classId);
-		// 	console.log(state.activeSVGs);
-		// 	return {
-		// 		...state,
-		// 		activeSVGs,
-		// 	};
-
-		// 	// ---------------------------------------------------------    
- 
-		// case types.SET_RANGE1Y:
-		// 	activeSVGs[action.payload.classId].range1y = action.payload.range1y;
-		// 	console.log(action.payload.classId);
-		// 	console.log(state.activeSVGs);
-		// 	return {
-		// 		...state,
-		// 		activeSVGs,
-		//   };
-    
+		
 	case types.SET_X:
 		// find the specific index i activeSVGs array and change its value
 		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
@@ -176,71 +146,6 @@ function pathReducer(state=initialState, action){
 			...state,
 			activeSVGs,
 		};
-
-		// ---------------------------------------------------------  
-
-		// case types.SET_RANGE2X:
-		// 	activeSVGs[action.payload.classId].range2x = action.payload.range2x;
-		// 	console.log(action.payload.classId);
-		// 	console.log(state.activeSVGs);
-		// 	return {
-		// 		...state,
-		// 		activeSVGs,
-		// 	};
-
-		// 	// ---------------------------------------------------------      
- 
-		// case types.SET_RANGE2Y:
-		// 	activeSVGs[action.payload.classId].range2y = action.payload.range2y;
-		// 	console.log(action.payload.classId);
-		// 	console.log(state.activeSVGs);
-		// 	return {
-		// 		...state,
-		// 		activeSVGs,
-		// 	};
-		// ---------------------------------------------------------    
- 
-		//     case types.SET_RANGE3X:
-		//       activeSVGs[action.payload.classId].range3x = action.payload.range3x;
-		//       console.log(action.payload.classId)
-		//       console.log(state.activeSVGs)
-		//       return {
-		//         ...state,
-		//         activeSVGs,
-		//       };
-
-		// // ---------------------------------------------------------      
- 
-		//     case types.SET_RANGE3Y:
-		//       activeSVGs[action.payload.classId].range3y = action.payload.range3y;
-		//       console.log(action.payload.classId)
-		//       console.log(state.activeSVGs)
-		//       return {
-		//         ...state,
-		//         activeSVGs,
-		//       };
-
-		// // ---------------------------------------------------------     
- 
-		//     case types.SET_RANGE4X:
-		//       activeSVGs[action.payload.classId].range4x = action.payload.range4x;
-		//       console.log(action.payload.classId)
-		//       console.log(state.activeSVGs)
-		//       return {
-		//         ...state,
-		//         activeSVGs,
-		//       };
-
-		// // ---------------------------------------------------------      
- 
-		//     case types.SET_RANGE4Y:
-		//       activeSVGs[action.payload.classId].range4y = action.payload.range4y;
-		//       console.log(action.payload.classId)
-		//       console.log(state.activeSVGs)
-		//       return {
-		//         ...state,
-		//         activeSVGs,
-		//       };
 
 		// ---------------------------------------------------------      
 
