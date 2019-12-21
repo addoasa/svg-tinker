@@ -56,3 +56,11 @@ export const addVertices = (classId)=>({
 	type:types.ADD_VERTICES,
 	payload: classId,
 });
+export const setX = (value, classId, sliderId)=>({
+  type:types.SET_X,
+  payload: {value , classId, sliderId },
+});
+export const setY = (value, classId, sliderId)=>({
+  type:types.SET_Y,
+  payload: {value,classId, sliderId},
+});
