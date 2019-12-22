@@ -53,7 +53,7 @@ class Workspace extends React.Component{
 					renderString += ` ${extractedRanges[i]}`;
 				}
       }
-      console.log(renderString);
+      // console.log(renderString);
 			return( 
 				<React.Fragment key = {index}>
 					<path  d={renderString + " Z"} />

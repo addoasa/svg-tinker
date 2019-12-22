@@ -23,7 +23,7 @@ class LiveCode extends React.Component{
 			for(let key in SVG){
 				extractedRanges.push(SVG[key]);
 			}
-			console.log(extractedRanges);
+			// console.log(extractedRanges);
 			// build final code string by gradually concatenating with extracted values
 			for(let i = 0; i < extractedRanges.length; i++){
 				if(i === 0){

@@ -59,7 +59,7 @@ function pathReducer(state=initialState, action){
 		// ---------------------------------------------------------    
 	case types.ADD_VERTICES: 
 		// we have access to the specific object we want to add vertices to
-		console.log(activeSVGs[action.payload]);
+		// console.log(activeSVGs[action.payload]);
 		// turn the state object into an array inorder to find the length
 		const turnObjToArr = [];
 		for(let key in activeSVGs[action.payload]){
@@ -82,8 +82,8 @@ function pathReducer(state=initialState, action){
 	case types.REMOVE_SVG:
 		// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
 		activeSVGs.splice(action.payload.classId, 1); // Remove one item from activeSVG array with the index specified in the payload
-		console.log({ activeSVGs });
-		console.log(action.payload.classId, "payload");
+		// console.log({ activeSVGs });
+		// console.log(action.payload.classId, "payload");
 		return {
 			...state,
 			activeSVGs,
@@ -124,10 +124,10 @@ function pathReducer(state=initialState, action){
 	case types.SET_X:
 		// find the specific index i activeSVGs array and change its value
 		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
-		console.log(action.payload.classId, "classId");
-		console.log(action.payload.sliderId, "sliderid");
-		console.log(action.payload.value, "vaLx");
-		console.log(state.activeSVGs);
+		// console.log(action.payload.classId, "classId");
+		// console.log(action.payload.sliderId, "sliderid");
+		// console.log(action.payload.value, "vaLx");
+		// console.log(state.activeSVGs);
 		return {
 			...state,
 			activeSVGs,
@@ -137,11 +137,11 @@ function pathReducer(state=initialState, action){
  
 	case types.SET_Y:
 		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
-		console.log(action.payload.classId, "classId");
-		console.log(action.payload.sliderId, "sliderid");
-		console.log(action.payload.value, "vaLy");
+		// console.log(action.payload.classId, "classId");
+		// console.log(action.payload.sliderId, "sliderid");
+		// console.log(action.payload.value, "vaLy");
 
-		console.log(state.activeSVGs);
+		// console.log(state.activeSVGs);
 		return {
 			...state,
 			activeSVGs,
