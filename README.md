@@ -13,7 +13,7 @@
 
 ## Planned features
 #### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
-#### [✖] Add and removal of Path vertices (Each shape has 4 currently)
+#### [✔] Add and removal of Path vertices (Each shape has 4 currently)
 #### [✖] Enable support for SVG: lines, circles, elipses, polygons, polylines, text, dropshadows, blur effects and filters   
 #### [✖] Implement color selection for shapes
 #### [✖] Implement Undo/Redo changes made

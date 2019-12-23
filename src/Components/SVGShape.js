@@ -7,6 +7,7 @@ class SVGShape extends React.Component{
 		this.handleX = this.handleX.bind(this);
 		this.handleY = this.handleY.bind(this);
 		this.addCorner = this.addCorner.bind(this);
+		this.removeCorner = this.removeCorner.bind(this);
 
 	}
 	//------------------------------------------------------------------------------------
@@ -31,12 +32,21 @@ class SVGShape extends React.Component{
   
 	handleY(event){
 		this.props.setY(event.target.value, event.target.className.split(" ")[0],event.target.className.split(" ")[1]);
-	}
+    // console.log(event.target.className.split(" ")[1]);
+
+  }
   
 	addCorner(event){
 		// used split() here because event.target.className gives you all classes associated with an element as a long string.
 		this.props.addVertices(event.target.className.split(" ")[1]);
 		console.log(event.target.className.split(" ")[1]);
+	}
+	removeCorner(event){
+		// used split() here because event.target.className gives you all classes associated with an element as a long string.
+    const foundSlidersToDelete = event.target.parentElement.nextSibling.nextSibling.children;
+    this.props.removeVertices(this.props.index, foundSlidersToDelete[0].className.split(" ")[1], foundSlidersToDelete[1].className.split(" ")[1]);
+    // console.log(event.target.className.split(" ")[1]);
+    //parrent.nextsib.nextsib.children
 	}
 
 	//------------------------------------------------------------------------------------
@@ -61,8 +71,11 @@ class SVGShape extends React.Component{
 		for(let i = 1, j = 0, k = 0;i< extractedRanges.length; i+=2, j++,k+=2){
 			newSlider.push(	
 				<>
-					<h3 className="corner-caption">Corner {j}</h3>
-					<div className = "slider-labels">
+          <div className = "cornercaption-and-deletebtn">
+            <h3 className="corner-caption">Corner {j}</h3>
+            <button className = {`delete-vertice-btn ${this.props.index}`} onClick ={this.removeCorner}>Delete</button>
+          </div>
+          <div className = "slider-labels">
 						<p>x-axis</p>
 						<p>y-axis</p>
 					</div>

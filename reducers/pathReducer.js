@@ -56,18 +56,25 @@ function pathReducer(state=initialState, action){
 			activeSVGs,
 		};
 		//return the new state
+    
+		// ---------------------------------------------------------    
+		// Logic for adding verticies
 		// ---------------------------------------------------------    
 	case types.ADD_VERTICES: 
-		// we have access to the specific object we want to add vertices to
+		// we have access to the specific object we want to add vertices to through the classid in the payload
 		// console.log(activeSVGs[action.payload]);
-		// turn the state object into an array inorder to find the length
+		// turn the unique state object at that specific classid into an array inorder to find the length
+		// We do this so we know how many vertices already exist on this specific shape/object
 		const turnObjToArr = [];
 		for(let key in activeSVGs[action.payload]){
 			turnObjToArr.push(key);
+			// console.log(key)
 		}
-
+		// create a unique name for the keys we will be adding to this specific shape/object(ex: sliderX4 or sliderY9)
 		let newVertice = "slider";
-		if(turnObjToArr.length % 2 === 0){
+		if(turnObjToArr.length % 2 === 0){ 
+			// if there are an even number of sliders...(which there should always be)... 
+			// ... add a new pair to the specific shape/object in state at that classid
 			newVertice= newVertice + "X" + turnObjToArr.length;
 			activeSVGs[action.payload][newVertice] = 300;
 			newVertice = "slider";
@@ -78,7 +85,38 @@ function pathReducer(state=initialState, action){
 			...state,
 			activeSVGs,
 		};
-		// ---------------------------------------------------------    
+		// ---------------------------------------------------------   
+   
+	case types.REMOVE_VERTICES: 
+		// Delete the specified verticies
+    
+		delete activeSVGs[action.payload.classId][action.payload.xToDelete];
+		delete activeSVGs[action.payload.classId][action.payload.yToDelete];
+
+		// then rebuild the object to fix order
+		const makeObjToArr = [];
+		for(let key in activeSVGs[action.payload.classId]){
+			makeObjToArr.push(activeSVGs[action.payload.classId][key]);
+		}
+		//build new obj using the same naming convention
+		const newObj = {};
+		let newSlider ="";
+		for(let i = 0; i < makeObjToArr.length; i+=2){
+			if(makeObjToArr.length % 2 === 0){ 
+				newSlider = "sliderX"+i;
+				newObj[newSlider] = makeObjToArr[i];
+				newSlider = "sliderY"+(i+1);
+				newObj[newSlider] = makeObjToArr[i+1];
+			}
+		}
+		activeSVGs[action.payload.classId] = newObj;
+		return {
+			...state,
+			activeSVGs,
+		};
+    
+		// --------------------------------------------------------- 
+     
 	case types.REMOVE_SVG:
 		// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
 		activeSVGs.splice(action.payload.classId, 1); // Remove one item from activeSVG array with the index specified in the payload
@@ -119,13 +157,11 @@ function pathReducer(state=initialState, action){
 		// With that information we can now manipulate x and y positioning of that 
 		// specific shape's vertices
 		// --------------------------------------------------------------------------    
-
-		
 	case types.SET_X:
 		// find the specific index i activeSVGs array and change its value
 		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
 		// console.log(action.payload.classId, "classId");
-		// console.log(action.payload.sliderId, "sliderid");
+		console.log(action.payload.sliderId, "sliderid");
 		// console.log(action.payload.value, "vaLx");
 		// console.log(state.activeSVGs);
 		return {
@@ -138,7 +174,7 @@ function pathReducer(state=initialState, action){
 	case types.SET_Y:
 		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
 		// console.log(action.payload.classId, "classId");
-		// console.log(action.payload.sliderId, "sliderid");
+		console.log(action.payload.sliderId, "sliderid");
 		// console.log(action.payload.value, "vaLy");
 
 		// console.log(state.activeSVGs);

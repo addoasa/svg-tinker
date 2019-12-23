@@ -7,6 +7,7 @@ export const SET_WIDTH = "SET_WIDTH";
 export const ADD_SVG = "ADD_SVG";
 export const REMOVE_SVG = "REMOVE_SVG";
 export const ADD_VERTICES = "ADD_VERTICES";
+export const REMOVE_VERTICES = "REMOVE_VERTICES";
 export const SET_Y = "SET_Y";
 export const SET_X = "SET_X";
 //🐣

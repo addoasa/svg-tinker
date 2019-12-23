@@ -27,6 +27,10 @@
   color: rgba(0,0,0,0.6);
   /* font-weight: 300; */
 }
+.cornercaption-and-deletebtn{
+  display:flex;
+  justify-content: space-between;
+}
 .shape-caption{
   display:flex;
   font-family: helvetica;

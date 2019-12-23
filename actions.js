@@ -24,6 +24,10 @@ export const addVertices = (classId)=>({
 	type:types.ADD_VERTICES,
 	payload: classId,
 });
+export const removeVertices = (classId, xToDelete, yToDelete)=>({
+	type:types.REMOVE_VERTICES,
+	payload: {classId, xToDelete, yToDelete},
+});
 export const setX = (value, classId, sliderId)=>({
 	type:types.SET_X,
 	payload: {value , classId, sliderId },

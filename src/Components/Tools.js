@@ -4,6 +4,7 @@ import { setX } from "../../actions";
 import { setY } from "../../actions";
 import { removeSVG } from "../../actions";
 import { addVertices } from "../../actions";
+import { removeVertices } from "../../actions";
 import SVGShape from "./SVGShape.js";
 import { connect } from "react-redux";
 import "../styles/Tools.css";
@@ -16,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
 	setX : (event, classId, sliderId)=> dispatch(setX(event, classId, sliderId)),
 	removeSVG : (event, classId)=> dispatch(removeSVG(event, classId)),
 	addVertices : (classId)=> dispatch(addVertices(classId)),
+	removeVertices : (classId, xToDelete, yToDelete)=> dispatch(removeVertices(classId, xToDelete, yToDelete)),
 });
 
 
@@ -36,6 +38,7 @@ class Tools extends React.Component{
 					activeSVGs={this.props.activeSVGs} 
 					SVG = {SVG} index = {index} 
 					addVertices = {this.props.addVertices} 
+					removeVertices = {this.props.removeVertices} 
 					removeSVG = {this.props.removeSVG} 
 				/>
 			); 
