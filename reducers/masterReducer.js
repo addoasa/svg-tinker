@@ -8,7 +8,10 @@ function masterReducer(state=initialState, action){
   let masterSVGArray = state.masterSVGArray.slice();
   switch(action.type){
     case types.INSERT_INTO_MASTER:
-      masterSVGArray.push(action.payload.SVG);
+      masterSVGArray.push({
+        svgType:action.payload.svgType,
+        svgData:action.payload.SVG,
+      });
       return{
         ...state,
         masterSVGArray

@@ -72,7 +72,7 @@ export const setRadius = (radiusValue, classId)=>({
 // MASTER ACTIONS
 // ------------------
 
-export const insertIntoMaster = (SVG)=>({
+export const insertIntoMaster = (SVG, svgType)=>({
 	type:types.INSERT_INTO_MASTER,
-	payload: {SVG},
+	payload: {SVG, svgType},
 });

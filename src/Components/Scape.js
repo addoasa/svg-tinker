@@ -14,7 +14,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
   addSVG: ()=> dispatch(addSVG()),
   addCircle: ()=> dispatch(addCircle()),
-  insertIntoMaster: (SVG)=> dispatch(insertIntoMaster(SVG)),
+  insertIntoMaster: (SVG, svgType)=> dispatch(insertIntoMaster(SVG, svgType)),
 })
 
 
@@ -22,12 +22,15 @@ const mapDispatchToProps = dispatch => ({
 class Scape extends React.Component{
   constructor(){
     super()
-    this.handleClick = this.handleClick.bind(this);
+    this.handlePathClick = this.handlePathClick.bind(this);
     this.handleCircleClick = this.handleCircleClick.bind(this);
   }
   
-  handleClick(){
+  handlePathClick(){
     this.props.addSVG();
+    const lastPathAdded = this.props.activeSVGs[this.props.activeSVGs.length - 1];
+    this.props.insertIntoMaster(lastPathAdded, "PATH");
+
   }
   handleCircleClick(){
     // add a new circle to the circle array in the circle reducer
@@ -35,7 +38,7 @@ class Scape extends React.Component{
     // then take the last circle added to the circle array and store it in a variable
     const lastCircleAdded = this.props.activeCircleSVGs[this.props.activeCircleSVGs.length - 1];
     // now insert the last added circle into the master list to render
-    this.props.insertIntoMaster(lastCircleAdded);
+    this.props.insertIntoMaster(lastCircleAdded, "CIRCLE");
     // console.log(this.props.activeCircleSVGs)
   }
 
@@ -45,7 +48,7 @@ class Scape extends React.Component{
     return(
       <div className = "utility-wrapper">
         <div className="add-container">
-          <i className={this.props.activeSVGs.length !== 0 ? 'fas fa-plus-circle addSlider' : "fas fa-plus-circle emphasizeAddSlider"} onClick ={this.handleClick}></i>
+          <i className={this.props.activeSVGs.length !== 0 ? 'fas fa-plus-circle addSlider' : "fas fa-plus-circle emphasizeAddSlider"} onClick ={this.handlePathClick}></i>
           <h4 className="add-caption">Add new shape</h4>
         </div>
         <div className="add-container-option">
