@@ -176,7 +176,7 @@ function pathReducer(state=initialState, action){
 	// --------------------------------------------------------------------------    
 
 	case types.SET_X:
-		// find the specific index i activeSVGs array and change its value
+		// find the specific index in activeSVGs array and change its value
 
 		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
 		// console.log(action.payload.classId, "classId");

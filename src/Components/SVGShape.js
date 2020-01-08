@@ -23,7 +23,7 @@ class SVGShape extends React.Component{
  	//------------------------------------------------------------------------------------
   
 	//------------------------------------------------------------------------------------
-	// Methods for manipulating vertices
+	// Methods for manipulating Path vertices
 	//------------------------------------------------------------------------------------
 	handleX(event){
 		this.props.setX(event.target.value, event.target.className.split(" ")[0], event.target.className.split(" ")[1]);
@@ -42,11 +42,9 @@ class SVGShape extends React.Component{
 		console.log(event.target.className.split(" ")[1]);
 	}
 	removeCorner(event){
-		// used split() here because event.target.className gives you all classes associated with an element as a long string.
     const foundSlidersToDelete = event.target.parentElement.nextSibling.nextSibling.children;
     this.props.removeVertices(this.props.index, foundSlidersToDelete[0].className.split(" ")[1], foundSlidersToDelete[1].className.split(" ")[1]);
     // console.log(event.target.className.split(" ")[1]);
-    //parrent.nextsib.nextsib.children
 	}
 
 	//------------------------------------------------------------------------------------

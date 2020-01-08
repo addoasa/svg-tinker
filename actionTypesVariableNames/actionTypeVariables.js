@@ -10,4 +10,10 @@ export const ADD_VERTICES = "ADD_VERTICES";
 export const REMOVE_VERTICES = "REMOVE_VERTICES";
 export const SET_Y = "SET_Y";
 export const SET_X = "SET_X";
+export const ADD_CIRCLE = "ADD_CIRCLE";
+export const REMOVE_CIRCLE = "REMOVE_CIRCLE";
+export const SET_CIRCLE_Y = "SET_CIRCLE_Y";
+export const SET_CIRCLE_X = "SET_CIRCLE_X";
+export const SET_CIRCLE_RADIUS = "SET_CIRCLE_RADIUS";
+
 //🐣

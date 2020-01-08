@@ -36,7 +36,8 @@ class Tools extends React.Component{
 					setY={this.props.setY} 
 					setX={this.props.setX} 
 					activeSVGs={this.props.activeSVGs} 
-					SVG = {SVG} index = {index} 
+					SVG = {SVG} 
+					index = {index} 
 					addVertices = {this.props.addVertices} 
 					removeVertices = {this.props.removeVertices} 
 					removeSVG = {this.props.removeSVG} 

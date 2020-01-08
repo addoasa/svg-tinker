@@ -12,17 +12,31 @@
 #### Use the control panel on the left side of the screen to manipulate the cooresponding vertices of a shape. To add another shape to your SVG click the "add new shape" button above the control panel. To remove a particular shape click the "-" icon located at the top right of every shape in the control panel.
 
 ## Planned features
-#### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
-#### [✔] Add and removal of Path vertices (Each shape has 4 currently)
+#### [✔] Add and removal of Path vertices (Each path has 4 currently)
+#### [✖] Enable the Path SVGs to also be relatively positioned(Each path is currently using only absolute postioned vertices)   
 #### [✖] Enable support for SVG: lines, circles, elipses, polygons, polylines, text, dropshadows, blur effects and filters   
-#### [✖] Implement color selection for shapes
+```
+     [✖] Circles
+     [✖] Lines
+     [✖] Text
+     [✖] Elipses
+     [✖] Rectagles
+     [✖] Polygons
+     [✖] Polylines
+     [✖] Paths
+     [✖] Filters
+
+```
+#### [✖] Enable shape layer heirachy
+#### [✖] Enable user to live code SVG
+#### [✖] Enable user to import and render svg code (including default or starter shapes like stars or stairs)
 #### [✖] Implement Undo/Redo changes made
 #### [✖] Implement copy and paste || or Duplicate shape feature
-#### [✖] Enable shape layer heirachy
+#### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
 #### [✖] Refactor and refine UI
-#### [✖] Enable user to store SVGs in DB /Save Progress 
-#### [✖] Enable user to import and render svg code
-#### [✖] Enable user to live code SVG
+#### [✖] Enable user to store SVGs/ save  in DB/localstorage etc  
+#### [✖] Adding math tools(ex: user can proportionally resize svgs or translate its position)
+
 
 
 
