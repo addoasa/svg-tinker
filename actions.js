@@ -67,3 +67,12 @@ export const setRadius = (radiusValue, classId)=>({
 	type:types.SET_CIRCLE_RADIUS,
 	payload: {radiusValue,classId},
 });
+
+// ------------------
+// MASTER ACTIONS
+// ------------------
+
+export const insertIntoMaster = (SVG)=>({
+	type:types.INSERT_INTO_MASTER,
+	payload: {SVG},
+});

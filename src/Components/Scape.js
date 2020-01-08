@@ -1,18 +1,20 @@
 import React from 'react';
 import '../styles/Scape.css';
 //import the action you want to use
-import { addSVG, addCircle } from '../../actions'
+import { addSVG, addCircle, insertIntoMaster } from '../../actions'
 import { connect } from 'react-redux';
 
 
 const mapStateToProps = store => ({
   activeSVGs : store.tinker.activeSVGs,
-  activeCircleSVGs : store.circle.activeCircleSVGs,
+  activeCircleSVGs : store.circles.activeCircleSVGs,
+  masterSVGArray : store.master.masterSVGArray,
 
 })
 const mapDispatchToProps = dispatch => ({
   addSVG: ()=> dispatch(addSVG()),
   addCircle: ()=> dispatch(addCircle()),
+  insertIntoMaster: (SVG)=> dispatch(insertIntoMaster(SVG)),
 })
 
 
@@ -28,11 +30,18 @@ class Scape extends React.Component{
     this.props.addSVG();
   }
   handleCircleClick(){
+    // add a new circle to the circle array in the circle reducer
     this.props.addCircle();
-    console.log(this.props.activeCircleSVGs)
+    // then take the last circle added to the circle array and store it in a variable
+    const lastCircleAdded = this.props.activeCircleSVGs[this.props.activeCircleSVGs.length - 1];
+    // now insert the last added circle into the master list to render
+    this.props.insertIntoMaster(lastCircleAdded);
+    // console.log(this.props.activeCircleSVGs)
   }
 
   render(){
+    console.log(this.props.masterSVGArray, "Master hoorray");
+
     return(
       <div className = "utility-wrapper">
         <div className="add-container">

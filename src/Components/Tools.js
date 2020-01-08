@@ -10,7 +10,8 @@ import { connect } from "react-redux";
 import "../styles/Tools.css";
 
 const mapStateToProps = store => ({
-	activeSVGs : store.tinker.activeSVGs
+	activeSVGs : store.tinker.activeSVGs,
+	activeCircleSVGs : store.circles.activeCircleSVGs,
 });
 const mapDispatchToProps = dispatch => ({
 	setY : (event, classId, sliderId)=> dispatch(setY(event, classId, sliderId)),
