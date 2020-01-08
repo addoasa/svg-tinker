@@ -84,6 +84,7 @@ function circleReducer(state=initialState, action){
 
 		activeCircleSVGs[action.payload.classId].radius = action.payload.radiusValue;
 
+		return{
 			...state,
 			activeCircleSVGs,
 		};

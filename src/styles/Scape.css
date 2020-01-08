@@ -20,6 +20,9 @@
   margin-top: 10px;
 
 }
+.utility-wrapper{
+  display:flex;
+}
 .add-container{
   display:flex;
   border: dashed 3pt rgba(0,0,0,0.1);
@@ -31,6 +34,18 @@
 }
 .add-container:hover{
   border: dashed 3pt rgba(0,0,0,0.9);
+  transition:0.3s;
+ 
+}
+.add-container-option{
+  display:flex;
+  width:170px;
+  height: 70px;
+  margin-left: 4.8em;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.add-container-option:hover{
   transition:0.3s;
  
 }
