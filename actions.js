@@ -14,17 +14,24 @@ export const setWorkspaceWidth = (workspaceWidth)=>({
 	payload: workspaceWidth,
 });
 
+// I don't have a solution to remove the correct shape from both the (path,circle,etc)array AND the master array simultaneously.
+// tried: Allowing the master array to know where its shapes are comming from
+// also tried: Allowing to shapes from the (path, circle,etc) arrays to know where they are in the master array
+// problem: after deleting a shape simultaneously from masterarray AND children arrays the reference to index becomes incorrect from that point on
+// so for now the (path,circle ,etc) arrays will no longer use this action until a solution that can fix the issue of index order being wrong after removing an svg is found 
+// The children array will act as templates for svgs and the masterarray will be the only significant array used for rendering
+
+// export const removeSVG = (SVG, indexToDelete)=>({
+// 	type:types.REMOVE_SVG,
+// 	payload: {SVG, indexToDelete},
+// });
 // ------------------
 // PATH ACTIONS
 // ------------------
 
-export const addSVG = (SVG)=>({
-	type:types.ADD_SVG,
-	payload: SVG,
-});
-export const removeSVG = (SVG, classId)=>({
-	type:types.REMOVE_SVG,
-	payload: {SVG, classId},
+export const addPath = (indexInMaster)=>({
+	type:types.ADD_PATH,
+	payload: indexInMaster,
 });
 export const addVertices = (classId)=>({
 	type:types.ADD_VERTICES,
@@ -34,12 +41,12 @@ export const removeVertices = (classId, xToDelete, yToDelete)=>({
 	type:types.REMOVE_VERTICES,
 	payload: {classId, xToDelete, yToDelete},
 });
-export const setX = (value, classId, sliderId)=>({
-	type:types.SET_X,
+export const setXPathVertice = (value, classId, sliderId)=>({
+	type:types.SET_X_PATH_VERTICE,
 	payload: {value , classId, sliderId },
 });
-export const setY = (value, classId, sliderId)=>({
-	type:types.SET_Y,
+export const setYPathVertice = (value, classId, sliderId)=>({
+	type:types.SET_Y_PATH_VERTICE,
 	payload: {value,classId, sliderId},
 });
 
@@ -47,14 +54,14 @@ export const setY = (value, classId, sliderId)=>({
 // CIRCLE ACTIONS
 // ------------------
 
-export const addCircle = (circle)=>({
+export const addCircle = (indexInMaster)=>({
 	type:types.ADD_CIRCLE,
-	payload: circle,
+	payload: indexInMaster,
 });
-export const removeCircle = (circle, classId)=>({
-	type:types.REMOVE_CIRCLE,
-	payload: {circle, classId},
-});
+// export const removeCircle = (circle, classId)=>({
+// 	type:types.REMOVE_CIRCLE,
+// 	payload: {circle, classId},
+// });
 export const setCircleX = (xValue, classId)=>({
 	type:types.SET_CIRCLE_X,
 	payload: {xValue , classId},
@@ -75,4 +82,8 @@ export const setRadius = (radiusValue, classId)=>({
 export const insertIntoMaster = (SVG, svgType)=>({
 	type:types.INSERT_INTO_MASTER,
 	payload: {SVG, svgType},
+});
+export const removeFromMaster = (classId)=>({
+	type:types.REMOVE_FROM_MASTER,
+	payload: {classId},
 });

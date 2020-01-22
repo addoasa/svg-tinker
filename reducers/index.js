@@ -9,7 +9,7 @@ import masterReducer from './masterReducer';
 const reducers = combineReducers({
   //if i had more reducers they would go in here
   master : masterReducer,
-  tinker : pathReducer,
+  paths : pathReducer,
   circles : circleReducer
 })
 

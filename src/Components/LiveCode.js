@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 // import alterRange
 
 const mapStateToProps = store => ({
-	activeSVGs : store.tinker.activeSVGs,
+	activePathSVGs : store.paths.activePathSVGs,
+	masterSVGArray : store.master.masterSVGArray,
 });
 
 class LiveCode extends React.Component{
@@ -16,12 +17,12 @@ class LiveCode extends React.Component{
 	render(){
 		let finalCodeString = "";
 		// loop through each shape in state 
-		const liveCode = this.props.activeSVGs.map((SVG, index)=>{
+		const liveCode = this.props.masterSVGArray.map((SVG, index)=>{
 			finalCodeString = "<path d=";
 			// extract all ranges in an svg object and store in array
 			const extractedRanges = [];
-			for(let key in SVG){
-				extractedRanges.push(SVG[key]);
+			for(let key in SVG.svgData){
+				extractedRanges.push(SVG.svgData[key]);
 			}
 			// console.log(extractedRanges);
 			// build final code string by gradually concatenating with extracted values

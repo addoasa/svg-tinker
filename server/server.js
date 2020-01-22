@@ -14,6 +14,8 @@ app.use('/build', express.static(path.join(__dirname, '../build')));
 app.use('/', (req, res, next)=>{
 res.sendFile(path.join(__dirname, '../public/index.html'))
 })
+
+// MongoDB database idea is on hold
 // app.use('/',async (req,res,next)=>{
 //   let found;
 //   MongoClient.connect('mongodb://localhost:27017/', (err,client)=>{

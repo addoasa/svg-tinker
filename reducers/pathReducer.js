@@ -8,7 +8,7 @@ const initialState = {
 	workspaceHeight:400,
 	workspaceWidth:700,
 	//Currently, every shape created will be initialized with 4 corners (each with an x position and a y position)
-	activeSVGs: [ 
+	activePathSVGs: [ 
 		{
 			sliderX0:275,
 			sliderY1:175,
@@ -31,7 +31,7 @@ function pathReducer(state=initialState, action){
 	// For arrays, we use slice() because slice() will return a new array containing the elements of the old array
 	let workspaceHeight = state.workspaceHeight;
 	let workspaceWidth = state.workspaceWidth;
-	let activeSVGs = state.activeSVGs.slice();
+	let activePathSVGs = state.activePathSVGs.slice();
 
 	//then set conditionals of how i want to change state based on the action type i pick
 	//Often people seem to use switch statements here
@@ -42,8 +42,8 @@ function pathReducer(state=initialState, action){
 	// ADDING AND REMOVING SVG PATHS
 	// --------------------------------------------------------------------------    
 
-	case types.ADD_SVG: //checking if the passed in action.type = the value of the ADD_SVG variable from the actionTypesVAriable file. In this case that literally equals "ADD_SVG"
-		// if action type is ADD_SVG, create a new SVG object with values...
+	case types.ADD_PATH: //checking if the passed in action.type = the value of the ADD_PATH variable from the actionTypesVAriable file. In this case that literally equals "ADD_PATH"
+		// if action type is ADD_PATH, create a new SVG object with values...
 		const newSVG = {
 			sliderX0:275,
 			sliderY1:175,
@@ -53,12 +53,12 @@ function pathReducer(state=initialState, action){
 			sliderY5:175,
 		};
 			// ...push this new SVG object into clone of array of SVG objects
-		activeSVGs.push(newSVG);
-		// console.log(state.activeSVGs)
+		activePathSVGs.push(newSVG);
+		// console.log(state.activePathSVGs)
 		// ***Possible future feature with this action could be allowing the user to specify the dimensions of a new shape by utilizing a payload
 		return {
 			...state,
-			activeSVGs,
+			activePathSVGs,
 		};
 		//return the new state
 
@@ -66,12 +66,12 @@ function pathReducer(state=initialState, action){
      
 	case types.REMOVE_SVG:
 		// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
-		activeSVGs.splice(action.payload.classId, 1); // Remove one item from activeSVG array with the index specified in the payload
-		// console.log({ activeSVGs });
+		activePathSVGs.splice(action.payload.indexToDelete, 1); // Remove one item from activeSVG array with the index specified in the payload
+		// console.log({ activePathSVGs });
 		// console.log(action.payload.classId, "payload");
 		return {
 			...state,
-			activeSVGs,
+			activePathSVGs,
 		};
     
 	// --------------------------------------------------------------------------    
@@ -80,12 +80,12 @@ function pathReducer(state=initialState, action){
 
 	case types.ADD_VERTICES: 
 		// we have access to the specific object we want to add vertices to through the classid that was sent here from the payload
-		// console.log(activeSVGs[action.payload]);
+		// console.log(activePathSVGs[action.payload]);
 		// turn the unique state object at that specific classid into an array inorder to find the length
 		// We do this so we know how many vertices already exist on this specific shape/object
 		
 		const turnObjToArr = [];
-		for(let key in activeSVGs[action.payload]){
+		for(let key in activePathSVGs[action.payload]){
 			turnObjToArr.push(key);
 			// console.log(key)
 		}
@@ -97,14 +97,14 @@ function pathReducer(state=initialState, action){
 			// if there are an even number of sliders...(which there should always be)... 
 			// ... add a new pair to the specific shape/object in state at that classid
 			newVertice= newVertice + "X" + turnObjToArr.length;
-			activeSVGs[action.payload][newVertice] = 300;
+			activePathSVGs[action.payload][newVertice] = 300;
 			newVertice = "slider";
 			newVertice= newVertice + "Y" + (turnObjToArr.length + 1);
-			activeSVGs[action.payload][newVertice] = 300;
+			activePathSVGs[action.payload][newVertice] = 300;
 		}
 		return {
 			...state,
-			activeSVGs,
+			activePathSVGs,
 		};
 	// ---------------------------------------------------------   
    
@@ -112,8 +112,8 @@ function pathReducer(state=initialState, action){
 		// Step 1) Delete the specified verticies
 		// xToDelete and yToDelete are the vertice key names passed from the payload
 		
-		delete activeSVGs[action.payload.classId][action.payload.xToDelete];
-		delete activeSVGs[action.payload.classId][action.payload.yToDelete];
+		delete activePathSVGs[action.payload.classId][action.payload.xToDelete];
+		delete activePathSVGs[action.payload.classId][action.payload.yToDelete];
 
 		// Step 2) Rebuild the svg object to fix the order of its vertices
 		// Ex: in this obj { 1:a, 2:b, 3:c, 4:d, 5:e } ... if I delete key 2... im left with { 1:a, 3:c, 4:d, 5:e } which is a problem
@@ -122,8 +122,8 @@ function pathReducer(state=initialState, action){
 		// Do this by storing the vertice values of this specific svg object into an array...
 		
 		const makeObjToArr = [];
-		for(let key in activeSVGs[action.payload.classId]){
-			makeObjToArr.push(activeSVGs[action.payload.classId][key]);
+		for(let key in activePathSVGs[action.payload.classId]){
+			makeObjToArr.push(activePathSVGs[action.payload.classId][key]);
 		}
 		
 		// and then build new obj using the same naming convention (ex: pairs of sliderX1: 300, sliderY2:400)
@@ -138,10 +138,10 @@ function pathReducer(state=initialState, action){
 				newObj[newSlider] = makeObjToArr[i+1];
 			}
 		}
-		activeSVGs[action.payload.classId] = newObj;
+		activePathSVGs[action.payload.classId] = newObj;
 		return {
 			...state,
-			activeSVGs,
+			activePathSVGs,
 		};
     
 	// --------------------------------------------------------------------------    
@@ -170,37 +170,37 @@ function pathReducer(state=initialState, action){
 	// --------------------------------------------------------------------------    
 	//SETTING RANGES OF VERTICE VALUES
 	// Use the class_id from the payload to find the index of the shape in the
-	// activeSVGs array. 
+	// activePathSVGs array. 
 	// With that information we can now manipulate x and y positioning of that 
 	// specific shape's vertices
 	// --------------------------------------------------------------------------    
 
-	case types.SET_X:
-		// find the specific index in activeSVGs array and change its value
+	case types.SET_X_PATH_VERTICE:
+		// find the specific index in activePathSVGs array and change its value
 
-		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
+		activePathSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
 		// console.log(action.payload.classId, "classId");
 		console.log(action.payload.sliderId, "sliderid");
 		// console.log(action.payload.value, "vaLx");
-		// console.log(state.activeSVGs);
+		// console.log(state.activePathSVGs);
 		return {
 			...state,
-			activeSVGs,
+			activePathSVGs,
 		};
 
 	// ---------------------------------------------------------    
  
-	case types.SET_Y:
+	case types.SET_Y_PATH_VERTICE:
 
-		activeSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
+		activePathSVGs[action.payload.classId][action.payload.sliderId] = action.payload.value;
 		// console.log(action.payload.classId, "classId");
 		console.log(action.payload.sliderId, "sliderid");
 		// console.log(action.payload.value, "vaLy");
 
-		// console.log(state.activeSVGs);
+		// console.log(state.activePathSVGs);
 		return {
 			...state,
-			activeSVGs,
+			activePathSVGs,
 		};
 
 	// ---------------------------------------------------------      

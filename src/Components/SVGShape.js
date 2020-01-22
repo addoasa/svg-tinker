@@ -4,8 +4,8 @@ class SVGShape extends React.Component{
 	constructor(){
 		super();
 		this.handleDeleteSVG = this.handleDeleteSVG.bind(this);
-		this.handleX = this.handleX.bind(this);
-		this.handleY = this.handleY.bind(this);
+		this.handleXPathVertice = this.handleXPathVertice.bind(this);
+		this.handleYPathVertice = this.handleYPathVertice.bind(this);
 		this.addCorner = this.addCorner.bind(this);
 		this.removeCorner = this.removeCorner.bind(this);
 
@@ -16,7 +16,9 @@ class SVGShape extends React.Component{
 
 	handleDeleteSVG(event){
 		// used split() here because event.target.className gives you all classes associated with an element as a long string.
-		this.props.removeSVG(event.target.value, event.target.className.split(" ")[2]);
+		// Delete this specific PATH shape by sending its index to the PATH reducer for deletion
+		this.props.removeSVG(event.target.value, this.props.masterSVGArray[event.target.className.split(" ")[2].indexInChildArray]);
+		this.props.removeFromMaster(event.target.className.split(" ")[2]);
 		console.log(event.target.className.split(" ")[2]);
 	}
 
@@ -25,13 +27,13 @@ class SVGShape extends React.Component{
 	//------------------------------------------------------------------------------------
 	// Methods for manipulating Path vertices
 	//------------------------------------------------------------------------------------
-	handleX(event){
-		this.props.setX(event.target.value, event.target.className.split(" ")[0], event.target.className.split(" ")[1]);
+	handleXPathVertice(event){
+		this.props.setXPathVertice(event.target.value, event.target.className.split(" ")[0], event.target.className.split(" ")[1]);
 		// console.log(event.target.className.split(" ")[1]);
 	}
   
-	handleY(event){
-		this.props.setY(event.target.value, event.target.className.split(" ")[0],event.target.className.split(" ")[1]);
+	handleYPathVertice(event){
+		this.props.setYPathVertice(event.target.value, event.target.className.split(" ")[0],event.target.className.split(" ")[1]);
     // console.log(event.target.className.split(" ")[1]);
 
   }
@@ -52,7 +54,8 @@ class SVGShape extends React.Component{
 	render(){
 		let newSlider = [];
 		const extractedRanges = [];
-		let uniqueSVGObj = this.props.SVG;
+		let uniqueSVGObj = this.props.SVG.svgData;
+		console.log(this.props.SVG.svgData, "OOOOOO")
 		// loop through the current unique SVG object that this component represents in state 
 		// and put that object's slider values into an array called extractedRanges
 		for(let key in uniqueSVGObj){
@@ -65,7 +68,7 @@ class SVGShape extends React.Component{
 		// loop through the slider values we've now extracted
 		// and build a pair of UI sliders for each pair of x and y slider values
 		// use variables i,j,and k to make sure each slider is accurate
-     
+    //creating an array of new sliders 
 		for(let i = 1, j = 0, k = 0;i< extractedRanges.length; i+=2, j++,k+=2){
 			newSlider.push(	
 				<>
@@ -78,8 +81,8 @@ class SVGShape extends React.Component{
 						<p>y-axis</p>
 					</div>
 					<div className = {`verticies corner${j}`}>
-						<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.handleX} type="range" max='1000' min="0"></input>
-						<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.handleY} type="range" max="1000" min="0"></input>
+						<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.handleXPathVertice} type="range" max='1000' min="0"></input>
+						<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.handleYPathVertice} type="range" max="1000" min="0"></input>
 					</div>
 				</>);
 		}

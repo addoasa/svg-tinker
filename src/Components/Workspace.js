@@ -7,9 +7,10 @@ import { connect } from "react-redux";
 // import alterRange
 
 const mapStateToProps = store => ({
-	workspaceHeight : store.tinker.workspaceHeight,
-	workspaceWidth : store.tinker.workspaceWidth,
-	activeSVGs : store.tinker.activeSVGs,
+	workspaceHeight : store.paths.workspaceHeight,
+	workspaceWidth : store.paths.workspaceWidth,
+	activePathSVGs : store.paths.activePathSVGs,
+	masterSVGArray : store.master.masterSVGArray,
 });
 
 const mapDispatchToProps = dispatch =>({
@@ -37,12 +38,12 @@ class Workspace extends React.Component{
 
 	render(){
 		let renderString = "";
-		const allSVGs = this.props.activeSVGs.map((SVG, index)=>{
-			// create a 4 cornered path element based on each SVG object that exists in the activeSVGs array in redux state
+		const allSVGs = this.props.masterSVGArray.map((SVG, index)=>{
+			// create a 4 cornered path element based on each SVG object that exists in the activePathSVGs array in redux state
       renderString = "";
       const extractedRanges = [];
-			for(let key in SVG){
-				extractedRanges.push(SVG[key]);
+			for(let key in SVG.svgData){
+				extractedRanges.push(SVG.svgData[key]);
       }
       for(let i = 0; i < extractedRanges.length; i++){
 				if(i === 0){
@@ -69,8 +70,8 @@ class Workspace extends React.Component{
 				<label  className="size-input2" htmlFor= 'width'>Width</label> 
 				<input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
 				<br />
-				<svg id="workspace" className={this.props.activeSVGs.length !== 0 ? "fine" : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
-					{this.props.activeSVGs ? allSVGs : emptyMessage}  
+				<svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
+					{this.props.masterSVGArray ? allSVGs : emptyMessage}  
 				</svg>
 
 			</div>

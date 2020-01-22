@@ -9,7 +9,6 @@ const initialState = {
       radius:50,
 		}
 	]
-
 };
 
 function circleReducer(state=initialState, action){
@@ -40,9 +39,9 @@ function circleReducer(state=initialState, action){
 
 	// --------------------------------------------------------- 
      
-	case types.REMOVE_CIRCLE:
+	case types.REMOVE_SVG:
 		// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
-		activeCircleSVGs.splice(action.payload.classId, 1); // Remove one item from activeSVG array with the index specified in the payload
+		activeCircleSVGs.splice(action.payload.indexToDelete, 1); // Remove one item from activeCircleSVG array with the index specified in the payload
 
 		return {
 			...state,

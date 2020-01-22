@@ -38,6 +38,10 @@
 #### [✖] Enable user to store SVGs/ save  in DB/localstorage etc  
 #### [✖] Adding math tools(ex: user can proportionally resize svgs or translate its position)
 
+## Planned UI Mockup
+ ![alt text](./public/assets/mockup-assets/svgtinker-mockup01.png)
+ ![alt text](./public/assets/mockup-assets/svgtinker-mockup02.png)
+
 
 
 
