@@ -2,7 +2,7 @@ import React from "react";
 // import "../../server/mong.js"
 import { setXPathVertice } from "../../actions";
 import { setYPathVertice } from "../../actions";
-import { removeSVG } from "../../actions";
+// import { removeSVG } from "../../actions";
 import { addVertices } from "../../actions";
 import { removeVertices } from "../../actions";
 import { removeFromMaster } from "../../actions";
@@ -18,7 +18,7 @@ const mapStateToProps = store => ({
 const mapDispatchToProps = dispatch => ({
 	setYPathVertice : (event, classId, sliderId)=> dispatch(setYPathVertice(event, classId, sliderId)),
 	setXPathVertice : (event, classId, sliderId)=> dispatch(setXPathVertice(event, classId, sliderId)),
-	removeSVG : (event, classId)=> dispatch(removeSVG(event, classId)),
+	// removeSVG : (event, classId)=> dispatch(removeSVG(event, classId)),
 	removeFromMaster : (classId)=> dispatch(removeFromMaster(classId)),
 	addVertices : (classId)=> dispatch(addVertices(classId)),
 	removeVertices : (classId, xToDelete, yToDelete)=> dispatch(removeVertices(classId, xToDelete, yToDelete)),
@@ -30,6 +30,7 @@ class Tools extends React.Component{
 		super();
 	}
 	render(){
+		console.log(this.props.masterSVGArray)
 		//-----------------------------------------
 		//  Build UI component called SVGShape for each SVG Object in state
 		//-----------------------------------------

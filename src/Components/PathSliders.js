@@ -1,0 +1,1 @@
+// This component will possibly be used to modularize and declutter the logic <SVGShape /> component for readablility
