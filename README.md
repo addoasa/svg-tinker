@@ -17,7 +17,7 @@
 #### [✖] Enable the Path SVGs to also be relatively positioned(Each path is currently using only absolute postioned vertices)   
 #### [✖] Enable support for SVG: lines, circles, elipses, polygons, polylines, text, dropshadows, blur effects and filters   
 ```
-     [✖] Circles
+     [✔] Circles
      [✖] Lines
      [✖] Text
      [✖] Elipses

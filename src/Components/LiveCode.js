@@ -18,28 +18,46 @@ class LiveCode extends React.Component{
 		let finalCodeString = "";
 		// loop through each shape in state 
 		const liveCode = this.props.masterSVGArray.map((SVG, index)=>{
-			finalCodeString = "<path d=";
-			// extract all ranges in an svg object and store in array
-			const extractedRanges = [];
-			for(let key in SVG.svgData){
-				extractedRanges.push(SVG.svgData[key]);
+			switch(SVG.svgType){
+				// **************************
+				// Code for PATH svg
+				// **************************
+				case "PATH":
+					finalCodeString = "<path d=";
+					// extract all values in an svg object and store in array
+					const extractedRanges = [];
+					for(let key in SVG.svgData){
+						extractedRanges.push(SVG.svgData[key]);
+					}
+					// console.log(extractedRanges);
+					// build final code string by gradually concatenating with extracted values
+					for(let i = 0; i < extractedRanges.length; i++){
+						if(i === 0){
+							finalCodeString += `M${extractedRanges[i]}`;
+						}else if(i % 2 === 0){
+							finalCodeString += ` L${extractedRanges[i]}`;
+						}else{
+							finalCodeString += ` ${extractedRanges[i]}`;
+						}
+					}
+					return( 
+						<React.Fragment key={index}>
+							<h2 className="code">{finalCodeString + " Z"}/></h2>
+						</React.Fragment> 
+					);
+				// **************************
+				// Code for CIRCLE svg
+				// **************************
+				case "CIRCLE":
+					finalCodeString = `<circle cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius}`;
+					// cx="100" cy="100" r="80"
+					console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<h2 className="code">{finalCodeString}/></h2>
+						</React.Fragment> 
+					);						
 			}
-			// console.log(extractedRanges);
-			// build final code string by gradually concatenating with extracted values
-			for(let i = 0; i < extractedRanges.length; i++){
-				if(i === 0){
-					finalCodeString += `M${extractedRanges[i]}`;
-				}else if(i % 2 === 0){
-					finalCodeString += ` L${extractedRanges[i]}`;
-				}else{
-					finalCodeString += ` ${extractedRanges[i]}`;
-				}
-			}
-			return( 
-				<React.Fragment key={index}>
-					<h2 className="code">{finalCodeString + " Z"}/></h2>
-				</React.Fragment> 
-			);
 		});
     
 		return(

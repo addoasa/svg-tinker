@@ -39,27 +39,44 @@ class Workspace extends React.Component{
 	render(){
 		let renderString = "";
 		const allSVGs = this.props.masterSVGArray.map((SVG, index)=>{
-			// create a 4 cornered path element based on each SVG object that exists in the activePathSVGs array in redux state
-      renderString = "";
-      const extractedRanges = [];
-			for(let key in SVG.svgData){
-				extractedRanges.push(SVG.svgData[key]);
-      }
-      for(let i = 0; i < extractedRanges.length; i++){
-				if(i === 0){
-					renderString += `M${extractedRanges[i]}`;
-				}else if(i % 2 === 0){
-					renderString += ` L${extractedRanges[i]}`;
-				}else{
-					renderString += ` ${extractedRanges[i]}`;
-				}
-      }
-      // console.log(renderString);
-			return( 
-				<React.Fragment key = {index}>
-					<path  d={renderString + " Z"} />
-				</React.Fragment> 
-			);
+			switch(SVG.svgType){
+				// **************************
+				// Code to Render PATH svg
+				// **************************
+				case "PATH":
+					// create a 4 cornered path element based on each SVG object that exists in the activePathSVGs array in redux state
+					renderString = "";
+					const extractedRanges = [];
+					for(let key in SVG.svgData){
+						extractedRanges.push(SVG.svgData[key]);
+					}
+					for(let i = 0; i < extractedRanges.length; i++){
+						if(i === 0){
+							renderString += `M${extractedRanges[i]}`;
+						}else if(i % 2 === 0){
+							renderString += ` L${extractedRanges[i]}`;
+						}else{
+							renderString += ` ${extractedRanges[i]}`;
+						}
+					}
+					return( 
+						<React.Fragment key = {index}>
+							<path  d={renderString + " Z"} />
+						</React.Fragment> 
+					);
+				// **************************
+				// Code for CIRCLE svg
+				// **************************
+				// styles for circles are hard coded for now... until the styling feature is added
+				case "CIRCLE":
+					// renderString = `cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius} stroke="black" stroke-width="5" fill="red"`;
+					// console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<circle cx={SVG.svgData.xAxis} cy={SVG.svgData.yAxis} r={SVG.svgData.radius} stroke="black" stroke-width="5" fill="red" />
+						</React.Fragment> 
+					);						
+			}
 		});
 		const emptyMessage = <h2>Add a shape</h2>;
 		// Render all path elements from newly made allSVGs array inside svg tag
