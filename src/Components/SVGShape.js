@@ -69,9 +69,9 @@ class SVGShape extends React.Component{
 		// **************************
 			case "PATH" :
 				//-----------------------------------------
-				//  Build slider set for each SVGShape component
+				//  Build slider set if this <SVGShape /> component is the type of: "PATH"
 				//-----------------------------------------
-				// loop through the path slider values we've now extracted
+				// loop through the path slider values we've now extracted from state obj
 				// and build a pair of UI sliders for each pair of x and y slider values
 				// use variables i,j,and k to make sure each slider is accurate
 				// creating an array of new sliders 
