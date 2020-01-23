@@ -24,7 +24,7 @@
      [✖] Rectagles
      [✖] Polygons
      [✖] Polylines
-     [✖] Paths
+     [✔] Paths
      [✖] Filters
 
 ```
