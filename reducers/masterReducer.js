@@ -97,6 +97,43 @@ case types.REMOVE_VERTICES:
     masterSVGArray,
   };
   
+  	// --------------------------------------------------------------------------    
+	//SETTING RANGES OF VERTICE VALUES
+	// Use the class_id from the payload to find the index of the shape in the
+	// masterSVGArray array. 
+	// With that information we can now manipulate x and y positioning of that 
+	// specific shape's vertices
+	// --------------------------------------------------------------------------    
+
+	case types.SET_X_PATH_VERTICE:
+		// find the specific index in masterSVGArray array and change its value
+
+		masterSVGArray[action.payload.classId].svgData[action.payload.sliderId] = action.payload.value;
+		// console.log(action.payload.classId, "classId");
+		console.log(action.payload.sliderId, "sliderid");
+		// console.log(action.payload.value, "vaLx");
+		// console.log(state.masterSVGArray);
+		return {
+			...state,
+			masterSVGArray,
+		};
+
+	// ---------------------------------------------------------    
+ 
+	case types.SET_Y_PATH_VERTICE:
+
+		masterSVGArray[action.payload.classId].svgData[action.payload.sliderId] = action.payload.value;
+		// console.log(action.payload.classId, "classId");
+		console.log(action.payload.sliderId, "sliderid");
+		// console.log(action.payload.value, "vaLy");
+
+		// console.log(state.masterSVGArray);
+		return {
+			...state,
+			masterSVGArray,
+		};
+
+	// --
       
   }
 }
