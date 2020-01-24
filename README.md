@@ -18,13 +18,13 @@
 #### [✖] Enable support for SVG: lines, circles, elipses, polygons, polylines, text, dropshadows, blur effects and filters   
 ```
      [✔] Circles
+     [✔] Elipses
+     [✔] Paths
      [✖] Lines
      [✖] Text
-     [✖] Elipses
      [✖] Rectagles
      [✖] Polygons
      [✖] Polylines
-     [✔] Paths
      [✖] Filters
 
 ```
