@@ -105,7 +105,7 @@ case types.REMOVE_VERTICES:
 	// specific shape's vertices
 	// --------------------------------------------------------------------------    
 
-	case types.SET_X_PATH_VERTICE:
+	case types.USE_SLIDER:
 		// find the specific index in masterSVGArray array and change its value
 
 		masterSVGArray[action.payload.classId].svgData[action.payload.sliderId] = action.payload.value;
@@ -119,22 +119,7 @@ case types.REMOVE_VERTICES:
 		};
 
 	// ---------------------------------------------------------    
- 
-	case types.SET_Y_PATH_VERTICE:
 
-		masterSVGArray[action.payload.classId].svgData[action.payload.sliderId] = action.payload.value;
-		// console.log(action.payload.classId, "classId");
-		console.log(action.payload.sliderId, "sliderid");
-		// console.log(action.payload.value, "vaLy");
-
-		// console.log(state.masterSVGArray);
-		return {
-			...state,
-			masterSVGArray,
-		};
-
-	// --
-      
   }
 }
 export default masterReducer;

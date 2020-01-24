@@ -1,7 +1,6 @@
 import React from "react";
 // import "../../server/mong.js"
-import { setXPathVertice } from "../../actions";
-import { setYPathVertice } from "../../actions";
+import { useSlider } from "../../actions";
 // import { removeSVG } from "../../actions";
 import { addVertices } from "../../actions";
 import { removeVertices } from "../../actions";
@@ -16,8 +15,7 @@ const mapStateToProps = store => ({
 	masterSVGArray : store.master.masterSVGArray,
 });
 const mapDispatchToProps = dispatch => ({
-	setYPathVertice : (event, classId, sliderId)=> dispatch(setYPathVertice(event, classId, sliderId)),
-	setXPathVertice : (event, classId, sliderId)=> dispatch(setXPathVertice(event, classId, sliderId)),
+	useSlider : (event, classId, sliderId)=> dispatch(useSlider(event, classId, sliderId)),
 	// removeSVG : (event, classId)=> dispatch(removeSVG(event, classId)),
 	removeFromMaster : (classId)=> dispatch(removeFromMaster(classId)),
 	addVertices : (classId)=> dispatch(addVertices(classId)),
@@ -39,7 +37,7 @@ class Tools extends React.Component{
 		// 		<SVGShape 
 		// 			key= {index} 
 		// 			setYPathVertice={this.props.setYPathVertice} 
-		// 			setXPathVertice={this.props.setXPathVertice} 
+		// 			useSlider={this.props.useSlider} 
 		// 			activePathSVGs={this.props.activePathSVGs} 
 		// 			SVG = {SVG} 
 		// 			index = {index} 
@@ -53,8 +51,7 @@ class Tools extends React.Component{
 			return (
 				<SVGShape 
 					key= {index} 
-					setYPathVertice={this.props.setYPathVertice} 
-					setXPathVertice={this.props.setXPathVertice} 
+					useSlider={this.props.useSlider} 
 					masterSVGArray={this.props.masterSVGArray} 
 					SVG = {SVG} 
 					index = {index} 

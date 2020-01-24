@@ -1,91 +1,95 @@
 import * as types from "../actionTypesVariableNames/actionTypeVariables";
+{/* <ellipse cx="240" cy="50" rx="220" ry="30" style="fill:yellow" /> // This ellipse will overlap the second one */}
 
-//set the initial state 
 const initialState = {
-	activeCircleSVGs: [ 
+	activeEllipseSVGs: [ 
 		{
       xAxis:100,
       yAxis:100,
-      radius:50,
+      rWidth:50,
+      rHeight:100
 		}
 	]
 };
 
-function circleReducer(state=initialState, action){
+function ellipseReducer(state=initialState, action){
 	
-	let activeCircleSVGs = state.activeCircleSVGs.slice();
+	let activeEllipseSVGs = state.activeEllipseSVGs.slice();
 
 	switch(action.type){
 
 	// --------------------------------------------------------------------------    
-	// ADDING AND REMOVING SVG CIRCLES
+	// ADDING AND REMOVING SVG ELLIPSE
 	// --------------------------------------------------------------------------    
 
-  case types.ADD_CIRCLE: 
+  case types.ADD_ELLIPSE: 
   
-		const newCircle = {
+		const newEllipse = {
       xAxis:100,
       yAxis:100,
-      radius:50,
+      rWidth:50,
+      rHeight:100,
 		};
 			// ...push this new SVG object into clone of array of SVG objects
-		activeCircleSVGs.push(newCircle);
+		activeEllipseSVGs.push(newEllipse);
 		// ***Possible future feature with this action could be allowing the user to specify the dimensions of a new shape by utilizing a payload
 		return {
 			...state,
-			activeCircleSVGs,
+			activeEllipseSVGs,
 		};
 		//return the new state
 
 	// --------------------------------------------------------- 
      
-	// case types.REMOVE_SVG:
-	// 	// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
-	// 	activeCircleSVGs.splice(action.payload.indexToDelete, 1); // Remove one item from activeCircleSVG array with the index specified in the payload
 
-	// 	return {
-	// 		...state,
-	// 		activeCircleSVGs,
-	// 	};
-    
-	
 
 	// --------------------------------------------------------------------------    
-	//SETTING RANGES OF CIRCLE cx, cy and r VALUES
+	//SETTING RANGES OF ELLIPSE cx, cy and r VALUES
 	// Use the class_id from the payload to find the index of the circle in the
-	// activeCircleSVGs array. 
+	// activeEllipseSVGs array. 
 	// With that information we can now manipulate the x, y and radius values 
 	// --------------------------------------------------------------------------    
 
-	case types.SET_CIRCLE_X:
+	case types.SET_ELLIPSE_X:
 
-		activeCircleSVGs[action.payload.classId].xAxis = action.payload.xValue;
+		activeEllipseSVGs[action.payload.classId].xAxis = action.payload.xValue;
 
 		return {
 			...state,
-			activeCircleSVGs,
+			activeEllipseSVGs,
 		};
 
 	// ---------------------------------------------------------    
  
-	case types.SET_CIRCLE_Y:
+	case types.SET_ELLIPSE_Y:
 
-		activeCircleSVGs[action.payload.classId].yAxis = action.payload.yValue;
+		activeEllipseSVGs[action.payload.classId].yAxis = action.payload.yValue;
 
 		return {
 			...state,
-			activeCircleSVGs,
+			activeEllipseSVGs,
 		};
 
 	// ---------------------------------------------------------      
  
-	case types.SET_CIRCLE_RADIUS:
+	case types.SET_ELLIPSE_HEIGHT:
 
-		activeCircleSVGs[action.payload.classId].radius = action.payload.radiusValue;
+		activeEllipseSVGs[action.payload.classId].radius = action.payload.rHeight;
 
 		return{
 			...state,
-			activeCircleSVGs,
+			activeEllipseSVGs,
+		};
+
+	// ---------------------------------------------------------      
+ 
+	case types.SET_ELLIPSE_WIDTH:
+
+		activeEllipseSVGs[action.payload.classId].radius = action.payload.rWidth;
+
+		return{
+			...state,
+			activeEllipseSVGs,
 		};
 
 	// ---------------------------------------------------------      
@@ -96,4 +100,4 @@ function circleReducer(state=initialState, action){
   //if no match actiontypes then return state anyway
 	}
 }
-export default circleReducer;
+export default ellipseReducer;

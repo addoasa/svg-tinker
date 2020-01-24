@@ -45,12 +45,26 @@ class LiveCode extends React.Component{
 							<h2 className="code">{finalCodeString + " Z"}/></h2>
 						</React.Fragment> 
 					);
+
 				// **************************
 				// Code for CIRCLE svg
 				// **************************
 				case "CIRCLE":
 					finalCodeString = `<circle cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius}`;
 					// cx="100" cy="100" r="80"
+					console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<h2 className="code">{finalCodeString}/></h2>
+						</React.Fragment> 
+					);
+
+				// **************************
+				// Code for ELLIPSE svg
+				// **************************
+
+				case "ELLIPSE":
+					finalCodeString = `<ellipse cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} rx=${SVG.svgData.rWidth} ry=${SVG.svgData.rHeight}`;
 					console.log(SVG.svgData)
 					return( 
 						<React.Fragment key={index}>

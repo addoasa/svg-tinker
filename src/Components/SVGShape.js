@@ -4,8 +4,7 @@ class SVGShape extends React.Component{
 	constructor(){
 		super();
 		this.handleDeleteSVG = this.handleDeleteSVG.bind(this);
-		this.handleXPathVertice = this.handleXPathVertice.bind(this);
-		this.handleYPathVertice = this.handleYPathVertice.bind(this);
+		this.sliderHandler = this.sliderHandler.bind(this);
 		this.addCorner = this.addCorner.bind(this);
 		this.removeCorner = this.removeCorner.bind(this);
 
@@ -27,16 +26,10 @@ class SVGShape extends React.Component{
 	//------------------------------------------------------------------------------------
 	// Methods for manipulating Path vertices
 	//------------------------------------------------------------------------------------
-	handleXPathVertice(event){
-		this.props.setXPathVertice(event.target.value, event.target.className.split(" ")[0], event.target.className.split(" ")[1]);
+	sliderHandler(event){
+		this.props.useSlider(event.target.value, event.target.className.split(" ")[0], event.target.className.split(" ")[1]);
 		// console.log(event.target.className.split(" ")[1]);
 	}
-  
-	handleYPathVertice(event){
-		this.props.setYPathVertice(event.target.value, event.target.className.split(" ")[0],event.target.className.split(" ")[1]);
-    // console.log(event.target.className.split(" ")[1]);
-
-  }
   
 	addCorner(event){
 		// used split() here because event.target.className gives you all classes associated with an element as a long string.
@@ -89,8 +82,8 @@ class SVGShape extends React.Component{
 								<p>y-axis</p>
 							</div>
 							<div className = {`verticies corner${j}`}>
-								<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.handleXPathVertice} type="range" max='1000' min="0"></input>
-								<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.handleYPathVertice} type="range" max="1000" min="0"></input>
+								<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
+								<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
 							</div>
 						</>);
 				}
@@ -109,13 +102,36 @@ class SVGShape extends React.Component{
 								<p>r</p>
 							</div>
 							<div className = "verticies">
-								<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.handleXPathVertice} type="range" max='1000' min="0"></input>
-								<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.handleYPathVertice} type="range" max="1000" min="0"></input>
-								<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.handleYPathVertice} type="range" max="1000" min="0"></input>
+								<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
+								<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
 							</div>
 						</>);
 				
 				break;
+
+		// **************************
+		// Build an Ellipse slider set
+		// **************************
+			case "ELLIPSE":				
+
+			newSlider.push(	
+				<>
+					<div className = "slider-labels">
+						<p>x</p>
+						<p>y</p>
+						<p>w</p>
+						<p>h</p>
+					</div>
+					<div className = "verticies">
+						<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
+						<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						<input className = {`${this.props.index} rWidth`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						<input className = {`${this.props.index} rHeight`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+					</div>
+				</>);
+		
+		break;
 		}
 
 

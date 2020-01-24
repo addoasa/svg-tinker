@@ -40,9 +40,11 @@ class Workspace extends React.Component{
 		let renderString = "";
 		const allSVGs = this.props.masterSVGArray.map((SVG, index)=>{
 			switch(SVG.svgType){
+			
 				// **************************
-				// Code to Render PATH svg
+				// Render PATH svg
 				// **************************
+				
 				case "PATH":
 					// create a 4 cornered path element based on each SVG object that exists in the activePathSVGs array in redux state
 					renderString = "";
@@ -64,9 +66,11 @@ class Workspace extends React.Component{
 							<path  d={renderString + " Z"} />
 						</React.Fragment> 
 					);
+				
 				// **************************
-				// Code for CIRCLE svg
+				// Render CIRCLE svg
 				// **************************
+				
 				// styles for circles are hard coded for now... until the styling feature is added
 				case "CIRCLE":
 					// renderString = `cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius} stroke="black" stroke-width="5" fill="red"`;
@@ -74,6 +78,19 @@ class Workspace extends React.Component{
 					return( 
 						<React.Fragment key={index}>
 							<circle cx={SVG.svgData.xAxis} cy={SVG.svgData.yAxis} r={SVG.svgData.radius} stroke="black" stroke-width="5" fill="red" />
+						</React.Fragment> 
+					);						
+				
+				// **************************
+				// Render Ellipse svg
+				// **************************
+				
+				case "ELLIPSE":
+					// renderString = `cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius} stroke="black" stroke-width="5" fill="red"`;
+					// console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<ellipse cx={SVG.svgData.xAxis} cy={SVG.svgData.yAxis} rx={SVG.svgData.rWidth} ry={SVG.svgData.rHeight} stroke="black" stroke-width="2" />
 						</React.Fragment> 
 					);						
 			}

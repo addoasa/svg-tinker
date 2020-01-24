@@ -41,14 +41,8 @@ export const removeVertices = (classId, xToDelete, yToDelete)=>({
 	type:types.REMOVE_VERTICES,
 	payload: {classId, xToDelete, yToDelete},
 });
-export const setXPathVertice = (value, classId, sliderId)=>({
-	type:types.SET_X_PATH_VERTICE,
-	payload: {value , classId, sliderId },
-});
-export const setYPathVertice = (value, classId, sliderId)=>({
-	type:types.SET_Y_PATH_VERTICE,
-	payload: {value,classId, sliderId},
-});
+
+
 
 // ------------------
 // CIRCLE ACTIONS
@@ -76,6 +70,32 @@ export const setRadius = (radiusValue, classId)=>({
 });
 
 // ------------------
+// ELLIPSES ACTIONS
+// ------------------
+
+export const addEllipse = (indexInMaster)=>({
+	type:types.ADD_ELLIPSE,
+	payload: indexInMaster,
+});
+
+export const setEllipseX = (xValue, classId)=>({
+	type:types.SET_ELLIPSE_X,
+	payload: {xValue , classId},
+});
+export const setEllipseY = (yValue, classId)=>({
+	type:types.SET_ELLIPSE_Y,
+	payload: {yValue,classId},
+});
+export const setEllipseHeight = (rHeight, classId)=>({
+	type:types.SET_ELLIPSE_HEIGHT,
+	payload: {rHeight,classId},
+});
+export const setEllipseWidth = (rWidth, classId)=>({
+	type:types.SET_ELLIPSE_WIDTH,
+	payload: {rWidth,classId},
+});
+
+// ------------------
 // MASTER ACTIONS
 // ------------------
 
@@ -86,4 +106,8 @@ export const insertIntoMaster = (SVG, svgType)=>({
 export const removeFromMaster = (classId)=>({
 	type:types.REMOVE_FROM_MASTER,
 	payload: {classId},
+});
+export const useSlider = (value, classId, sliderId)=>({
+	type:types.USE_SLIDER,
+	payload: {value , classId, sliderId },
 });
