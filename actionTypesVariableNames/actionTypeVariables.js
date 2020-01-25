@@ -22,6 +22,25 @@ export const SET_ELLIPSE_X = "SET_ELLIPSE_X";
 export const SET_ELLIPSE_HEIGHT = "SET_ELLIPSE_HEIGHT";
 export const SET_ELLIPSE_WIDTH = "SET_ELLIPSE_WIDTH";
 
+export const ADD_RECTANGLE = "ADD_RECTANGLE";
+export const SET_RECTANGLE_Y = "SET_RECTANGLE_Y";
+export const SET_RECTANGLE_X = "SET_RECTANGLE_X";
+export const SET_RECTANGLE_HEIGHT = "SET_RECTANGLE_HEIGHT";
+export const SET_RECTANGLE_WIDTH = "SET_RECTANGLE_WIDTH";
+export const SET_RECTANGLE_RY = "SET_RECTANGLE_RY";
+export const SET_RECTANGLE_RX = "SET_RECTANGLE_RX";
+
+export const ADD_TEXT = "ADD_TEXT_X";
+export const SET_TEXT_X = "SET_TEXT_X";
+export const SET_TEXT_Y = "SET_TEXT_Y";
+export const SET_TEXT = "SET_TEXT";
+
+export const ADD_LINE = "ADD_LINE";
+export const SET_LINE_X1 = "SET_LINE_X1";
+export const SET_LINE_Y1 = "SET_LINE_Y1";
+export const SET_LINE_X2 = "SET_LINE_X2";
+export const SET_LINE_Y2 = "SET_LINE_Y2";
+
 export const INSERT_INTO_MASTER = "INSERT_INTO_MASTER";
 export const REMOVE_FROM_MASTER = "REMOVE_FROM_MASTER";
 export const USE_SLIDER = "USE_SLIDER";

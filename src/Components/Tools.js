@@ -32,21 +32,7 @@ class Tools extends React.Component{
 		//-----------------------------------------
 		//  Build UI component called SVGShape for each SVG Object in state
 		//-----------------------------------------
-		// const allSliders = this.props.activePathSVGs.map((SVG, index)=>{
-		// 	return (
-		// 		<SVGShape 
-		// 			key= {index} 
-		// 			setYPathVertice={this.props.setYPathVertice} 
-		// 			useSlider={this.props.useSlider} 
-		// 			activePathSVGs={this.props.activePathSVGs} 
-		// 			SVG = {SVG} 
-		// 			index = {index} 
-		// 			addVertices = {this.props.addVertices} 
-		// 			removeVertices = {this.props.removeVertices} 
-		// 			removeSVG = {this.props.removeSVG} 
-		// 		/>
-		// 	); 
-		// });
+
 		const allSliders = this.props.masterSVGArray.map((SVG, index)=>{
 			return (
 				<SVGShape 
@@ -58,7 +44,7 @@ class Tools extends React.Component{
 					addVertices = {this.props.addVertices} 
 					removeVertices = {this.props.removeVertices} 
 					removeFromMaster = {this.props.removeFromMaster} 
-					removeSVG = {this.props.removeSVG} 
+					// removeSVG = {this.props.removeSVG} 
 				/>
 			); 
 		});

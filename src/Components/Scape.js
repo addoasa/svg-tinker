@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Scape.css';
 //import the action you want to use
-import { addPath, addCircle, addEllipse ,insertIntoMaster } from '../../actions'
+import { addPath, addCircle, addEllipse , addRectangle, addText, addLine, insertIntoMaster } from '../../actions'
 import { connect } from 'react-redux';
 
 
@@ -9,6 +9,9 @@ const mapStateToProps = store => ({
   activePathSVGs : store.paths.activePathSVGs,
   activeCircleSVGs : store.circles.activeCircleSVGs,
   activeEllipseSVGs : store.ellipses.activeEllipseSVGs,
+  activeRectangleSVGs : store.rectangles.activeRectangleSVGs,
+  activeTextSVGs : store.texts.activeTextSVGs,
+  activeLineSVGs : store.lines.activeLineSVGs,
   masterSVGArray : store.master.masterSVGArray,
 
 })
@@ -16,6 +19,9 @@ const mapDispatchToProps = dispatch => ({
   addPath: (indexInMaster)=> dispatch(addPath(indexInMaster)),
   addCircle: (indexInMaster)=> dispatch(addCircle(indexInMaster)),
   addEllipse: (indexInMaster)=> dispatch(addEllipse(indexInMaster)),
+  addRectangle: (indexInMaster)=> dispatch(addRectangle(indexInMaster)),
+  addText: (indexInMaster)=> dispatch(addText(indexInMaster)),
+  addLine: (indexInMaster)=> dispatch(addLine(indexInMaster)),
   insertIntoMaster: (SVG, svgType, idInChildArray)=> dispatch(insertIntoMaster(SVG, svgType, idInChildArray)),
 })
 
@@ -59,11 +65,48 @@ class Scape extends React.Component{
         this.props.addEllipse(this.props.masterSVGArray.length);
         // then take the last circle added to the circle array and store it in a variable
         const lastEllipseAdded = this.props.activeEllipseSVGs[this.props.activeEllipseSVGs.length - 1];
-        // Let the masterarray keep track of this new shape's spot in the activeCirclesSVGs array
+        // Let the masterarray keep track of this new shape's spot in the activeEllipseSVGs array
         const idInEllipseArray = this.props.activeEllipseSVGs.length -1;
-        // now insert the last added circle into the master list to render
+        // now insert the last added ellipse into the master list to render
         this.props.insertIntoMaster(lastEllipseAdded, "ELLIPSE", idInEllipseArray);
+        // console.log(this.props.activeEllipseSVGs)
+        break;
+
+      case "rectangle-btn":
+        // add a new rectangle to the rectangle array in the rectangle reducer
+        this.props.addRectangle(this.props.masterSVGArray.length);
+        // then take the last rectangle added to the rectangle array and store it in a variable
+        const lastRectangleAdded = this.props.activeRectangleSVGs[this.props.activeRectangleSVGs.length - 1];
+        // Let the masterarray keep track of this new shape's spot in the activeRectangleSVGs array
+        const idInRectangleArray = this.props.activeRectangleSVGs.length -1;
+        // now insert the last added rectangle into the master list to render
+        this.props.insertIntoMaster(lastRectangleAdded, "RECTANGLE", idInRectangleArray);
+        // console.log(this.props.activeRectangleSVGs)
+        break;
+
+      case "text-btn":
+        // add a new text obj to the text array in the text reducer
+        this.props.addText(this.props.masterSVGArray.length);
+        // then take the last text obj that was added to the text array and store it in a variable
+        const lastTextAdded = this.props.activeTextSVGs[this.props.activeTextSVGs.length - 1];
+        // Let the masterarray keep track of this new shape's spot in the activeTextSVGs array
+        const idInTextArray = this.props.activeTextSVGs.length -1;
+        // now insert the last added text into the master list to render
+        this.props.insertIntoMaster(lastTextAdded, "TEXT", idInTextArray);
+        // console.log(this.props.activeTextSVGs)
+        break;
+
+      case "line-btn":
+        // add a new ellipse to the ellipse array in the ellipse reducer
+        this.props.addLine(this.props.masterSVGArray.length);
+        // then take the last line added to the line array and store it in a variable
+        const lastLineAdded = this.props.activeLineSVGs[this.props.activeLineSVGs.length - 1];
+        // Let the masterarray keep track of this new shape's spot in the activeLineSVGs array
+        const idInLineArray = this.props.activeLineSVGs.length -1;
+        // now insert the last added line into the master list to render
+        this.props.insertIntoMaster(lastLineAdded, "LINE", idInLineArray);
         // console.log(this.props.activeCircleSVGs)
+        break;
     }
   }
 
@@ -75,19 +118,27 @@ class Scape extends React.Component{
       <div className = "utility-wrapper">
         <div className="add-container">
           <i className={this.props.activePathSVGs.length !== 0 ? 'fas fa-plus-circle addSlider' : "fas fa-plus-circle emphasizeAddSlider"} id="path-btn" onClick ={this. handleAddingAnSVG}></i>
-          <h4 className="add-caption">Add new shape</h4>
+          <h4 className="add-caption">Add Path</h4>
         </div>
         <div className="add-container-option">
           <i className="fa fa-circle addSlider" id="circle-btn" onClick ={this. handleAddingAnSVG}></i>
-          <h4 className="add-caption">Circle</h4>
+          <h4 className="add-caption">Add Circle</h4>
         </div>
         <div className="add-container-option">
           <i className="fa fa-circle addSlider" id="ellipse-btn"  onClick ={this. handleAddingAnSVG}></i>
-          <h4 className="add-caption">Ellipse</h4>
+          <h4 className="add-caption">Add Ellipse</h4>
+        </div>
+        <div className="add-container-option">
+          <i className="fa fa-circle addSlider" id="rectangle-btn"  onClick ={this. handleAddingAnSVG}></i>
+          <h4 className="add-caption">Add Rectangle</h4>
+        </div>
+        <div className="add-container-option">
+          <i className="fa fa-circle addSlider" id="text-btn"  onClick ={this. handleAddingAnSVG}></i>
+          <h4 className="add-caption">Add Text</h4>
         </div>
         <div className="add-container-option">
           <i className="fa fa-circle addSlider" id="line-btn"  onClick ={this. handleAddingAnSVG}></i>
-          <h4 className="add-caption">Ellipse</h4>
+          <h4 className="add-caption">Add line</h4>
         </div>
       </div>
     )

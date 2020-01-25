@@ -1,5 +1,4 @@
 import * as types from "../actionTypesVariableNames/actionTypeVariables";
-{/* <ellipse cx="240" cy="50" rx="220" ry="30" style="fill:yellow" /> // This ellipse will overlap the second one */}
 
 const initialState = {
 	activeEllipseSVGs: [ 
@@ -74,7 +73,7 @@ function ellipseReducer(state=initialState, action){
  
 	case types.SET_ELLIPSE_HEIGHT:
 
-		activeEllipseSVGs[action.payload.classId].radius = action.payload.rHeight;
+		activeEllipseSVGs[action.payload.classId].rHeight = action.payload.rHeight;
 
 		return{
 			...state,
@@ -85,7 +84,7 @@ function ellipseReducer(state=initialState, action){
  
 	case types.SET_ELLIPSE_WIDTH:
 
-		activeEllipseSVGs[action.payload.classId].radius = action.payload.rWidth;
+		activeEllipseSVGs[action.payload.classId].rHeight = action.payload.rWidth;
 
 		return{
 			...state,

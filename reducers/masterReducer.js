@@ -104,13 +104,15 @@ case types.REMOVE_VERTICES:
 	// With that information we can now manipulate x and y positioning of that 
 	// specific shape's vertices
 	// --------------------------------------------------------------------------    
-
+// this action (USE_SLIDER) is responsible for manipulating all of  the sliders in this application
 	case types.USE_SLIDER:
-		// find the specific index in masterSVGArray array and change its value
+    // find the specific SVG by index in the masterSVGArray array 
+    // access that SVG's svgData object (holds the SVG's values such as x and y etc)
+    // change the value of the specified key on that object (aka sliderId)
 
 		masterSVGArray[action.payload.classId].svgData[action.payload.sliderId] = action.payload.value;
 		// console.log(action.payload.classId, "classId");
-		console.log(action.payload.sliderId, "sliderid");
+		console.log(action.payload.sliderId, "is being changed");
 		// console.log(action.payload.value, "vaLx");
 		// console.log(state.masterSVGArray);
 		return {
