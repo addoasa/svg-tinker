@@ -50,12 +50,12 @@ class LiveCode extends React.Component{
 				// Code for CIRCLE svg
 				// **************************
 				case "CIRCLE":
-					finalCodeString = `<circle cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius}`;
+					finalCodeString = `<circle cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius}/>`;
 					// cx="100" cy="100" r="80"
 					console.log(SVG.svgData)
 					return( 
 						<React.Fragment key={index}>
-							<h2 className="code">{finalCodeString}/></h2>
+							<h2 className="code">{finalCodeString}</h2>
 						</React.Fragment> 
 					);
 
@@ -64,11 +64,50 @@ class LiveCode extends React.Component{
 				// **************************
 
 				case "ELLIPSE":
-					finalCodeString = `<ellipse cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} rx=${SVG.svgData.rWidth} ry=${SVG.svgData.rHeight}`;
+					finalCodeString = `<ellipse cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} rx=${SVG.svgData.rWidth} ry=${SVG.svgData.rHeight}/>`;
 					console.log(SVG.svgData)
 					return( 
 						<React.Fragment key={index}>
-							<h2 className="code">{finalCodeString}/></h2>
+							<h2 className="code">{finalCodeString}</h2>
+						</React.Fragment> 
+					);						
+
+				// **************************
+				// Code for RECTANGLE svg
+				// **************************
+
+				case "RECTANGLE":
+					finalCodeString = `<rect x=${SVG.svgData.x} y=${SVG.svgData.y} rx=${SVG.svgData.rx} ry=${SVG.svgData.ry} width=${SVG.svgData.width} height=${SVG.svgData.height}/>`;
+					console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<h2 className="code">{finalCodeString}</h2>
+						</React.Fragment> 
+					);						
+
+				// **************************
+				// Code for TEXT svg
+				// **************************
+
+				case "TEXT":
+					finalCodeString = `<text x=${SVG.svgData.x} y=${SVG.svgData.y} >${SVG.svgData.text}</text>`;
+					console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<h2 className="code">{finalCodeString}</h2>
+						</React.Fragment> 
+					);						
+
+				// **************************
+				// Code for LINE svg
+				// **************************
+
+				case "LINE":
+					finalCodeString = `<line x1=${SVG.svgData.x1} y1=${SVG.svgData.y1} x2=${SVG.svgData.x2} y2=${SVG.svgData.y2}/>`;
+					console.log(SVG.svgData)
+					return( 
+						<React.Fragment key={index}>
+							<h2 className="code">{finalCodeString}</h2>
 						</React.Fragment> 
 					);						
 			}
