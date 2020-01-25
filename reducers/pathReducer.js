@@ -10,14 +10,12 @@ const initialState = {
 	//Currently, every shape created will be initialized with 4 corners (each with an x position and a y position)
 	activePathSVGs: [ 
 		{
-			sliderX0:275,
-			sliderY1:175,
-			sliderX2:225,
-			sliderY3:175,
-			sliderX4:275,
-			sliderY5:175,
-			// sliderX6:225,
-			// sliderY7:175,
+			sliderX0:150,
+			sliderY1:100,
+			sliderX2:100,
+			sliderY3:200,
+			sliderX4:250,
+			sliderY5:200,
 		}
 	]
 
@@ -48,9 +46,10 @@ function pathReducer(state=initialState, action){
 			sliderX0:275,
 			sliderY1:175,
 			sliderX2:225,
-			sliderY3:175,
+			sliderY3:100,
 			sliderX4:275,
-			sliderY5:175,
+			sliderY5:200,
+
 		};
 			// ...push this new SVG object into clone of array of SVG objects
 		activePathSVGs.push(newSVG);

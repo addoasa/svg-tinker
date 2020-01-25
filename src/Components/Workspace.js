@@ -73,8 +73,7 @@ class Workspace extends React.Component{
 				
 				// styles for circles are hard coded for now... until the styling feature is added
 				case "CIRCLE":
-					// renderString = `cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius} stroke="black" stroke-width="5" fill="red"`;
-					// console.log(SVG.svgData)
+
 					return( 
 						<React.Fragment key={index}>
 							<circle cx={SVG.svgData.xAxis} cy={SVG.svgData.yAxis} r={SVG.svgData.radius} stroke="black" stroke-width="5" fill="red" />
@@ -86,11 +85,46 @@ class Workspace extends React.Component{
 				// **************************
 				
 				case "ELLIPSE":
-					// renderString = `cx=${SVG.svgData.xAxis} cy=${SVG.svgData.yAxis} r=${SVG.svgData.radius} stroke="black" stroke-width="5" fill="red"`;
-					// console.log(SVG.svgData)
+
 					return( 
 						<React.Fragment key={index}>
 							<ellipse cx={SVG.svgData.xAxis} cy={SVG.svgData.yAxis} rx={SVG.svgData.rWidth} ry={SVG.svgData.rHeight} stroke="black" stroke-width="2" />
+						</React.Fragment> 
+					);						
+				
+				// **************************
+				// Render Line svg
+				// **************************
+				
+				case "LINE":
+
+					return( 
+						<React.Fragment key={index}>
+							<line x1={SVG.svgData.x1} y1={SVG.svgData.y1} x2={SVG.svgData.x2} y2={SVG.svgData.y2} stroke="black" stroke-width="2" />
+						</React.Fragment> 
+					);						
+				
+				// **************************
+				// Render Text svg
+				// **************************
+				
+				case "TEXT":
+
+					return( 
+						<React.Fragment key={index}>
+							<text x={SVG.svgData.x} y={SVG.svgData.y} >{SVG.svgData.text}</text>
+						</React.Fragment> 
+					);						
+				
+				// **************************
+				// Render Rectangle svg
+				// **************************
+				
+				case "RECTANGLE":
+
+					return( 
+						<React.Fragment key={index}>
+							<rect x={SVG.svgData.x} y={SVG.svgData.y} rx={SVG.svgData.rx} ry={SVG.svgData.ry} width={SVG.svgData.width} height={SVG.svgData.height}/>
 						</React.Fragment> 
 					);						
 			}

@@ -224,7 +224,7 @@ class SVGShape extends React.Component{
 					<i className={`fas fa-times ${this.props.index}`} onClick ={this.handleDeleteSVG}></i>
 				</div>
 				{newSlider}
-				<button className = {`add-vertice-btn ${this.props.index}`} onClick ={this.addCorner}>Add new vertice</button>
+				{this.props.SVG.svgType === "PATH" ? <button className = {`add-vertice-btn ${this.props.index}`} onClick ={this.addCorner}>Add new vertice</button> : <></>}
 			</div>
 		); 
 	}

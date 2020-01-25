@@ -116,28 +116,28 @@ class Scape extends React.Component{
 
     return(
       <div className = "utility-wrapper">
-        <div className="add-container">
+        <div className="add-container-option">
           <i className={this.props.activePathSVGs.length !== 0 ? 'fas fa-plus-circle addSlider' : "fas fa-plus-circle emphasizeAddSlider"} id="path-btn" onClick ={this. handleAddingAnSVG}></i>
           <h4 className="add-caption">Add Path</h4>
         </div>
         <div className="add-container-option">
-          <i className="fa fa-circle addSlider" id="circle-btn" onClick ={this. handleAddingAnSVG}></i>
+          <i className="fa fa-plus-circle addSlider" id="circle-btn" onClick ={this. handleAddingAnSVG}></i>
           <h4 className="add-caption">Add Circle</h4>
         </div>
         <div className="add-container-option">
-          <i className="fa fa-circle addSlider" id="ellipse-btn"  onClick ={this. handleAddingAnSVG}></i>
+          <i className="fa fa-plus-circle addSlider" id="ellipse-btn"  onClick ={this. handleAddingAnSVG}></i>
           <h4 className="add-caption">Add Ellipse</h4>
         </div>
         <div className="add-container-option">
-          <i className="fa fa-circle addSlider" id="rectangle-btn"  onClick ={this. handleAddingAnSVG}></i>
+          <i className="fa fa-plus-circle addSlider" id="rectangle-btn"  onClick ={this. handleAddingAnSVG}></i>
           <h4 className="add-caption">Add Rectangle</h4>
         </div>
         <div className="add-container-option">
-          <i className="fa fa-circle addSlider" id="text-btn"  onClick ={this. handleAddingAnSVG}></i>
+          <i className="fa fa-plus-circle addSlider" id="text-btn"  onClick ={this. handleAddingAnSVG}></i>
           <h4 className="add-caption">Add Text</h4>
         </div>
         <div className="add-container-option">
-          <i className="fa fa-circle addSlider" id="line-btn"  onClick ={this. handleAddingAnSVG}></i>
+          <i className="fa fa-plus-circle addSlider" id="line-btn"  onClick ={this. handleAddingAnSVG}></i>
           <h4 className="add-caption">Add line</h4>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import * as types from "../actionTypesVariableNames/actionTypeVariables";
 
 const initialState = {
-  masterSVGArray:[{a:"s"}],
+  masterSVGArray:[],
 }
 
 function masterReducer(state=initialState, action){
@@ -50,10 +50,10 @@ function masterReducer(state=initialState, action){
     // if there are an even number of sliders...(which there should always be)... 
     // ... add a new pair to the specific shape/object in state at that classid
     newVertice= newVertice + "X" + turnObjToArr.length;
-    masterSVGArray[action.payload].svgData[newVertice] = 300;
+    masterSVGArray[action.payload].svgData[newVertice] = 200;
     newVertice = "slider";
     newVertice= newVertice + "Y" + (turnObjToArr.length + 1);
-    masterSVGArray[action.payload].svgData[newVertice] = 300;
+    masterSVGArray[action.payload].svgData[newVertice] = 100;
   }
   return {
     ...state,
