@@ -91,8 +91,8 @@ class SVGShape extends React.Component{
 								<p>y-axis</p>
 							</div>
 							<div className = {`verticies corner${j}`}>
-								<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
-								<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+								<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 							</div>
 						</>);
 				}
@@ -111,9 +111,9 @@ class SVGShape extends React.Component{
 							<p>r</p>
 						</div>
 						<div className = "verticies">
-							<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
-							<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+							<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+							<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 						</div>
 					</>);
 				
@@ -133,10 +133,10 @@ class SVGShape extends React.Component{
 							<p>h</p>
 						</div>
 						<div className = "verticies">
-							<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
-							<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} rWidth`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} rHeight`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+							<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+							<input className = {`${this.props.index} rWidth`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+							<input className = {`${this.props.index} rHeight`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 						</div>
 					</>);
 			
@@ -158,12 +158,12 @@ class SVGShape extends React.Component{
 						<p>height</p>
 					</div>
 					<div className = "verticies">
-						<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
-						<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} rx`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} ry`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} width`} value= {extractedRanges[4]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} height`} value= {extractedRanges[5]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+						<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+						<input className = {`${this.props.index} rx`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+						<input className = {`${this.props.index} ry`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+						<input className = {`${this.props.index} width`} value= {extractedRanges[4]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+						<input className = {`${this.props.index} height`} value= {extractedRanges[5]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 					</div>
 				</>);
 		
@@ -182,8 +182,8 @@ class SVGShape extends React.Component{
 					<p>text</p>
 				</div>
 				<div className = "verticies">
-					<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
-					<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+					<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+					<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 					<input className = {`${this.props.index} text`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="text" ></input>
 				</div>
 			</>);
@@ -204,10 +204,10 @@ class SVGShape extends React.Component{
 					<p>h</p>
 				</div>
 				<div className = "verticies">
-					<input className = {`${this.props.index} x1`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max='1000' min="0"></input>
-					<input className = {`${this.props.index} y1`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} x2`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} y2`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+					<input className = {`${this.props.index} x1`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+					<input className = {`${this.props.index} y1`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+					<input className = {`${this.props.index} x2`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+					<input className = {`${this.props.index} y2`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 				</div>
 			</>);
 	

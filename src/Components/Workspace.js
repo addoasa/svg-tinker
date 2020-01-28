@@ -138,7 +138,8 @@ class Workspace extends React.Component{
 				<label  className="size-input2" htmlFor= 'width'>Width</label> 
 				<input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
 				<br />
-				<svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} height={this.props.workspaceHeight} width={this.props.workspaceWidth}>
+				<svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} viewBox = {`0 0 ${this.props.workspaceHeight} ${this.props.workspaceHeight}`}>
+				{/* <svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} viewBox = {`0 0 ${this.props.workspaceHeight} ${this.props.workspaceWidth}`}> */}
 					{this.props.masterSVGArray ? allSVGs : emptyMessage}  
 				</svg>
 
