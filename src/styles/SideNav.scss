@@ -1,0 +1,69 @@
+
+.side-navbar{
+  width:5%;
+  height:100vh;
+  position:fixed;
+  display:grid;
+  grid-template-rows: 20% 13% 13% 13% 13% 13% 13%;
+  // border:solid 3px rgba(0,0,0,1);
+  /* border-bottom: solid 1px rgba(0,0,0,0.7); */
+  /* box-shadow: 0 5px 6px rgba(0,0,0,0.2); */
+  /* background-color: rgba(0, 0, 0, 0.87); */
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-image: linear-gradient(rgb(252, 252, 252), rgba(0, 0, 0, 0.1)); */
+    .nav-item {
+      // position: absolute;
+      height:100%;
+      width:100%;
+      border:solid 1px rgba(255,0,0,1);
+      
+      .nav-item-content{
+        // background-color: blue;
+        height:100%;
+        width:100%;
+      }
+    }  
+}
+
+// .fa-cogs{
+//   font-size: 40pt;
+//   margin-left: 30px;
+// }
+// .logo-container{
+  // /* background-image: url('../../assets/2.png'); */
+//   height:80px;
+//   width:100px;
+//   padding-left: 100px;
+//   padding-top: 10px;
+// }
+// .logo{
+//   width:330px;
+//   opacity: 0.85;
+//   /* background-color: black; */
+//   /* height: 150px; */
+//   margin:0 auto;
+//   margin-left: 75%;
+//   /* padding-left: -20px; */
+//   padding-top: 50px;
+//   border-bottom: 1px black solid,
+// }
+// .logo-img{
+//   width:20.415%;
+//   /* height: 150px; */
+// }
+// .logo p{
+//   padding-left: 115%;
+// }
+// #tinkertitle{
+//   font-family:Arial, Helvetica, sans-serif;
+//   font-weight: 300;
+//   font-size: 20pt;
+// }
+// #SVGtitle{
+//   font-family:Arial, Helvetica, sans-serif;
+//   font-weight: 800;
+//   font-size: 24pt;
+// }
+// #github-link{
+//   margin-left:13%;
+// }

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Workspace.css";
+import "../styles/Workspace.scss";
 import { setWorkspaceHeight } from "../../actions";
 import { setWorkspaceWidth } from "../../actions";
 import { connect } from "react-redux";

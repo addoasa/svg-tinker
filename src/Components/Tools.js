@@ -7,7 +7,7 @@ import { removeVertices } from "../../actions";
 import { removeFromMaster } from "../../actions";
 import SVGShape from "./SVGShape.js";
 import { connect } from "react-redux";
-import "../styles/Tools.css";
+import "../styles/Tools.scss";
 
 const mapStateToProps = store => ({
 	activePathSVGs : store.paths.activePathSVGs,

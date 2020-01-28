@@ -8,7 +8,7 @@ let PORT = 3000;
 // const MongoClient = require('mongodb').MongoClient;
 // let db;
 
-
+app.use(express.static('public'))
 //without this webpack will only serve html and nothing else
 app.use('/build', express.static(path.join(__dirname, '../build')));
 app.use('/', (req, res, next)=>{

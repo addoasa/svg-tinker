@@ -1,0 +1,20 @@
+.header{
+  background-color: black;
+  width:100vw;
+  height:3vh;
+  // position:fixed;
+  div{
+    height:100%;
+    width:20%;
+    margin:0 auto;
+    // border: dashed brown 1pt;
+    h1{
+      padding-top:1%;
+      color:white;
+      text-align: center;
+      font-size:1.5vh;
+      font-family: roboto;
+      font-weight: 500;
+    }
+  }
+}
