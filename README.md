@@ -38,6 +38,7 @@
 #### [✖] Refactor and refine UI
 #### [✖] Enable user to store SVGs/ save  in DB/localstorage etc  
 #### [✖] Adding math tools(ex: user can proportionally resize svgs or translate its position)
+#### [✖] In addition to a Canvas, there should also be a viewbox that overlaps the canvas. The view box is what will actually be rendered when the code for an SVG is run.
 
 ## Planned UI Mockup
  ![alt text](./public/assets/mockup-assets/svgtinker-mockup01.png)
