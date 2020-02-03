@@ -1,0 +1,97 @@
+@import 'colors';
+.corner-caption{
+  font-family: helvetica;
+  color: rgba(0,0,0,0.6);
+  /* font-weight: 300; */
+}
+.cornercaption-and-deletebtn{
+  display:flex;
+  justify-content: space-between;
+}
+.shape-caption{
+  display:flex;
+  font-family: helvetica;
+  color:rgba(190, 95, 95, 0.9);
+  padding-bottom: 10px;
+  justify-content: space-between;
+
+}
+.fa-times{
+  font-size: 12pt;
+  color:rgba(0,0,0,0.5);
+  padding-top: 7px; 
+  margin-left: 9rem;  
+}
+.fa-times:hover{
+  color:rgba(0,0,0,0.9);
+  cursor: pointer;
+
+}
+.slider-labels{
+  display:flex;
+  justify-content: space-around;
+  font-family: helvetica;
+
+}
+.slider-labels p{
+  font-weight: 100;
+  color:rgba(0,0,0,0.5);
+}
+.a-single-slider-container{
+  border-left:solid rgba(0,0,0,0.4) 5.5pt;
+  padding:15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  position:relative;
+  box-shadow: 5px 5px 8px rgba(0,0,0,0.25);
+  animation: appear 0.3s ease-in-out;
+}
+.PATH-container{
+  border-left:solid $path-black 5.5pt;
+}
+.CIRCLE-container{
+  border-left:solid $circle-red 5.5pt;
+}
+.RECTANGLE-container{
+  border-left:solid $rectangle-blue 5.5pt;
+}
+.ELLIPSE-container{
+  border-left:solid $ellipse-purple 5.5pt;
+}
+.TEXT-container{
+  border-left:solid $text-lime 5.5pt;
+}
+.POLYLINE-container{
+  border-left:solid $polyline-white 5.5pt;
+}
+.POLYGON-container{
+  border-left:solid $polygon-gray 5.5pt;
+}
+.LINE-container{
+  border-left:solid $line-gold 5.5pt;
+}
+.verticies input{
+  width:115px;
+  margin-left: 10px;;
+}
+
+.add-vertice-btn{
+  opacity: 0.3;
+  width:70%;
+  height:2em;
+  border: black solid 1px;
+  outline: none;
+  background-color: transparent;
+  margin-left: 15%;
+  margin-top: 1em;
+  color: black;
+}
+@keyframes appear{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+        opacity:100;
+  }
+}

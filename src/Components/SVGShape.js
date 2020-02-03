@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/SVGShape.scss";
 
 class SVGShape extends React.Component{
 	constructor(){
@@ -220,9 +221,9 @@ class SVGShape extends React.Component{
 		return (
 		// create a UI container for each SVG object in state and give it sliders that corresspond with the values within it
 
-			<div className = "a-single-slider-container">
+			<div className = {`a-single-slider-container ${this.props.SVG.svgType}-container`}>
 				<div className ="shape-caption">
-					<h1>Shape:{this.props.index + 1}</h1>
+					<h1>{this.props.index + 1}</h1>
 					<i className={`fas fa-times ${this.props.index}`} onClick ={this.handleDeleteSVG}></i>
 				</div>
 				{newSlider}
