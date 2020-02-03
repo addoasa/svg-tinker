@@ -29,16 +29,31 @@
      [✖] Filters
 
 ```
+#### [✖] Re-design UI
 #### [✖] Enable shape layer heirachy
 #### [✖] Enable user to live code SVG
 #### [✖] Enable user to import and render svg code (including default or starter shapes like stars or stairs)
 #### [✖] Implement Undo/Redo changes made
 #### [✖] Implement copy and paste || or Duplicate shape feature
 #### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
-#### [✖] Refactor and refine UI
-#### [✖] Enable user to store SVGs/ save  in DB/localstorage etc  
+#### [✖] Enable user to store SVGs/ save in DB/localstorage etc  
 #### [✖] Adding math tools(ex: user can proportionally resize svgs or translate its position)
-#### [✖] In addition to a Canvas, there should also be a viewbox that overlaps the canvas. The view box is what will actually be rendered when the code for an SVG is run.
+#### [✖] In addition to a Canvas, there should also be a viewbox that overlaps the canvas. Whatever content is within the view box is what will actually be rendered when the code for the SVG is run.
+#### [✖] Re-name certain components to more understandable names. (ex: "Workspace", "Scape" and "Tools" are vague names)
+#### [✖] Fully test the application
+```
+Write tests for:
+     [✔] MasterReducer
+     [✔] All other reducers
+     [✔] UI Components should look and work as intended:
+          [✔] SideNav
+          [✔] SvgShape
+          [✔] LiveCode
+          [✔] Workspace
+        
+
+```
+#### [✖] Refactor, Dry up and de-clutter code.
 
 ## Planned UI Mockup
  ![alt text](./public/assets/mockup-assets/svgtinker-mockup01.png)
