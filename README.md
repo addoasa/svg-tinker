@@ -11,7 +11,7 @@
 ![alt text](./public/assets/svg1.gif)
 ![alt text](./public/assets/svg2.gif)
 ## How to Use
- Use the control panel on the left side of the screen to manipulate the cooresponding vertices of a shape. To add another shape to your SVG click the "add new shape" button above the control panel. To remove a particular shape click the "-" icon located at the top right of every shape in the control panel.
+ Use the set of sliders on the left side of the screen to manipulate the cooresponding attributes of a shape. To add another shape to your SVG click the "new shape" button on the side nav bar to bring up the Add Shape menu. Then choose an SVG type among the options. To remove a particular shape click the "x" icon located at the top right of every shape in the control panel.
 
 ## Planned features
 #### [✔] Add and removal of Path vertices (Each path has 4 currently)
@@ -30,32 +30,31 @@
 
 ```
 #### [✖] Re-design UI
-#### [✖] Enable shape layer heirachy
-#### [✖] Enable user to live code SVG
+#### [✖] Enable support for applying CSS attributes. Things such as fill, stroke, stroke-width and colors (Any bit of color is hard coded at the moment)
+#### [✖] Enable a shape heirachy that can dynamically be changed
+#### [✖] Enable user to live code SVG code. (This will require error handling in case the user inserts improper code)
 #### [✖] Enable user to import and render svg code (including default or starter shapes like stars or stairs)
 #### [✖] Implement Undo/Redo changes made
-#### [✖] Implement copy and paste || or Duplicate shape feature
+#### [✖] Implement copy and paste or Duplicate shape feature
 #### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
 #### [✖] Enable user to store SVGs/ save in DB/localstorage etc  
-#### [✖] Adding math tools(ex: user can proportionally resize svgs or translate its position)
-#### [✖] In addition to a Canvas, there should also be a viewbox that overlaps the canvas. Whatever content is within the view box is what will actually be rendered when the code for the SVG is run.
+#### [✖] In addition to a Canvas, there should also be a sizable viewbox that overlaps the canvas. Whatever content is within the view box is what will actually be rendered when the code for the SVG is run.
+#### [✖] Adding math tools(ex: user can proportionally resize svgs and/or translate its position within the viewbox.)
 #### [✖] Re-name certain components to more understandable names. (ex: "Workspace", "Scape" and "Tools" are vague names)
 #### [✖] Fully test the application
 ```
 Write tests for:
-     [✔] MasterReducer
-     [✔] All other reducers
-     [✔] UI Components should look and work as intended:
-          [✔] SideNav
-          [✔] SvgShape
-          [✔] LiveCode
-          [✔] Workspace
-        
-
+     [✖] MasterReducer
+     [✖] All other reducers
+     [✖] UI Components should look and work as intended:
+          [✖] SideNav
+          [✖] SvgShape
+          [✖] LiveCode
+          [✖] Workspace
 ```
 #### [✖] Refactor, Dry up and de-clutter code.
 
-## Planned UI Mockup
+## Planned UI Illustrator Mockup
  ![alt text](./public/assets/mockup-assets/svgtinker-mockup01.png)
  ![alt text](./public/assets/mockup-assets/svgtinker-mockup02.png)
 
