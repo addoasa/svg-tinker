@@ -1,21 +1,74 @@
 @import 'colors';
-.corner-caption{
-  font-family: helvetica;
-  color: rgba(0,0,0,0.6);
-  /* font-weight: 300; */
-}
-.cornercaption-and-deletebtn{
+
+.slider-set-and-btns{
   display:flex;
-  justify-content: space-between;
-}
-.shape-caption{
-  display:flex;
-  font-family: helvetica;
-  color:rgba(190, 95, 95, 0.9);
-  padding-bottom: 10px;
-  justify-content: space-between;
+  margin-top: 19px;
+
+  .slider{
+    display: flex;
+    margin-top: 5px;
+  }
+  .slider-btns-and-status{
+    margin-left:15px;
+    .slider-btns{
+      display:flex;
+      width:70px;
+      justify-content: space-around;
+      padding-left: 3px;
+      button{
+        background-color: transparent;
+        border-radius: 50%;
+        border:solid rgba(0, 0, 0, 0.8) 1pt;
+        color:rgba(0, 0, 0, 0.8);
+        height: 20px;
+        width: 20px;
+      }
+    }
+    p{
+      font-family: "Roboto";
+      font-weight: 350;
+      font-size: 10pt;
+      color: rgba(0,0,0,0.8);
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+  }
 
 }
+
+
+.shape-caption{
+  display:flex;
+  font-family: "Roboto";
+  color:rgba(0, 0, 0, 0.8);
+  padding-bottom: 10px;
+  font-size: 14pt;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.shape-name-and-img{
+  display:flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  .shape-name{
+    font-family: "Roboto";
+    font-weight: 350;
+    font-size: 14pt;
+    color:rgba(0, 0, 0, 0.8);
+  }
+  .shape-img{
+    width:2em;
+    height:2em;
+
+    img{
+      width:100%;
+    }
+  }
+}
+
 .fa-times{
   font-size: 12pt;
   color:rgba(0,0,0,0.5);
@@ -27,16 +80,7 @@
   cursor: pointer;
 
 }
-.slider-labels{
-  display:flex;
-  justify-content: space-around;
-  font-family: helvetica;
 
-}
-.slider-labels p{
-  font-weight: 100;
-  color:rgba(0,0,0,0.5);
-}
 .a-single-slider-container{
   border-left:solid rgba(0,0,0,0.4) 5.5pt;
   padding:15px;
@@ -70,10 +114,7 @@
 .LINE-container{
   border-left:solid $line-gold 5.5pt;
 }
-.verticies input{
-  width:115px;
-  margin-left: 10px;;
-}
+
 
 .add-vertice-btn{
   opacity: 0.3;
@@ -95,3 +136,120 @@
         opacity:100;
   }
 }
+
+//---------------------------
+// Slider styles
+//---------------------------
+.slider-set{
+  margin-left: 10px;
+  
+  .corner-label{
+    font-family: "Roboto";
+    font-weight: 350;
+    font-size: 10pt;
+    color: rgba(0,0,0,0.8);
+  }
+  .slider-label{
+    font-family: "Roboto";
+    font-size: 10pt;
+    font-weight: 300;
+  }
+
+  input{
+    width:200px;
+    margin-left: 10px;
+    -webkit-appearance: none;
+  }
+  /* ---------------------
+  Chrome slider
+  --------------------- */
+  input::-webkit-slider-runnable-track {
+    width: 250px;
+    height: 5px;
+    background: rgba(0,0,0,0.6);
+    // border: none;
+    border-radius: 3px;
+  }
+
+  input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 0.5pt rgba(0,0,0,0.7) solid;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: white;
+    margin-top: -4px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  /* ---------------------
+  Firefox slider
+  --------------------- */
+
+  input::-moz-range-track {
+    width: 300px;
+    height: 5px;
+    background: black;
+    border: none;
+    border-radius: 3px;
+  }
+
+  input::-moz-range-thumb {
+    border: 0.2pt white solid;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: black;
+  }
+
+  /*hide the outline behind the border*/
+  input:-moz-focusring{
+    // outline: 1px solid white;
+    outline-offset: -1px;
+  }
+
+  input:focus::-moz-range-track {
+    // background: #ccc;
+  }
+
+  /* ---------------------
+  ie10 slider
+  --------------------- */
+  input::-ms-track {
+    width: 300px;
+    height: 5px;
+    /*remove bg colour from the track*/
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+    color: transparent;
+  }
+  input::-ms-fill-lower {
+    background: green;
+    border-radius: 10px;
+  }
+  input::-ms-fill-upper {
+    background: red;
+    border-radius: 10px;
+  }
+  input::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.8);
+  }
+  input:focus::-ms-fill-lower {
+    // background: #888;
+  }
+  input:focus::-ms-fill-upper {
+    // background: #ccc;
+  }
+} 
+
+
