@@ -47,8 +47,9 @@ class SVGShape extends React.Component{
 		console.log(event.target.className.split(" ")[1]);
 	}
 	removeCorner(event){
-    const foundSlidersToDelete = event.target.parentElement.nextSibling.nextSibling.children;
-    this.props.removeVertices(this.props.index, foundSlidersToDelete[0].className.split(" ")[1], foundSlidersToDelete[1].className.split(" ")[1]);
+		// Searching the dom for the slider vertice class names to be sent to the master reducer for deletion
+    const foundSlidersToDelete = event.target.parentElement.parentElement.parentElement.children[0].children;
+    this.props.removeVertices(this.props.index, foundSlidersToDelete[1].children[1].className.split(" ")[1], foundSlidersToDelete[2].children[1].className.split(" ")[1]);
     // console.log(event.target.className.split(" ")[1]);
 	}
 
@@ -100,12 +101,13 @@ class SVGShape extends React.Component{
 								<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input> */}
 								<div className="slider-btns-and-status">
 									<div className = "slider-btns">
-										<button className = {`delete-vertice-btn ${this.props.index}`} onClick ={this.removeCorner}></button>
-										<button className = {`delete-vertice-btn ${this.props.index}`} onClick ={this.removeCorner}></button>
-										<button className = {`delete-vertice-btn ${this.props.index}`} onClick ={this.removeCorner}></button>
+										<button></button>
+										<button ></button>
+										<button className = {`delete-vertice-btn ${this.props.index}`} onClick ={this.removeCorner}>-</button>
 									</div>
 									<p>(200,655)</p>
 								</div>
+
 							</div>
 						</>);
 				}
@@ -118,15 +120,28 @@ class SVGShape extends React.Component{
 
 				newSlider.push(	
 					<>
-						<div className = "slider-labels">
-							<p>x</p>
-							<p>y</p>
-							<p>r</p>
-						</div>
-						<div className = "slider-set">
-							<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						<div className="slider-set-and-btns">
+							<div className = "slider-set">
+								<div className = "slider">
+									<p className = "slider-label">X</p>
+									<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+								<div className = "slider">
+									<p className = "slider-label">Y</p>
+									<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+								<div className = "slider">
+									<p className = "slider-label">R</p>
+									<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+							</div>
+							<div className="slider-btns-and-status">
+								<div className = "slider-btns">
+									<button ></button>
+								</div>
+								<p>(200,655)</p>
+								<p>(200)</p>
+							</div>
 						</div>
 					</>);
 				
@@ -139,17 +154,33 @@ class SVGShape extends React.Component{
 
 				newSlider.push(	
 					<>
-						<div className = "slider-labels">
-							<p>x</p>
-							<p>y</p>
-							<p>w</p>
-							<p>h</p>
-						</div>
-						<div className = "slider-set">
-							<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} rWidth`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-							<input className = {`${this.props.index} rHeight`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						<div className="slider-set-and-btns">
+							<div className = "slider-set">
+								<div className = "slider">
+									<p className = "slider-label">X</p>
+									<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+								<div className = "slider">
+									<p className = "slider-label">Y</p>
+									<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+								<div className = "slider">
+									<p className = "slider-label">W</p>
+									<input className = {`${this.props.index} rWidth`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+								<div className = "slider">
+									<p className = "slider-label">H</p>
+									<input className = {`${this.props.index} rHeight`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+								</div>
+							</div>
+							<div className="slider-btns-and-status">
+								<div className = "slider-btns">
+								<button ></button>
+								</div>
+								<p>(200,655)</p>
+								<p>(200,655)</p>
+							</div>
+
 						</div>
 					</>);
 			
@@ -162,21 +193,42 @@ class SVGShape extends React.Component{
 
 			newSlider.push(	
 				<>
-					<div className = "slider-labels">
-						<p>x</p>
-						<p>y</p>
-						<p>rx</p>
-						<p>ry</p>
-						<p>width</p>
-						<p>height</p>
-					</div>
-					<div className = "slider-set">
-						<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} rx`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} ry`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} width`} value= {extractedRanges[4]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-						<input className = {`${this.props.index} height`} value= {extractedRanges[5]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+					<div className="slider-set-and-btns">
+						<div className = "slider-set">
+							<div className = "slider">
+								<p className = "slider-label">X</p>
+								<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							</div>
+							<div className = "slider">
+								<p className = "slider-label">Y</p>
+								<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							</div>
+							<div className = "slider">
+								<p className = "slider-label">RX</p>
+								<input className = {`${this.props.index} rx`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							</div>
+							<div className = "slider">
+								<p className = "slider-label">RY</p>
+								<input className = {`${this.props.index} ry`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							</div>
+							<div className = "slider">
+								<p className = "slider-label">W</p>
+								<input className = {`${this.props.index} width`} value= {extractedRanges[4]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							</div>
+							<div className = "slider">
+								<p className = "slider-label">H</p>
+								<input className = {`${this.props.index} height`} value= {extractedRanges[5]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+							</div>
+						</div>
+						<div className="slider-btns-and-status">
+							<div className = "slider-btns">
+							<button ></button>
+							</div>
+							<p>(200,655)</p>
+							<p>(200,655)</p>
+							<p>(200,655)</p>
+						</div>
+
 					</div>
 				</>);
 		
@@ -189,15 +241,28 @@ class SVGShape extends React.Component{
 
 		newSlider.push(	
 			<>
-				<div className = "slider-labels">
-					<p>x</p>
-					<p>y</p>
-					<p>text</p>
-				</div>
-				<div className = "slider-set">
-					<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} text`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="text" ></input>
+				<div className="slider-set-and-btns">
+					<div className = "slider-set">
+						<div className = "slider">
+							<p className = "slider-label">X</p>
+							<input className = {`${this.props.index} x`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						</div>
+						<div className = "slider">
+							<p className = "slider-label">Y</p>
+							<input className = {`${this.props.index} y`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						</div>
+						<div className = "slider">
+							<p className = "slider-label">T</p>
+							<input className = {`${this.props.index} text`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="text" ></input>
+						</div>
+					</div>
+					<div className="slider-btns-and-status">
+						<div className = "slider-btns">
+						<button ></button>
+						</div>
+						<p>(200,655)</p>
+					</div>
+
 				</div>
 			</>);
 	
@@ -210,17 +275,33 @@ class SVGShape extends React.Component{
 
 		newSlider.push(	
 			<>
-				<div className = "slider-labels">
-					<p>x</p>
-					<p>y</p>
-					<p>w</p>
-					<p>h</p>
-				</div>
-				<div className = "slider-set">
-					<input className = {`${this.props.index} x1`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} y1`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} x2`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
-					<input className = {`${this.props.index} y2`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+				<div className="slider-set-and-btns">
+					<div className = "slider-set">
+						<div className="slider">
+							<p className = "slider-label">X1</p>
+							<input className = {`${this.props.index} x1`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						</div>
+						<div className="slider">
+							<p className = "slider-label">Y1</p>
+							<input className = {`${this.props.index} y1`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						</div>
+						<div className="slider">
+							<p className = "slider-label">X2</p>
+							<input className = {`${this.props.index} x2`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						</div>
+						<div className="slider">
+							<p className = "slider-label">Y2</p>
+							<input className = {`${this.props.index} y2`} value= {extractedRanges[3]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+						</div>
+					</div>
+					<div className="slider-btns-and-status">
+						<div className = "slider-btns">
+						<button ></button>
+						</div>
+						<p>(200,655)</p>
+						<p>(880,300)</p>
+					</div>
+
 				</div>
 			</>);
 	
@@ -245,6 +326,7 @@ class SVGShape extends React.Component{
 				<hr></hr>
 				{newSlider}
 				{this.props.SVG.svgType === "PATH" ? <button className = {`add-vertice-btn ${this.props.index}`} onClick ={this.addCorner}>Add new vertice</button> : <></>}
+				<p className="collapse-sliders">Collapse</p>
 			</div>
 		); 
 	}
