@@ -57,36 +57,36 @@ function circleReducer(state=initialState, action){
 	// With that information we can now manipulate the x, y and radius values 
 	// --------------------------------------------------------------------------    
 
-	case types.SET_CIRCLE_X:
+	// case types.SET_CIRCLE_X:
 
-		activeCircleSVGs[action.payload.classId].xAxis = action.payload.xValue;
+	// 	activeCircleSVGs[action.payload.classId].xAxis = action.payload.xValue;
 
-		return {
-			...state,
-			activeCircleSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeCircleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------    
+	// // ---------------------------------------------------------    
  
-	case types.SET_CIRCLE_Y:
+	// case types.SET_CIRCLE_Y:
 
-		activeCircleSVGs[action.payload.classId].yAxis = action.payload.yValue;
+	// 	activeCircleSVGs[action.payload.classId].yAxis = action.payload.yValue;
 
-		return {
-			...state,
-			activeCircleSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeCircleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_CIRCLE_RADIUS:
+	// case types.SET_CIRCLE_RADIUS:
 
-		activeCircleSVGs[action.payload.classId].radius = action.payload.radiusValue;
+	// 	activeCircleSVGs[action.payload.classId].radius = action.payload.radiusValue;
 
-		return{
-			...state,
-			activeCircleSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeCircleSVGs,
+	// 	};
 
 	// ---------------------------------------------------------      
 

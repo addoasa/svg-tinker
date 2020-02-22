@@ -58,71 +58,71 @@ function rectangleReducer(state=initialState, action){
 	// Use the class_id from the payload to find the index of the circle in the
 	// activeRectangleSVGs array. 
 	// With that information we can now manipulate the x, y and radius values 
-	// --------------------------------------------------------------------------    
+	// // --------------------------------------------------------------------------    
 
-	case types.SET_RECTANGLE_X:
+	// case types.SET_RECTANGLE_X:
 
-		activeRectangleSVGs[action.payload.classId].x = action.payload.x;
+	// 	activeRectangleSVGs[action.payload.classId].x = action.payload.x;
 
-		return {
-			...state,
-			activeRectangleSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeRectangleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------    
+	// // ---------------------------------------------------------    
  
-	case types.SET_RECTANGLE_Y:
+	// case types.SET_RECTANGLE_Y:
 
-		activeRectangleSVGs[action.payload.classId].y = action.payload.y;
+	// 	activeRectangleSVGs[action.payload.classId].y = action.payload.y;
 
-		return {
-			...state,
-			activeRectangleSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeRectangleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_RECTANGLE_HEIGHT:
+	// case types.SET_RECTANGLE_HEIGHT:
 
-		activeRectangleSVGs[action.payload.classId].height = action.payload.height;
+	// 	activeRectangleSVGs[action.payload.classId].height = action.payload.height;
 
-		return{
-			...state,
-			activeRectangleSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeRectangleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_RECTANGLE_WIDTH:
+	// case types.SET_RECTANGLE_WIDTH:
 
-		activeRectangleSVGs[action.payload.classId].width = action.payload.width;
+	// 	activeRectangleSVGs[action.payload.classId].width = action.payload.width;
 
-		return{
-			...state,
-			activeRectangleSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeRectangleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_RECTANGLE_RX:
+	// case types.SET_RECTANGLE_RX:
 
-		activeRectangleSVGs[action.payload.classId].rx = action.payload.rx;
+	// 	activeRectangleSVGs[action.payload.classId].rx = action.payload.rx;
 
-		return{
-			...state,
-			activeRectangleSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeRectangleSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_RECTANGLE_RY:
+	// case types.SET_RECTANGLE_RY:
 
-		activeRectangleSVGs[action.payload.classId].ry = action.payload.ry;
+	// 	activeRectangleSVGs[action.payload.classId].ry = action.payload.ry;
 
-		return{
-			...state,
-			activeRectangleSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeRectangleSVGs,
+	// 	};
 
 	// ---------------------------------------------------------      
 

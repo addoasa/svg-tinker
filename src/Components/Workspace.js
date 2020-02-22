@@ -49,9 +49,13 @@ class Workspace extends React.Component{
 					// create a 4 cornered path element based on each SVG object that exists in the activePathSVGs array in redux state
 					renderString = "";
 					const extractedRanges = [];
+					
+					// Place the path vertice values from state into an array called extracted ranges
 					for(let key in SVG.svgData){
 						extractedRanges.push(SVG.svgData[key]);
 					}
+
+					// loop over the array of extracted path vertice values and use them to build upon the render string
 					for(let i = 0; i < extractedRanges.length; i++){
 						if(i === 0){
 							renderString += `M${extractedRanges[i]}`;

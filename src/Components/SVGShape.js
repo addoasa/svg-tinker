@@ -1,6 +1,12 @@
 import React from "react";
 import "../styles/SVGShape.scss";
 
+//------------------------------------------------------------------------------------
+// This component will be created for every SVG object in the State.
+// The sliders and behavior of this component will depend on the SVG type
+// that this component will recieve from props (this.props.SVG.svgType) 
+//------------------------------------------------------------------------------------
+
 class SVGShape extends React.Component{
 	constructor(){
 		super();
@@ -8,10 +14,9 @@ class SVGShape extends React.Component{
 		this.sliderHandler = this.sliderHandler.bind(this);
 		this.addCorner = this.addCorner.bind(this);
 		this.removeCorner = this.removeCorner.bind(this);
-
 	}
 	//------------------------------------------------------------------------------------
-	//  Methods for manipulating whole SVGs
+	//  Methods for manipulating whole SVGs 
 	//------------------------------------------------------------------------------------
 
 	handleDeleteSVG(event){
@@ -25,13 +30,13 @@ class SVGShape extends React.Component{
  	//------------------------------------------------------------------------------------
   
 	//------------------------------------------------------------------------------------
-	// Methods for manipulating Path vertices
+	// Methods for manipulating Path vertices (only used when the svgType happens to be 'PATH')
 	//------------------------------------------------------------------------------------
 	sliderHandler(event){
 		// Use this function to send the following to masterReducer:
-				// 1) the value of this slider set by user, 
-				// 2) the specific shape the user is manipulating, 
-				// 3) and the name of the key value to manipulate in state
+				// 1) the value of this slider set by user, aka (event.target.value)
+				// 2) the specific shape the user is manipulating, aka (event.target.className.split(" ")[0])
+				// 3) and the name of the key value to manipulate in state aka (event.target.className.split(" ")[1])
 
 		// With that payload data, the master reducer will then do the following :		
 			 // 1) search the masterSVGarray
@@ -40,7 +45,6 @@ class SVGShape extends React.Component{
 		this.props.useSlider(event.target.value, event.target.className.split(" ")[0], event.target.className.split(" ")[1]);
 		// console.log(event.target.className.split(" ")[1]);
 	}
-  
 	addCorner(event){
 		// used split() here because event.target.className gives you all classes associated with an element as a long string.
 		this.props.addVertices(event.target.className.split(" ")[1]);
@@ -55,13 +59,14 @@ class SVGShape extends React.Component{
 
 	//------------------------------------------------------------------------------------
 
-	render(){
+	render(){	
+		// Creating Sliders
 
 		let newSlider = [];
 		const extractedRanges = [];
 		let uniqueSVGObj = this.props.SVG.svgData;
 
-		// loop through the current unique SVG object that this component represents in state 
+		// loop through the current unique SVG object that this component represents in state... 
 		for(let key in uniqueSVGObj){
 			// and put that object's slider values into an array called extractedRanges
 			extractedRanges.push(uniqueSVGObj[key]);
@@ -105,7 +110,7 @@ class SVGShape extends React.Component{
 										<button ></button>
 										<button className = {`delete-vertice-btn ${this.props.index}`} onClick ={this.removeCorner}>-</button>
 									</div>
-									<p>(200,655)</p>
+									<p>{`(${uniqueSVGObj["sliderX"+k]},${uniqueSVGObj["sliderY"+(k+1)]})`}</p>
 								</div>
 
 							</div>
@@ -139,8 +144,8 @@ class SVGShape extends React.Component{
 								<div className = "slider-btns">
 									<button ></button>
 								</div>
-								<p>(200,655)</p>
-								<p>(200)</p>
+								<p>{`(${uniqueSVGObj.xAxis},${uniqueSVGObj.yAxis})`}</p>
+								<p>{`(${uniqueSVGObj.radius})`}</p>
 							</div>
 						</div>
 					</>);
@@ -177,8 +182,8 @@ class SVGShape extends React.Component{
 								<div className = "slider-btns">
 								<button ></button>
 								</div>
-								<p>(200,655)</p>
-								<p>(200,655)</p>
+								<p>{`(${uniqueSVGObj.xAxis},${uniqueSVGObj.yAxis})`}</p>
+								<p>{`(${uniqueSVGObj.rWidth},${uniqueSVGObj.rHeight})`}</p>
 							</div>
 
 						</div>
@@ -224,9 +229,9 @@ class SVGShape extends React.Component{
 							<div className = "slider-btns">
 							<button ></button>
 							</div>
-							<p>(200,655)</p>
-							<p>(200,655)</p>
-							<p>(200,655)</p>
+							<p>{`(${uniqueSVGObj.x},${uniqueSVGObj.y})`}</p>
+							<p>{`(${uniqueSVGObj.rx},${uniqueSVGObj.ry})`}</p>
+							<p>{`(${uniqueSVGObj.width},${uniqueSVGObj.height})`}</p>
 						</div>
 
 					</div>
@@ -260,7 +265,7 @@ class SVGShape extends React.Component{
 						<div className = "slider-btns">
 						<button ></button>
 						</div>
-						<p>(200,655)</p>
+						<p>{`(${uniqueSVGObj.x},${uniqueSVGObj.y})`}</p>
 					</div>
 
 				</div>
@@ -298,8 +303,8 @@ class SVGShape extends React.Component{
 						<div className = "slider-btns">
 						<button ></button>
 						</div>
-						<p>(200,655)</p>
-						<p>(880,300)</p>
+						<p>{`(${uniqueSVGObj.x1},${uniqueSVGObj.y1})`}</p>
+						<p>{`(${uniqueSVGObj.x2},${uniqueSVGObj.y2})`}</p>
 					</div>
 
 				</div>

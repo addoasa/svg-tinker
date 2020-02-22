@@ -97,7 +97,7 @@ case types.REMOVE_VERTICES:
     masterSVGArray,
   };
   
-  	// --------------------------------------------------------------------------    
+  // --------------------------------------------------------------------------    
 	//SETTING RANGES OF VERTICE VALUES
 	// Use the class_id from the payload to find the index of the shape in the
 	// masterSVGArray array. 

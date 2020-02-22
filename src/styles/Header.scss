@@ -7,16 +7,25 @@
     height:100%;
     width:20%;
     margin:0 auto;
-    // border: dashed brown 1pt;
+    padding-left: 13%;
+    display:flex;
     h1{
       padding-top:1%;
       color:white;
-      text-align: center;
+      // text-align: center;
       font-size:1.5vh;
       font-family: roboto;
       font-weight: 500;
       min-height: 1.5vh;
       max-height: 1.5vh;
+    }
+    .github-link{
+      padding-left: 3%;
+      padding-top: 0.7%;
+      .fa-github{
+        font-size:2vh;
+        color:white;
+      }
     }
   }
 }

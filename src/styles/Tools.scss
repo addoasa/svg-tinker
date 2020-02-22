@@ -8,7 +8,6 @@
 
 .entire-slider-container::-webkit-scrollbar{
   width:0.2rem;
-  height: 0.2rem;
   background-color:transparent;
 }
 .entire-slider-container::-webkit-scrollbar-thumb{
@@ -20,5 +19,5 @@
 }
 .entire-slider-container::-webkit-scrollbar-thumb:active{
   background-color:rgb(80, 77, 77);
-  border:1px solid #333333;
+  // border:1px solid #333333;
 }
