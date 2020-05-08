@@ -49,7 +49,7 @@ module.exports = {
 				use:[ "style-loader", "css-loader"]
 			},
 			{ 
-				test: /\.(gif|png|jpe?g|svg)$/i,
+				test: /\.(gif|png|jpe?g|svg|woff(2))$/i,
 				use: [
 					{ loader: "file-loader",
 						options:{
@@ -72,7 +72,7 @@ module.exports = {
 					},
 				]
 			},
-			{ test: /\.(jpe?g|png|gif|svg)$/i,
+			{ test: /\.(jpe?g|png|gif|svg|woff(2))$/i,
 				include : path.join(__dirname, "assets"), },
 		]   
 	}
