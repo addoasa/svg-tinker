@@ -1,85 +1,6 @@
-
-.side-navbar{
-  width:5em;
-  min-width:6vw;
-  max-width: 6vw;
-  height:100vh;
-  position:fixed;
-  background-color: #181818;
-  // display:grid;
-  // grid-template-rows: 20% 13% 13% 13% 13% 13% 13%;
-  hr{
-    width:3em;
-    height:0.2vh;
-    min-width:6vw;
-    max-width: 6vw;
-    border:none;
-    // border-top: solid 0.1vh rgba(255,255,255,0.2);
-    margin: 0 auto;
-  }
-  .nav-logo-container{
-    height:15vh;
-    min-height: 15vh;
-    max-height:15vh;
-    padding-top:3vh;
-  }
-
-    .nav-item {
-      // border-bottom:solid 0.50pt rgba(255,255,255,0.5);
-      // padding-bottom: 2em;
-      
-      .nav-item-content{
-        min-height: 6vh;
-        max-height:6vh;
-        width:auto;
-        display:flex;
-        flex-direction: column;
-        padding-top: 2vh;
-
-        svg{
-          stroke: rgba(255,255,255,0.6);
-          width:2em;
-          height:2em;
-          min-height: 3vh;
-          max-height: 3vh;
-          min-width: 3vh;
-          max-width: 3vh;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-      
-
-        .nav-item-text{
-          color:rgba(255,255,255,0.6);;
-          font-family: "Segoe UI";
-          font-weight: 100;
-          font-size: 1.7vh;
-          text-align: center;
-          padding-left: 0.5em;
-          padding-right: 0.5em;
-          min-height: 1.7vh;
-          max-height: 1.7vh;
-          padding-top: 1.5vh;
-
-        }
-      }
-    }  
-    .nav-item:hover{
-      cursor: pointer;
-      svg{
-        color:white;
-        stroke: white;
-      }
-      .nav-item-text{
-        color: white;
-        transition: 0.2;
-      } 
- 
-     
-    }
-}
-
+//--------------
+// LOGO styles
+//--------------
 .logo{
   margin: 0 auto ;
   width:100%;  
@@ -137,5 +58,142 @@
   }
   100%{
     transform: rotate(0deg);
+  }
+}
+
+// ----------------
+// Sidebar style
+// ----------------
+// .love{
+//   display:flex;
+// }
+.side-navbar{
+  // width:;
+  min-width:auto;
+  max-width: auto;
+  height:100vh;
+  position:fixed;
+  background-color: #181818;
+  transition:0.3s;
+  
+  // display:grid;
+  // grid-template-rows: 20% 13% 13% 13% 13% 13% 13%;
+  hr{
+    width:3em;
+    height:0.2vh;
+    min-width:6vw;
+    max-width: 6vw;
+    border:none;
+    // border-top: solid 0.1vh rgba(255,255,255,0.2);
+    margin: 0 auto;
+  }
+  .nav-logo-container{
+    height:15vh;
+    min-height: 15vh;
+    max-height:15vh;
+    padding-top:3vh;
+  }
+
+    .nav-item {
+      // border-bottom:solid 0.50pt rgba(255,255,255,0.5);
+      // padding-bottom: 2em;
+      width:7vw;
+      .nav-item-content{
+        min-height: 6vh;
+        max-height:6vh;
+        width:auto;
+        display:flex;
+        flex-direction: column;
+        padding-top: 2vh;
+
+        svg{
+          stroke: rgba(255,255,255,0.6);
+          width:2em;
+          height:2em;
+          min-height: 3vh;
+          max-height: 3vh;
+          min-width: 3vh;
+          max-width: 3vh;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        .nav-item-text{
+          color:rgba(255,255,255,0.6);;
+          font-family: "Segoe UI";
+          font-weight: 100;
+          font-size: 1.7vh;
+          text-align: center;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
+          min-height: 1.7vh;
+          max-height: 1.7vh;
+          padding-top: 1.5vh;
+        }
+      }
+    }  
+
+    .nav-item:hover{
+      cursor: pointer;
+      svg{
+        color:white;
+        stroke: white;
+      }
+      .nav-item-text{
+        color: white;
+        transition: 0.2;
+      }     
+    }
+    .settings-nav{
+      margin-top: 30vh;
+    }
+}
+
+.extended-sidenavbar-menu{
+  overflow-y: scroll;
+  margin-top: 3vh;
+  transition:0.6s;
+  height:97vh;
+  width:12vw;
+  // padding-left: 2vw;
+  padding-right: 0.5vw;
+  // background-color: #030303;
+  // animation:populate 1.5s linear;
+  .test-box{
+    width:100%;
+    height:25vh;
+    margin-top: 2vh;
+    border: solid white 0.5pt;
+    border-radius: 5px;
+    transition:0.3s;
+    animation:populate 1s linear;
+  }
+}
+
+
+.extended-sidenavbar-menu::-webkit-scrollbar{
+  width:0.2rem;
+  background-color:transparent;
+  padding-left: 20px;;
+}
+.extended-sidenavbar-menu::-webkit-scrollbar-thumb{
+  background-color:rgb(58, 56, 56);
+  border-radius:10px;
+}
+.extended-sidenavbar-menu::-webkit-scrollbar-thumb:hover{
+  background-color:rgb(114, 111, 111);
+}
+.extended-sidenavbar-menu::-webkit-scrollbar-thumb:active{
+  background-color:rgb(80, 77, 77);
+  // border:1px solid #333333;
+}
+@keyframes populate {
+  0%{
+    opacity:0;
+    margin-left: -100;
+  }
+  100%{
+    opacity:1;
+    margin-left: 0;
   }
 }
