@@ -16,9 +16,9 @@ class SideNav extends React.Component{
 		this.minimizeSideNav= this.minimizeSideNav.bind(this);
 	}
 
-	handleClick(event){
-		this.props.removeSVG(event.target.value, event.target.className);
-	}
+	// handleClick(event){
+	// 	this.props.removeSVG(event.target.value, event.target.className);
+	// }
 
 	extendSideNav(event){
 		const selectedSideNavItem = event.target.id;
@@ -29,7 +29,7 @@ class SideNav extends React.Component{
 				currentSideNavMenuType: selectedSideNavItem,
 			}
 		);
-		
+		event.target.style = {"animation":"rotatelogo 1s"};
 		console.log(this.state.isSideNavExtended, "Goober");
 		console.log(this.state.selectedSideNavItem, "Goober");
 	}

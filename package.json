@@ -1,6 +1,6 @@
 {
   "name": "svg-tinker",
-  "version": "1.0.0",
+  "version": "0.1.10",
   "description": "An app used to create svg graphics.",
   "main": "index.js",
   "scripts": {
