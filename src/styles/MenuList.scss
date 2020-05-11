@@ -1,0 +1,76 @@
+.extended-sidenavbar-menu{
+    // margin-top: 3vh;
+    transition:0.6s;
+    height:97vh;
+    width:15vw;
+    // padding-left: 2vw;
+    border-left: solid rgba(255,255,255, 0.1) 0.5pt ;
+    padding-right: 0.5vw;
+    padding-left: 1vw;
+    // background-color: #030303;
+    // animation:populate 1.5s linear;
+
+    h2{
+        color:white;
+        font-size: 3vh;
+        font-family: 'Segoe UI', sans-serif;
+        font-weight: 300;
+        text-align: center;
+        // border-bottom: solid rgba(255,255,255, 0.6) 0.5pt ;
+        margin-top: 5vh;
+        padding-bottom: 2vh;
+        animation: populate 0.4s linear ;
+    }
+    .list-of-items{
+        overflow-y: scroll;
+        height:80vh;
+        // margin-left: -50vw;
+        margin-top: 4.5vh;
+        animation:populate 0.3s linear;
+
+
+    }
+
+    
+}
+
+.list-of-items::-webkit-scrollbar{
+    width:0.2rem;
+    background-color:transparent;
+    padding-left: 2em;
+    display: none;
+    animation:populate 3s linear;    
+  }
+  .list-of-items::-webkit-scrollbar-thumb{
+    background-color:rgb(58, 56, 56);
+    border-radius:10px;
+  }
+  .list-of-items::-webkit-scrollbar-thumb:hover{
+    background-color:rgb(114, 111, 111);
+  }
+  .list-of-items::-webkit-scrollbar-thumb:active{
+    background-color:rgb(80, 77, 77);
+    // border:1px solid #333333;
+  }
+
+  @keyframes populate {
+    0%{
+      opacity:0;
+      margin-left: -2vw;
+    }
+    100%{
+      opacity:1;
+      margin-left: 0;
+    }
+  }
+
+  @keyframes comeFromLeft {
+    0%{
+    //   opacity:0;
+      padding-left: -100;
+    }
+    100%{
+    //   opacity:1;
+      padding-left: 0;
+    }
+  }

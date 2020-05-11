@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/SideNav.scss";
+import MenuList from "./MenuList";
 import { connect } from "react-redux";
 // ISSUE: Unable to load local images and assets. Problem is likely due to webpack.
 // Until that issue is solved, assets will be stored on a cloudinary's cloud.
@@ -21,14 +22,18 @@ class SideNav extends React.Component{
 	// }
 
 	extendSideNav(event){
-		const selectedSideNavItem = event.target.id;
+		const logoGear = document.querySelector(".logo-image");
+		logoGear.classList.add(".logo-image-quickspin");
+		const selectedSideNavItem = event.currentTarget.id;
 		console.log(event.target.id); 
-		this.setState(
-			{
-				isSideNavExtended: true,
-				currentSideNavMenuType: selectedSideNavItem,
-			}
-		);
+		this.setState((state,props)=>{
+			return(
+				{
+					isSideNavExtended: true,
+					currentSideNavMenuType: selectedSideNavItem,
+				}
+			);
+		});
 		event.target.style = {"animation":"rotatelogo 1s"};
 		console.log(this.state.isSideNavExtended, "Goober");
 		console.log(this.state.selectedSideNavItem, "Goober");
@@ -46,6 +51,7 @@ class SideNav extends React.Component{
 	}
 
 	render(){
+
 		return(
 			<>
 				<nav className="side-navbar" onMouseLeave={this.minimizeSideNav} style={this.state.isSideNavExtended ? {"width":"20vw","display":"flex"} : {"width":"7vw","display":"block"} }>
@@ -60,7 +66,7 @@ class SideNav extends React.Component{
 						</div>
 						<hr></hr>
 						<div className="nav-item">
-							<div className="nav-item-content" id="new project menu" onClick={this.extendSideNav}>
+							<div className="nav-item-content" id="new project" onClick={this.extendSideNav}>
 						    	<svg viewBox="0 0 32 32"  fill="none"  strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
 									<path d="M2 26 L30 26 30 7 14 7 10 4 2 4 Z M30 12 L2 12" />
 								</svg>            
@@ -69,7 +75,7 @@ class SideNav extends React.Component{
 						</div>
 						<hr></hr>
 						<div className="nav-item" >
-							<div className="nav-item-content" id="export" onClick={this.extendSideNav} >
+							<div className="nav-item-content" id="save/export" onClick={this.extendSideNav} >
 								<svg viewBox="0 0 32 32"  fill="none"  strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
 									<path d="M28 22 L28 30 4 30 4 22 M16 4 L16 24 M8 12 L16 4 24 12" />
 								</svg>
@@ -78,7 +84,7 @@ class SideNav extends React.Component{
 						</div>
 						<hr></hr>
 						<div className="nav-item" >
-							<div className="nav-item-content" id="import menu" onClick={this.extendSideNav}>
+							<div className="nav-item-content" id="load/import" onClick={this.extendSideNav}>
 								<svg  viewBox="0 0 32 32" fill="none"  strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
 									<path d="M28 22 L28 30 4 30 4 22 M16 4 L16 24 M8 16 L16 24 24 16" />
 								</svg>
@@ -87,7 +93,7 @@ class SideNav extends React.Component{
 						</div>
 						<hr></hr>
 						<div className="nav-item">
-							<div className="nav-item-content" id="add a new shape menu" onClick={this.extendSideNav}>
+							<div className="nav-item-content" id="add shapes" onClick={this.extendSideNav}>
 								<svg  viewBox="0 0 32 32"  fill="none"  strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
 									<path d="M16 2 L16 30 M2 16 L30 16" />
 								</svg>
@@ -96,7 +102,7 @@ class SideNav extends React.Component{
 						</div>
 						<hr></hr>
 						<div className="nav-item" >
-							<div className="nav-item-content" id="transform menu" onClick={this.extendSideNav}>
+							<div className="nav-item-content" id="transform" onClick={this.extendSideNav}>
 								<svg viewBox="0 0 20 20"  fill="none"  strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25">
 									<path d=" M19 0 L0 17 L19 17 Z"/>
 								</svg>
@@ -115,18 +121,7 @@ class SideNav extends React.Component{
 							</div>
 						</div>
 					</div>
-					{this.state.isSideNavExtended ?
-						<nav className="extended-sidenavbar-menu">
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-							<div className="test-box"></div>
-						</nav>:<></>}
+					{this.state.isSideNavExtended ? <MenuList currentSideNavMenuType={this.state.currentSideNavMenuType} /> : <></>}
 				</nav>
 			</>
 		);

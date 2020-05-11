@@ -9,28 +9,34 @@
   // height:16vh;
   display:flex;
   flex-direction: column;
-
-  .logo-text{
-    width:7vw;
-    height:0;
-    // min-height: 4vh;
-    // max-height: 4vh;
-    padding-bottom:10% ;
-    min-width: 7vh;
-    max-width: 7vh;
-    margin: 0 auto ;
-    // opacity: 0;
-    transition:0.4s;
-  }
-  
-  .logo-image{
-    margin: 0 auto ;
-    width:7vw;
-    min-width: 6vh;
-    max-width: 6vh;
-    animation: rotatelogo 1.2s;
-  }
 }
+.logo-text{
+  width:7vw;
+  height:0;
+  // min-height: 4vh;
+  // max-height: 4vh;
+  padding-bottom:10% ;
+  min-width: 7vh;
+  max-width: 7vh;
+  margin: 0 auto ;
+  // opacity: 0;
+  transition:0.4s;
+}
+  
+.logo-image{
+  margin: 0 auto ;
+  width:7vw;
+  min-width: 6vh;
+  max-width: 6vh;
+  animation: rotatelogo 0.6s;
+}
+.logo-image-quickspin{
+  animation: rotatelogo 0.6s;
+}
+.logo-image-slowspin{
+  animation: rotatelogo 2s infinite;
+}
+
 
 // .logo:hover{
 //   transition:0.3s;
@@ -149,55 +155,6 @@
     }
 }
 
-.extended-sidenavbar-menu{
-  overflow-y: scroll;
-  margin-top: 3vh;
-  transition:0.6s;
-  height:97vh;
-  width:12vw;
-  // padding-left: 2vw;
-  padding-right: 0.5vw;
-  // background-color: #030303;
-  // animation:populate 1.5s linear;
-  .test-box{
-    width:100%;
-    height:23vh;
-    margin-top: 2vh;
-    border: solid white 0.5pt;
-    border-radius: 5px;
-    transition:0.3s;
-    animation:populate 1s linear;
-  }
-  .test-box:hover ~ .logo-image{
-    animation: rotatologo2 0.5s;
-
-  }
-}
 
 
-.extended-sidenavbar-menu::-webkit-scrollbar{
-  width:0.2rem;
-  background-color:transparent;
-  padding-left: 20px;;
-}
-.extended-sidenavbar-menu::-webkit-scrollbar-thumb{
-  background-color:rgb(58, 56, 56);
-  border-radius:10px;
-}
-.extended-sidenavbar-menu::-webkit-scrollbar-thumb:hover{
-  background-color:rgb(114, 111, 111);
-}
-.extended-sidenavbar-menu::-webkit-scrollbar-thumb:active{
-  background-color:rgb(80, 77, 77);
-  // border:1px solid #333333;
-}
-@keyframes populate {
-  0%{
-    opacity:0;
-    margin-left: -100;
-  }
-  100%{
-    opacity:1;
-    margin-left: 0;
-  }
-}
+

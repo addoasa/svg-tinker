@@ -17,7 +17,7 @@ class App extends React.Component{
       <div className = "start">
         <Header />
         <SideNav />
-        <Scape />
+        {/* <Scape /> */}
         <main className ="main-layout">
           <Tools />
           <Workspace />

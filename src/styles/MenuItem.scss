@@ -1,0 +1,71 @@
+.menu-item{
+    width:95%;
+    height:23vh;
+    margin-top: 2vh;
+    border: solid rgba(255, 255, 255, 0.4) 0.5pt;
+    border-radius: 5px;
+    transition:0.3s;
+    animation:populate 0.1s linear;
+}
+.addSlider{
+    font-size: 34pt;
+     color: rgba(231, 223, 223, 0.685);
+     transition: 0.04s;
+     margin-left: 20px;
+     margin-top: 10px;
+   }
+   
+   .addSlider:hover{
+     color: rgba(255, 255, 255, 0.9);
+     transition: 0.04s;
+     cursor: pointer;
+   }
+   .emphasizeAddSlider{
+     font-size: 34pt;
+     color: rgba(0,0,0,0.9);
+     transition:0.3s;
+     cursor: pointer;
+     margin-left: 20px;
+     margin-top: 10px;
+   
+   }
+   .utility-wrapper{
+     display:flex;
+     margin-left: 20vw;
+   }
+   .add-container{
+     display:flex;
+     /* border: dashed 3pt rgba(0,0,0,0.1); */
+     width:90px;
+     height: 70px;
+     margin-left: 4.8em;
+     margin-top: 20px;
+     border-radius: 5px;
+   }
+   .add-container:hover{
+     border: dashed 3pt rgba(0,0,0,0.9);
+     transition:0.3s;
+    
+   }
+   .add-container-option{
+     display:flex;
+     width:170px;
+     height: 70px;
+     /* margin-left: 4.8em; */
+     margin-top: 20px;
+     border-radius: 5px;
+   }
+   .add-container-option:hover{
+     transition:0.3s;
+    
+   }
+   .add-caption{
+     padding-left: 7px;
+     padding-top: 18px;
+     width:70px;
+     height: 30px;
+     color:rgba(201, 199, 199, 0.5);
+     font-size: 10pt;
+     text-align: center;
+     font-family: Arial, Helvetica, sans-serif;
+   }
