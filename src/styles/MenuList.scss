@@ -1,5 +1,6 @@
 .extended-sidenavbar-menu{
     // margin-top: 3vh;
+    overflow-y: scroll;
     transition:0.6s;
     height:97vh;
     width:15vw;
@@ -22,7 +23,6 @@
         animation: populate 0.4s linear ;
     }
     .list-of-items{
-        overflow-y: scroll;
         height:80vh;
         // margin-left: -50vw;
         margin-top: 4.5vh;
@@ -34,21 +34,21 @@
     
 }
 
-.list-of-items::-webkit-scrollbar{
+.extended-sidenavbar-menu::-webkit-scrollbar{
     width:0.2rem;
     background-color:transparent;
     padding-left: 2em;
     display: none;
     animation:populate 3s linear;    
   }
-  .list-of-items::-webkit-scrollbar-thumb{
+  .extended-sidenavbar-menu::-webkit-scrollbar-thumb{
     background-color:rgb(58, 56, 56);
     border-radius:10px;
   }
-  .list-of-items::-webkit-scrollbar-thumb:hover{
+  .extended-sidenavbar-menu::-webkit-scrollbar-thumb:hover{
     background-color:rgb(114, 111, 111);
   }
-  .list-of-items::-webkit-scrollbar-thumb:active{
+  .extended-sidenavbar-menu::-webkit-scrollbar-thumb:active{
     background-color:rgb(80, 77, 77);
     // border:1px solid #333333;
   }

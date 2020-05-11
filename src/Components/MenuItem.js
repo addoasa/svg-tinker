@@ -113,20 +113,138 @@ class MenuItem extends React.Component{
 
 	render(){
 		// console.log(this.props.masterSVGArray, "Master hoorray");
-        console.log(this.props.currentSideNavMenuType)
-        let itemToDisplay = '';
+		console.log(this.props.currentSideNavMenuType)
+		let menuItemToDisplay = '';
 		if(this.props.currentSideNavMenuType === "add shapes"){
-			itemToDisplay = (
-				<div className = "menu-item">
-					<div className="add-container-option">
-						<i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i>
-						<h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
-					</div>
+            switch(this.props.svgTypeToAdd){
+                case "Path" :
+                menuItemToDisplay = (
+                    <div className = "menu-item">
+                        <div className="add-container-option">
+                            {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
+                            
+                            <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this.handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
+                                <polygon fill="none" stroke="#B0AFB0" stroke-miterlimit="10" points="66.612,131.033 40.711,86.171 66.612,41.311 118.413,41.311 
+            144.313,86.171 118.413,131.033 	"/>
+                                <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="67.017" cy="41.432" r="3.64"/>
+                                <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="40.71" cy="86.171" r="3.64"/>
+                                <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="118.21" cy="41.432" r="3.64"/>
+                                <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="144.313" cy="86.171" r="3.639"/>
+                                <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="118.21" cy="131.033" r="3.64"/>
+                                <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="66.21" cy="131.033" r="3.64"/>
+                            </svg>
+                            <hr></hr>
+                            <div>
+                                <h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
+                                <div className={`colorcircle-${this.props.svgTypeToAdd}`}></div>
+                            </div>                        
+                        </div>
+				    </div>
+                );
+                break;
+
+            case "Circle" :
+            menuItemToDisplay = (
+                <div className = "menu-item">
+                    <div className="add-container-option">
+                        {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
+                        
+                        <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this.handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 160 160" enable-background="new 0 0 194.697 186.364">
+                            <circle fill="none" stroke="#B0AFB0" stroke-width="0.9383" stroke-miterlimit="10" cx="98.598" cy="88.675" r="61.176"/>                       
+                        </svg>
+                        <hr></hr>
+                        <div>
+                            <h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
+                            <div className={`colorcircle-${this.props.svgTypeToAdd}`}></div>
+                        </div>                    
+                    </div>
                 </div>
             );
+            break;
+            case "Rectangle" :
+            menuItemToDisplay = (
+                <div className = "menu-item">
+                    <div className="add-container-option">
+                        {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
+                        
+                        <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this.handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
+                            <rect x="39.036" y="32.581" fill="none" stroke="#B0AFB0" stroke-miterlimit="10" width="104.037" height="104.038"/>
+                            <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="39.035" cy="32.581" r="3.64"/>
+                            <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="143.072" cy="32.581" r="3.64"/>
+                            <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="143.072" cy="136.8" r="3.64"/>
+                            <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="39.035" cy="136.619" r="3.64"/>                          
+                        </svg>
+                        <hr></hr>
+                        <div>
+                            <h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
+                            <div className={`colorcircle-${this.props.svgTypeToAdd}`}></div>
+                        </div>
+                    </div>
+                </div>
+            );
+            break;
+            case "Text" :
+            menuItemToDisplay = (
+                <div className = "menu-item">
+                    <div className="add-container-option">
+                        {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
+                        
+                        <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this.handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 160 160" enable-background="new 0 0 194.697 186.364">
+                            <path fill="#B0AFB0" d="M77.911,111.642V59.46H59.344v-6.512h44.525v6.512H85.215v52.182H77.911z"/>
+                            <path fill="#B0AFB0" d="M135.11,111.642l-12.848-17.424l-12.76,17.424h-7.568l16.281-21.822l-15.4-20.68h7.656l11.791,16.192l11.879-16.192h7.568l-15.398,20.68l16.367,21.822H135.11z"/>
+                        </svg>
+                        <hr></hr>
+                        <div>
+                            <h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
+                            <div className={`colorcircle-${this.props.svgTypeToAdd}`}></div>
+                        </div>                    
+                    </div>
+                </div>
+            );
+            break;
+            case "Ellipse" :
+            menuItemToDisplay = (
+                <div className = "menu-item">
+                    <div className="add-container-option">
+                        {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
+                        
+                        <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
+                            <ellipse transform="matrix(0.7071 0.7071 -0.7071 0.7071 91.4149 -42.7809)" fill="none" stroke="#B0AFB0" stroke-miterlimit="10" cx="97.348" cy="88.956" rx="35.949" ry="64.151"/>
+                        </svg>
+                        <hr></hr>
+                        <div>
+                            <h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
+                            <div className={`colorcircle-${this.props.svgTypeToAdd}`}></div>
+                        </div>                    
+                    </div>
+                </div>
+            );
+            break;
+            case "Line" :
+            menuItemToDisplay = (
+                <div className = "menu-item">
+                    <div className="add-container-option">
+                        {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
+                        
+                        <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this. handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
+                            <line fill="#0F0F0F" stroke="#B0AFB0" stroke-miterlimit="10" x1="46.722" y1="54.168" x2="129.722" y2="113.269"/>
+                            <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="46.721" cy="54.168" r="3.64"/>
+                            <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="129.721" cy="113.269" r="3.64"/>
+                        </svg>
+                        <hr></hr>
+                        <div>
+                            <h4 className="add-caption">Add {this.props.svgTypeToAdd}</h4>
+                            <div className={`colorcircle-${this.props.svgTypeToAdd}`}></div>
+                        </div>
+                    </div>
+                </div>
+            );
+            break;
+
+            }
 		}
 		return(
-            <>{itemToDisplay}</>
+			<>{menuItemToDisplay}</>
 		);    
 		// }   
 	}
