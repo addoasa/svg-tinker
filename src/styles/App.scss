@@ -11,9 +11,11 @@ body{
 .main-layout{
   display:flex; 
   margin-top: 3em;
-  padding-left: 3em; 
+  // margin-left: 20vw; 
+  transition: 0.35s;
   animation: slidein 1s;
   justify-content: center;
+  // width:900px;
   /* margin:0 auto; */
 }
 

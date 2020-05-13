@@ -6,8 +6,23 @@ import "../styles/MenuItem.scss";
 
 
 const mapStateToProps = store => ({
+	activePathSVGs : store.paths.activePathSVGs,
+	activeCircleSVGs : store.circles.activeCircleSVGs,
+	activeEllipseSVGs : store.ellipses.activeEllipseSVGs,
+	activeRectangleSVGs : store.rectangles.activeRectangleSVGs,
+	activeTextSVGs : store.texts.activeTextSVGs,
+	activeLineSVGs : store.lines.activeLineSVGs,
+	masterSVGArray : store.master.masterSVGArray,
+
 });
 const mapDispatchToProps = dispatch => ({
+	addPath: (indexInMaster)=> dispatch(addPath(indexInMaster)),
+	addCircle: (indexInMaster)=> dispatch(addCircle(indexInMaster)),
+	addEllipse: (indexInMaster)=> dispatch(addEllipse(indexInMaster)),
+	addRectangle: (indexInMaster)=> dispatch(addRectangle(indexInMaster)),
+	addText: (indexInMaster)=> dispatch(addText(indexInMaster)),
+	addLine: (indexInMaster)=> dispatch(addLine(indexInMaster)),
+	insertIntoMaster: (SVG, svgType, idInChildArray)=> dispatch(insertIntoMaster(SVG, svgType, idInChildArray)),
 });
 
 
@@ -21,6 +36,7 @@ class MenuItem extends React.Component{
 	handleAddingAnSVG(event){
 		switch(event.target.id){
 		case "Path-btn":
+            event.stopPropagation()
 			// add a new path to the path array in the path reducer
 			// ALSO, passing in the length of the entire masterarray so that this path knows where it exists within the masterarray
 			// when this path is created, it will be assigned the length of the masterarray as its index/SPOT in the master array
@@ -97,14 +113,17 @@ class MenuItem extends React.Component{
 
 
 	render(){
-		// console.log(this.props.currentSideNavMenuType)
+		// console.log(this.props.masterSVGArray, "Master hoorray");
+		console.log(this.props.currentSideNavMenuType)
 		//---------------------------------------------------------------------------------------------
-        // The <MenuList /> Component is supplying this component with specific items that are to be shown on the
+        // The <MenuList /> Component is supplying this component (through props) with specific items that are to be shown on the
         // current menu that the user clicked/chose. Depending on which icon the user clicked this component will be created
         // for the items for the specific menu that was selected.
+        
 		//---------------------------------------------------------------------------------------------
-		let menuItemToDisplay = "";
-
+        let menuItemToDisplay = "";
+        
+        // if the user clicked the add shapes button ...
 		if(this.props.currentSideNavMenuType === "add shapes"){
 			switch(this.props.svgTypeToAdd){
                 case "Path" : {
@@ -115,7 +134,7 @@ class MenuItem extends React.Component{
                                 
                                 <svg className="addSlider" id={`${this.props.svgTypeToAdd}-btn`} onClick ={this.handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
                                     <polygon fill="none" stroke="#B0AFB0" stroke-miterlimit="10" points="66.612,131.033 40.711,86.171 66.612,41.311 118.413,41.311 
-                144.313,86.171 118.413,131.033 	"/>
+144.313,86.171 118.413,131.033 	"/>
                                     <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="67.017" cy="41.432" r="3.64"/>
                                     <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="40.71" cy="86.171" r="3.64"/>
                                     <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="118.21" cy="41.432" r="3.64"/>
@@ -241,6 +260,7 @@ class MenuItem extends React.Component{
 		return(
 			<>{menuItemToDisplay}</>
 		);    
+		// }   
 	}
 }
 

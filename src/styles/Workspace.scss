@@ -10,7 +10,13 @@
   border-radius: 2px;
   background-image: url("../../public/assets/svg2.gif");
 }
-path{
+// for smooth movement on the canvas
+path, 
+circle, 
+rect, 
+ellipse, 
+text, 
+line {
   transition: 0.3s;
 }
 .empty-workspace{

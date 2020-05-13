@@ -1,12 +1,15 @@
 import React from "react";
-import Scape from "./Scape";
 import Workspace from "./Workspace";
 import Tools from "./Tools";
 import LiveCode from "./LiveCode";
 import SideNav from "./SideNav";
 import Header from "./Header";
-
+import { connect } from "react-redux";
 import "../styles/App.scss";
+
+const mapStateToProps = (store)=>({
+  uiState:store.uiState
+});
 
 class App extends React.Component{
   constructor(){
@@ -18,7 +21,7 @@ class App extends React.Component{
         <Header />
         <SideNav />
         {/* <Scape /> */}
-        <main className ="main-layout">
+        <main className ="main-layout" style={this.props.uiState.isSideNavExtended ? {"margin-left":"20vw"}:{}}>
           <Tools />
           <Workspace />
           <LiveCode />
@@ -28,4 +31,4 @@ class App extends React.Component{
   }
 }
 
-export default App;
+export default connect(mapStateToProps,null)(App);
