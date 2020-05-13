@@ -17,7 +17,7 @@ export const setWorkspaceWidth = (workspaceWidth)=>({
 // using removeFromMaster() instead of removeSVG()
 // I don't have a solution to remove the correct shape from both the (path,circle,ellipse etc)array AND the master array simultaneously.
 // tried: Allowing the master array to know where its shapes are comming from(so that deleting from master array could delete from the SVG's origin array)
-// also tried: Allowing to shapes from the origin arrays(path, circle,etc) to know where they are in the master array(by index) so that the master array could "listen" for when an svg is deleted from an origin array
+// also tried: Allowing the shapes from the origin arrays(path, circle,etc) to know where they are in the master array(by index) so that the master array could "listen" for when an svg is deleted from an origin array
 // problem: after deleting a shape simultaneously from masterarray AND children arrays the index references in the master array become incorrect from that point on
 // so for now the origin arrays(path,circle ,etc) arrays will no longer use this action until a solution that can fix the issue of index order being wrong after removing an svg is found 
 // The origin arrays will act as templates for building svgs and the masterarray will be the only significant array used for rendering/deleting/adding/altering
@@ -195,4 +195,18 @@ export const removeFromMaster = (classId)=>({
 export const useSlider = (value, classId, sliderId)=>({
 	type:types.USE_SLIDER,
 	payload: {value , classId, sliderId },
+});
+
+
+// ------------------
+// UI ACTIONS
+// ------------------
+
+export const toggleSideNavBar = ()=>({
+	type:types.TOGGLE_SIDENAVBAR,
+	payload:"",
+});
+export const setCurrentSideNavMenuType = (menuType)=>({
+	type:types.SET_CURRENT_SIDE_NAV_MENU_TYPE,
+	payload:menuType,
 });

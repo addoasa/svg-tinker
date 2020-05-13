@@ -1,35 +1,36 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import "../styles/MenuList.scss";
+import { connect } from "react-redux";
+
+const mapStateToProps = (store)=>({
+	uiState: store.uiState,
+});
 
 class MenuList extends React.Component{
 	constructor(){
-        super();
-        this.state={
-            newProjectMenuList:[],
-            exportMenuList:[],
-            importMenuList:[],
-            addMenuList:["Path", "Circle", "Rectangle", "Line", "Ellipse", "Text"],
-            transformMenuList:[],
-            settingsMenuList:[],
-
-        }
-        
+		super();
 	}
 
 	render(){
-        const listOfItems = this.state.addMenuList.map((item,index)=>{
-            return <MenuItem currentSideNavMenuType = {this.props.currentSideNavMenuType} svgTypeToAdd = {item}/>;
-        });
+        let listOfItems;
         
-        console.log(this.props.currentSideNavMenuType)
+        switch(this.props.currentSideNavMenuType){
+		case "add shapes": 
+			listOfItems = this.props.uiState.sideNavMenusAndContents.addShapeMenuList.map((item,index)=>{
+				return <MenuItem key={`add shapes menu item ${index}`} currentSideNavMenuType = {this.props.currentSideNavMenuType} svgTypeToAdd = {item}/>;
+			});
+                
+			console.log(this.props.currentSideNavMenuType)
+        }
+        
 		return(
-            <div className = "extended-sidenavbar-menu">
-                <h2>{this.props.currentSideNavMenuType}</h2>
-                <div className ="list-of-items">{listOfItems}</div>
-            </div>
+			<div className = "extended-sidenavbar-menu">
+				<h2>{this.props.currentSideNavMenuType}</h2>
+				<div className ="list-of-items">{listOfItems}</div>
+			</div>
 		);
 	}
 }
 
-export default MenuList;
+export default connect(mapStateToProps, null)(MenuList);

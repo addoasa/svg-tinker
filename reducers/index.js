@@ -7,6 +7,7 @@ import lineReducer from './lineReducer';
 import rectangleReducer from './rectangleReducer';
 import textReducer from './textReducer';
 import masterReducer from './masterReducer';
+import uiReducer from './uiReducer';
 //import all reducers
 
 //this will combine all reducers
@@ -18,7 +19,8 @@ const reducers = combineReducers({
   texts : textReducer,
   ellipses : ellipseReducer,
   rectangles : rectangleReducer,
-  lines :lineReducer,
+  lines : lineReducer,
+  uiState : uiReducer,
 });
 
 export default reducers;

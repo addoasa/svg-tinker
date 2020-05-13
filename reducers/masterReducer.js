@@ -2,7 +2,7 @@ import * as types from "../actionTypesVariableNames/actionTypeVariables";
 
 const initialState = {
   masterSVGArray:[],
-}
+};
 
 function masterReducer(state=initialState, action){
   let masterSVGArray = state.masterSVGArray.slice();
@@ -25,8 +25,7 @@ function masterReducer(state=initialState, action){
 			...state,
 			masterSVGArray,
 		};
-    default:
-    return state;
+ 
   // --------------------------------------------------------------------------    
 	// ADDING AND REMOVING PATH VERTICES
 	// --------------------------------------------------------------------------    
@@ -121,7 +120,8 @@ case types.REMOVE_VERTICES:
 		};
 
 	// ---------------------------------------------------------    
-
+	default:
+		return state;
   }
 }
 export default masterReducer;
