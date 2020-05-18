@@ -1,14 +1,36 @@
-
+.bg-logo{
+  width:60%;
+  opacity: 0.4;
+  animation: appear 0.4 linear;
+}
+#empty-message{
+  font-family: helvetica;
+  margin-left:30%;
+  margin-top:27%;
+}
 .workspace-container{
-  margin-left: 40px;
+  border-radius: 2px;
+  margin-left: 4vw;
+  margin-top: 7vh;
+  // padding-left:20px;
+  // padding-right:20px;
+  height:60vh;
+  transition: 0.3;
+  width:30vw;
+  // background-color: grey;
+  border:solid rgba(0,0,0,0.5) 1pt;
+
 }
 #workspace{
   transition:0.3s;
-  background-color: whitesmoke;
-  margin-top: 15px;
-  border: solid rgba(0,0,0,0.15) 4pt;
-  border-radius: 2px;
-  background-image: url("../../public/assets/svg2.gif");
+  background-color: white;
+  // margin-top: 15px;
+  border: dashed rgba(0,0,0,0.4) 1pt;
+  border-radius: 2px;  
+  height: 50vh;
+  // margin-left: 20px;
+
+  
 }
 // for smooth movement on the canvas
 path, 

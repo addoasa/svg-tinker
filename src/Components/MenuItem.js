@@ -34,6 +34,7 @@ class MenuItem extends React.Component{
 	}
   
 	handleAddingAnSVG(event){
+        this.props.spinFast();
 		switch(event.target.id){
 		case "Path-btn":
             event.stopPropagation()

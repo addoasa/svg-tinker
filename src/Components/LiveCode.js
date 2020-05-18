@@ -115,7 +115,7 @@ class LiveCode extends React.Component{
     
 		return(
 			<div className = "live-code-container">
-				<h2 id = "live-code-title">Code</h2>
+				<h2 id = "live-code-title">CODE</h2>
 				<h6 id="live-code-caption">(You can copy this code into your svg tag!)</h6>
 				<section id="live-code">
 					{liveCode}

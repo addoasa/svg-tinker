@@ -23,6 +23,7 @@ class SideNav extends React.Component{
 
 		this.extendSideNav= this.extendSideNav.bind(this);
 		this.minimizeSideNav= this.minimizeSideNav.bind(this);
+		this.spinFast= this.spinFast.bind(this);
 	}
 
 	// handleClick(event){
@@ -54,6 +55,16 @@ class SideNav extends React.Component{
 			this.props.setCurrentSideNavMenuType(" ");
 		}
 	}
+
+	spinFast(event){
+		document.querySelector(".logo-image").id = "logo-image-quickspin";
+		setTimeout(()=>{
+			console.log("beads");
+			document.querySelector(".logo-image").id = "";
+		},1);
+		
+		
+	}
 	//-----------------------------------------
 	render(){
 
@@ -77,7 +88,7 @@ class SideNav extends React.Component{
 							<div className = "nav-logo-container" >
 								<div className ="logo">
 									<img className = "logo-text" alt="This is the text part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222275/svgtinker/logotext.png" />
-									<img className = "logo-image" alt="This is the rotating gear logo mark that is part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222094/svgtinker/gear.png" />
+									<img className = "logo-image" onClick={this.spinFast} alt="This is the rotating gear logo mark that is part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222094/svgtinker/gear.png" />
 								</div>
 							</div>
 						</div>
@@ -144,7 +155,7 @@ class SideNav extends React.Component{
 							</div>
 						</div>
 					</div>
-					{this.props.uiState.isSideNavExtended ? <MenuList currentSideNavMenuType={this.props.uiState.currentSideNavMenuType} /> : <></>}
+					{this.props.uiState.isSideNavExtended ? <MenuList currentSideNavMenuType={this.props.uiState.currentSideNavMenuType} spinFast={this.spinFast}/> : <></>}
 				</nav>
 			</>
 		);

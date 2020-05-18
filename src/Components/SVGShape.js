@@ -95,11 +95,12 @@ class SVGShape extends React.Component{
 									<h3 className="corner-label">Corner {j}</h3>
 									<div className = "slider">
 										<p className = "slider-label">X</p>
-										<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+										<input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
+										{/* <input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input> */}
 									</div>
 									<div className = "slider">
 										<p className = "slider-label">Y</p>
-										<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+										<input className = {`${this.props.index} sliderY${k+1}`} value= {extractedRanges[i]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 									</div>
 								</div>
 								{/* <input className = {`${this.props.index} sliderX${k}`} value= {extractedRanges[i-1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
@@ -129,15 +130,15 @@ class SVGShape extends React.Component{
 							<div className = "slider-set">
 								<div className = "slider">
 									<p className = "slider-label">X</p>
-									<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+									<input className = {`${this.props.index} xAxis`} value= {extractedRanges[0]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 								</div>
 								<div className = "slider">
 									<p className = "slider-label">Y</p>
-									<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+									<input className = {`${this.props.index} yAxis`} value= {extractedRanges[1]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 								</div>
 								<div className = "slider">
 									<p className = "slider-label">R</p>
-									<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max="1000" min="0"></input>
+									<input className = {`${this.props.index} radius`} value= {extractedRanges[2]} onChange= {this.sliderHandler} type="range" max={`${this.props.workspaceHeight}`} min="0"></input>
 								</div>
 							</div>
 							<div className="slider-btns-and-status">
@@ -329,9 +330,11 @@ class SVGShape extends React.Component{
 					</div>
 				</div>
 				<hr></hr>
+				{/* sliders from the switch statement above get inserted here as the variable newSlider */}
 				{newSlider}
 				{this.props.SVG.svgType === "PATH" ? <button className = {`add-vertice-btn ${this.props.index}`} onClick ={this.addCorner}>Add new vertice</button> : <></>}
-				<p className="collapse-sliders">Collapse</p>
+				<p className="collapse-sliders">Minimize</p>
+				<svg className="collapse-arrow" height= "20px" width="30px" viewBox="0 0 90 90"><path d=" M0 43 L34 0 L68 43 Z"/></svg>
 			</div>
 		); 
 	}

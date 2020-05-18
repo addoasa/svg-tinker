@@ -18,7 +18,7 @@ class MenuList extends React.Component{
         switch(this.props.currentSideNavMenuType){
 		case "add shapes": 
 			listOfItems = this.props.uiState.sideNavMenusAndContents.addShapeMenuList.map((item,index)=>{
-				return <MenuItem key={`add shapes menu item ${index}`} currentSideNavMenuType = {this.props.currentSideNavMenuType} svgTypeToAdd = {item}/>;
+				return <MenuItem key={`add shapes menu item ${index}`} currentSideNavMenuType = {this.props.currentSideNavMenuType} svgTypeToAdd = {item} spinFast ={this.props.spinFast}/>;
 			});
                 
 			console.log(this.props.currentSideNavMenuType)

@@ -11,6 +11,7 @@ const mapStateToProps = store => ({
 	workspaceWidth : store.paths.workspaceWidth,
 	activePathSVGs : store.paths.activePathSVGs,
 	masterSVGArray : store.master.masterSVGArray,
+	uiState: store.uiState
 });
 
 const mapDispatchToProps = dispatch =>({
@@ -133,19 +134,22 @@ class Workspace extends React.Component{
 					);						
 			}
 		});
-		const emptyMessage = <h2>Add a shape</h2>;
+		
 		// Render all path elements from newly made allSVGs array inside svg tag
 		return(
 			<div className = "workspace-container">
-				<label className="size-input1" htmlFor="height">Height</label>
+				{/* <label className="size-input1" htmlFor="height">Viewbox Height</label>
 				<input className="size-input" onChange ={this.handleHeightChange} name = 'height' type='text' maxLength="3"></input>
-				<label  className="size-input2" htmlFor= 'width'>Width</label> 
-				<input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input>
-				<br />
-				<svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} viewBox = {`0 0 ${this.props.workspaceHeight} ${this.props.workspaceHeight}`}>
+				<label  className="size-input2" htmlFor= 'width'>Viewbox Width</label> 
+				<input className="size-input "  onChange ={this.handleWidthChange} name= "width" type='text' maxLength="3"></input> */}
+				{/* <br /> */}
+				{this.props.masterSVGArray.length 
+				?
+				<svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} viewBox = {`0 0 ${this.props.workspaceHeight} ${this.props.workspaceHeight}`} >
 				{/* <svg id="workspace" className={this.props.masterSVGArray.length !== 0 ? "fine" : "empty-workspace"} viewBox = {`0 0 ${this.props.workspaceHeight} ${this.props.workspaceWidth}`}> */}
-					{this.props.masterSVGArray ? allSVGs : emptyMessage}  
+					 {allSVGs}   
 				</svg>
+				: <div id ="empty-message"><img className="bg-logo" src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1589578998/svgtinker/svgtlogo2.png" /></div>}
 
 			</div>
 		);

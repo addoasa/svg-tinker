@@ -1,24 +1,28 @@
 @import 'colors';
 // @import 'importedFonts';
-@import 'colors';
 *{
   margin:0;
+  // Removing all transitions results in better browser performance
+  // transition: none !important;
 }
 body{
   // background-color: rgb(255, 255, 255);
   // background-image: linear-gradient(rgb(255, 255, 255), rgba(0,0,0,0.05));
 }
 .main-layout{
+  // border:dotted purple 4pt;
   display:flex; 
-  margin-top: 3em;
-  // margin-left: 20vw; 
+  margin-top: 10vh;
   transition: 0.35s;
   animation: slidein 1s;
-  justify-content: center;
-  // width:900px;
+  // justify-content: center;
+  width:auto;
   /* margin:0 auto; */
 }
 
+// @media(){
+  
+// }
 @keyframes slidein{
   0%{
     opacity:0;

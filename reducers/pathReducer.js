@@ -5,7 +5,7 @@ import * as types from "../actionTypesVariableNames/actionTypeVariables";
 const initialState = {
 	currentLetter: "A",
 	//Initialized the default size of the workarea
-	workspaceHeight:400,
+	workspaceHeight:300,
 	workspaceWidth:700,
 	//Currently, every shape created will be initialized with 4 corners (each with an x position and a y position)
 	activePathSVGs: [ 

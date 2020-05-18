@@ -10,6 +10,8 @@ import { connect } from "react-redux";
 import "../styles/Tools.scss";
 
 const mapStateToProps = store => ({
+	workspaceHeight : store.paths.workspaceHeight,
+	workspaceWidth : store.paths.workspaceWidth,
 	activePathSVGs : store.paths.activePathSVGs,
 	activeCircleSVGs : store.circles.activeCircleSVGs,
 	masterSVGArray : store.master.masterSVGArray,
@@ -44,12 +46,14 @@ class Tools extends React.Component{
 					addVertices = {this.props.addVertices} 
 					removeVertices = {this.props.removeVertices} 
 					removeFromMaster = {this.props.removeFromMaster} 
-					// removeSVG = {this.props.removeSVG} 
+					workspaceHeight = {this.props.workspaceHeight}
+					workspaceWidth = {this.props.workspaceWidth}
 				/>
 			); 
 		});
 		return(
 			<section className = "entire-slider-container">
+				<h2>SHAPES</h2>
 				{allSliders}
 			</section>
 		);

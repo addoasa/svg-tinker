@@ -25,4 +25,8 @@ Also, upon actually trying to use the sliders to create an image, I realize that
 --
 The basic structure of the side nav bar has been layed out. The buttons each activate their respective menus. However the state logic used for this side nav bar now needs to be moved over into redux. This way, the entire application can be aware of the status of the side nav bar. This would help with shifting the UI depending on whether the side nav bar has been expanded or minimized etc.
 
+-- 
+As of now, the viewbox size has been set to a static value in state. It can be changed dynamically but this breaks the UI at the moment. It will need to be dynamic in the future especially for importing svgs with various viewbox sizes.
+
+The transitions being used for the smooth ui transitions may cause performance issues. So there should be an option to disable them.
 ### 

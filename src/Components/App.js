@@ -13,7 +13,7 @@ const mapStateToProps = (store)=>({
 
 class App extends React.Component{
   constructor(){
-    super()
+    super();
   }
   render(){
     return(
@@ -21,7 +21,7 @@ class App extends React.Component{
         <Header />
         <SideNav />
         {/* <Scape /> */}
-        <main className ="main-layout" style={this.props.uiState.isSideNavExtended ? {"margin-left":"20vw"}:{}}>
+        <main className ="main-layout" style={this.props.uiState.isSideNavExtended ? {"margin-left":"21vw"}:{"margin-left":"12vw"}}>
           <Tools />
           <Workspace />
           <LiveCode />

@@ -39,6 +39,7 @@
 #### [✖] Enable shape-highlighting on activation (lets user know what they are manipulating)
 #### [✖] Enable user to store SVGs/ save in DB/localstorage etc  
 #### [✖] In addition to a Canvas, there should also be a sizable viewbox that overlaps the canvas. Whatever content is within the view box is what will actually be rendered when the code for the SVG is run.
+#### [✖] Enable user to use zoom in and out buttons to alter the viewbox 
 #### [✖] Adding math tools(ex: user can proportionally resize svgs and/or translate its position within the viewbox.)
 #### [✖] Re-name certain components to more understandable names. (ex: "Workspace", "Scape" and "Tools" are vague names)
 #### [✖] Implement a "preview mode" for svgs (to give the user a sense of what the svg would realistically look like in an application.)

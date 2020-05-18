@@ -30,10 +30,10 @@
   max-width: 6vh;
   animation: rotatelogo 0.6s;
 }
-.logo-image-quickspin{
-  animation: rotatelogo 0.6s;
-}
-.logo-image-slowspin{
+#logo-image-quickspin{
+  animation: rotatelogo2 0.6s;}
+
+#logo-image-slowspin{
   animation: rotatelogo 2s infinite;
 }
 
