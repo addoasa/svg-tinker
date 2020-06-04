@@ -32,3 +32,18 @@
   background-color:rgb(80, 77, 77);
   // border:1px solid #333333;
 }
+
+@media(max-width:900px){
+  .entire-slider-container{
+    margin-left: 0;
+    padding-right: 2vw;
+  }
+}
+@media(max-width:750px){
+  .entire-slider-container{
+    height:40vh;
+    padding-right: 2vw;
+    width:22em;  
+    // margin-left: 0vw;
+  }
+}

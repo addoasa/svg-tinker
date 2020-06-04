@@ -3,11 +3,12 @@
     overflow-y: scroll;
     transition:0.6s;
     height:97vh;
-    width:15vw;
+    width:100%;
     // padding-left: 2vw;
     border-left: solid rgba(255,255,255, 0.1) 0.5pt ;
     padding-right: 0.5vw;
     padding-left: 1vw;
+    // border: solid palegoldenrod 2pt;
     // background-color: #030303;
     // animation:populate 1.5s linear;
 
@@ -74,3 +75,28 @@
       padding-left: 0;
     }
   }
+
+  //-----------------
+// Media Queries
+//-----------------
+@media(max-width:1300px){
+  .extended-sidenavbar-menu{
+    width:16vw;
+    
+  }
+}
+// @media(max-width:900px){
+// .extended-sidenavbar-menu{
+//   width:17vw;
+// }
+// }
+// @media(max-width:600px){
+// .extended-sidenavbar-menu{
+//   width:17vw;
+// }
+// }
+// @media(max-width:375px){
+// .extended-sidenavbar-menu{
+//   width:17vw;
+// }
+// }

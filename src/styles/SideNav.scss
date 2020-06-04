@@ -67,94 +67,168 @@
 }
 
 // ----------------
-// Sidebar style
+// Sidebar styles
 // ----------------
-// .love{
-//   display:flex;
-// }
+
 .side-navbar{
-  // width:;
   min-width:auto;
   max-width: auto;
+  width:7vw;
   height:100vh;
   position:fixed;
   background-color: #181818;
   transition:0.3s;
+}
+.extended-sidenavbar{
+  display:flex;
+  min-width:auto;
+  max-width: auto;
+  width:20vw;
+  height:100vh;
+  position:fixed;
+  background-color: #181818;
+  transition:0.3s;
+}
+
+#side-navbar-horizontal{
   
-  // display:grid;
-  // grid-template-rows: 20% 13% 13% 13% 13% 13% 13%;
-  hr{
+}
+
+.side-navbar-items-horizontal{
+  display:flex;
+  justify-content: space-evenly;;
+}
+
+.menuitem-line{
     width:3em;
-    height:0.2vh;
+    height:0.1vh;
     min-width:6vw;
     max-width: 6vw;
     border:none;
     // border-top: solid 0.1vh rgba(255,255,255,0.2);
     margin: 0 auto;
   }
-  .nav-logo-container{
-    height:15vh;
-    min-height: 15vh;
-    max-height:15vh;
-    padding-top:3vh;
+.nav-logo-container{
+  height:15vh;
+  min-height: 15vh;
+  max-height:15vh;
+  padding-top:3vh;
+}
+
+.nav-item {
+  // border-bottom:solid 0.50pt rgba(255,255,255,0.5);
+  // padding-bottom: 2em;
+  width:7vw;
+  .nav-item-content{
+    min-height: 6vh;
+    max-height:6vh;
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    padding-top: 2vh;
+
+    svg{
+      stroke: rgba(255,255,255,0.6);
+      width:2em;
+      height:2em;
+      min-height: 3vh;
+      max-height: 3vh;
+      min-width: 3vh;
+      max-width: 3vh;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nav-item-text{
+      color:rgba(255,255,255,0.6);;
+      font-family: "Segoe UI";
+      font-weight: 100;
+      font-size: 1.7vh;
+      text-align: center;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      min-height: 1.7vh;
+      max-height: 1.7vh;
+      padding-top: 1.5vh;
+    }
   }
+  // .nav-item-content:onc
+}  
 
-    .nav-item {
-      // border-bottom:solid 0.50pt rgba(255,255,255,0.5);
-      // padding-bottom: 2em;
-      width:7vw;
-      .nav-item-content{
-        min-height: 6vh;
-        max-height:6vh;
-        width:auto;
-        display:flex;
-        flex-direction: column;
-        padding-top: 2vh;
-
-        svg{
-          stroke: rgba(255,255,255,0.6);
-          width:2em;
-          height:2em;
-          min-height: 3vh;
-          max-height: 3vh;
-          min-width: 3vh;
-          max-width: 3vh;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-        .nav-item-text{
-          color:rgba(255,255,255,0.6);;
-          font-family: "Segoe UI";
-          font-weight: 100;
-          font-size: 1.7vh;
-          text-align: center;
-          padding-left: 0.5em;
-          padding-right: 0.5em;
-          min-height: 1.7vh;
-          max-height: 1.7vh;
-          padding-top: 1.5vh;
-        }
-      }
-      // .nav-item-content:onc
-    }  
-
-    .nav-item:hover{
-      cursor: pointer;
-      svg{
-        color:white;
-        stroke: white;
-      }
-      .nav-item-text{
-        color: white;
-        transition: 0.2;
-      }     
-    }
-    .settings-nav{
-      margin-top: 30vh;
-    }
+.nav-item:hover{
+  cursor: pointer;
+  svg{
+    color:white;
+    stroke: white;
+  }
+  .nav-item-text{
+    color: white;
+    transition: 0.2;
+  }     
+}
+.settings-nav{
+  margin-top: 30vh;
 }
 
 
+//-----------------
+// Media Queries
+//-----------------
+@media(max-width:1300px){
+  .side-navbar{
+    width:8vw;
+    .nav-item{
+      width:8vw;
+    }
+  }
+  .extended-sidenavbar{
+    width:22vw
+  }
+}
+@media(max-width:900px){
+  .nav-logo-container{
+    padding-top:0vh;
+  }
+  .side-navbar{
+    // transition:none;
+    min-width:100vw;
+    max-width: 100vw;
+    max-height:auto;
+    min-height:auto;
+    width:100vw;
+    height:10vh;
 
+    .nav-item{
+      width:10vw;
+      padding-top: 1vh;
+      height: 7vh;
+    }
+  }
+  .extended-sidenavbar{
+    width:26vw
+  }
+
+  .settings-nav{
+    margin-top: 0;
+  }
+}
+// @media(max-width:600px){
+//   .side-navbar{
+//     width:14vw;
+//     .nav-item{
+//       width:14vw;
+//     }
+//   }
+//   .extended-sidenavbar{
+//     width:29vw
+//   }
+// }
+// @media(max-width:375px){
+//   .side-navbar{
+//     width:16vw;
+//     .nav-item{
+//       width:16vw;
+//     }
+//   }
+// }
 

@@ -2,8 +2,11 @@
   background-color: black;
   width:100vw;
   height:3vh;
+  
+  // border:purple solid 1pt;
   // position:fixed;
   div{
+  // border:pink solid 1pt;
     height:100%;
     width:20%;
     margin:0 auto;
@@ -24,6 +27,16 @@
       .fa-github{
         color:white;
       }
+    }
+  }
+}
+
+@media(max-width:750px){
+  .header{
+    // position: fixed;
+    // margin-top:4vh;
+    div{
+      width:40%
     }
   }
 }

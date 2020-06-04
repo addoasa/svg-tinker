@@ -26,10 +26,6 @@ class SideNav extends React.Component{
 		this.spinFast= this.spinFast.bind(this);
 	}
 
-	// handleClick(event){
-	// 	this.props.removeSVG(event.target.value, event.target.className);
-	// }
-
 	//-----------------------------------------
 	//  Methods to expand and minimize the sidebar
 	//-----------------------------------------
@@ -44,9 +40,6 @@ class SideNav extends React.Component{
 			this.props.toggleSideNavBar();
 		}
 		this.props.setCurrentSideNavMenuType(selectedSideNavItem);
-
-		event.target.style = {"animation":"rotatelogo 1s"};
-		
 	}
 
 	minimizeSideNav(){
@@ -55,6 +48,7 @@ class SideNav extends React.Component{
 			this.props.setCurrentSideNavMenuType(" ");
 		}
 	}
+	//-----------------------------------------
 
 	spinFast(event){
 		document.querySelector(".logo-image").id = "logo-image-quickspin";
@@ -65,9 +59,8 @@ class SideNav extends React.Component{
 		
 		
 	}
-	//-----------------------------------------
 	render(){
-
+		
 		//---------------------------------------------------------------------------------------------
 		// Clicking on any of the nav items below will tell redux to toggle the status of the sidenav bar 
 		// to be expanded. This onClick event will also notify the redux store of which nav item was 
@@ -81,8 +74,9 @@ class SideNav extends React.Component{
 
 		return(
 			<>
-				<nav className="side-navbar" onMouseLeave={this.minimizeSideNav} style={this.props.uiState.isSideNavExtended ? {"width":"20vw","display":"flex"} : {"width":"7vw","display":"block"} }>
-					<div className="side-navbar-items" >
+				{/* <nav className="side-navbar" onMouseLeave={this.minimizeSideNav} style={this.props.uiState.isSideNavExtended ? {"width":"20vw","display":"flex"} : {"display":"block"} }> */}
+				<nav id={this.props.windowWidth < 900 ? "side-navbar-horizontal" : "side-navbar-vertical"} className={this.props.uiState.isSideNavExtended ? "extended-sidenavbar" : "side-navbar" } onMouseLeave={this.minimizeSideNav}>
+					<div className={this.props.windowWidth < 900 ? "side-navbar-items-horizontal" : "side-navbar-items-vertical"} >
 
 						<div className="nav-item" >
 							<div className = "nav-logo-container" >

@@ -32,7 +32,9 @@
 
   
 }
+//------------------------------------
 // for smooth movement on the canvas
+//------------------------------------
 path, 
 circle, 
 rect, 
@@ -41,6 +43,7 @@ text,
 line {
   transition: 0.3s;
 }
+//------------------------------------
 .empty-workspace{
   background-color: rgba(0,0,0,0.1);
   transition:5s;
@@ -65,3 +68,50 @@ line {
 label{
   font-family: helvetica;
 }
+
+ //-----------------
+// Media Queries
+//-----------------
+@media(max-width:1300px){
+  .workspace-container{
+    margin-left: 0;
+  }
+}
+@media(max-width:1200px){
+  .workspace-container{
+    margin-left: 0;
+  }
+}
+@media(max-width:1010px){
+.extended-sidenavbar-menu{
+  width:17vw;
+}
+.workspace-container{
+  height:30vh;
+
+
+}
+#workspace{
+  height: 30vh;
+  width:auto;
+
+  
+}
+}
+
+
+@media(max-width:900px){
+  .workspace-container{
+    width:40vw;
+  }
+}
+@media(max-width:750px){
+  .workspace-container{
+    width:70vw;
+  }
+}
+// @media(max-width:375px){
+// .extended-sidenavbar-menu{
+//   width:17vw;
+// }
+// }
