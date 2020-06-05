@@ -102,7 +102,6 @@
   border-radius: 8px;
   margin-top: 4vh;
   // margin-left: 5vw;
-  position:relative;
   box-shadow: 5px 5px 8px rgba(0,0,0,0.25);
   width:auto;
   animation: appear 0.3s ease-in-out;
@@ -207,6 +206,7 @@
 
   input{
     width:15em;
+    height: 5px;
     margin-left: 10px;
     -webkit-appearance: none;
   }
@@ -223,7 +223,8 @@
   Chrome slider
   --------------------- */
   input::-webkit-slider-runnable-track {
-    width: 250px;
+    width:auto;
+    // margin-left: 10px;    
     height: 5px;
     background: rgba(0,0,0,0.6);
     // border: none;
@@ -249,7 +250,7 @@
   --------------------- */
 
   input::-moz-range-track {
-    width: 300px;
+    width: auto;
     height: 5px;
     background: black;
     border: none;
@@ -278,7 +279,7 @@
   ie10 slider
   --------------------- */
   input::-ms-track {
-    width: 300px;
+    width: auto;
     height: 5px;
     /*remove bg colour from the track*/
     background: transparent;
