@@ -252,17 +252,17 @@
   input::-moz-range-track {
     width: auto;
     height: 5px;
-    background: black;
+    background: rgba(0,0,0,0.6);
     border: none;
     border-radius: 3px;
   }
 
   input::-moz-range-thumb {
-    border: 0.2pt white solid;
+    border: 0.5pt rgba(0,0,0,0.7) solid;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: black;
+    background: white;
   }
 
   /*hide the outline behind the border*/
@@ -280,29 +280,25 @@
   --------------------- */
   input::-ms-track {
     width: auto;
-    height: 5px;
-    /*remove bg colour from the track*/
-    background: transparent;
-    
-    /*leave room for the larger thumb to overflow with a transparent border */
-    border-color: transparent;
-    border-width: 6px 0;
-    color: transparent;
-  }
-  input::-ms-fill-lower {
-    background: green;
-    border-radius: 10px;
-  }
-  input::-ms-fill-upper {
-    background: red;
-    border-radius: 10px;
-  }
-  input::-ms-thumb {
+    height: 16px;
+    background: rgba(0,0,0,0.6);
     border: none;
+    border-radius: 3px;
+  }
+  // input::-ms-fill-lower {
+  //   background: green;
+  //   border-radius: 10px;
+  // }
+  // input::-ms-fill-upper {
+  //   background: red;
+  //   border-radius: 10px;
+  // }
+  input::-ms-thumb {
+    border: 0.5pt rgba(0,0,0,0.7) solid;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: rgba(0,0,0,0.8);
+    background: white;
   }
   input:focus::-ms-fill-lower {
     // background: #888;

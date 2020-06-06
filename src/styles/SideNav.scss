@@ -75,6 +75,7 @@
   max-width: auto;
   width:7vw;
   height:100vh;
+  top:3vh;
   position:fixed;
   background-color: #181818;
   transition:0.3s;
@@ -86,13 +87,11 @@
   width:20vw;
   height:100vh;
   position:fixed;
+  top:3vh;
   background-color: #181818;
   transition:0.3s;
 }
 
-#side-navbar-horizontal{
-  
-}
 
 .side-navbar-items-horizontal{
   display:flex;
@@ -206,6 +205,7 @@
   }
   .extended-sidenavbar{
     width:26vw
+    
   }
 
   .settings-nav{
