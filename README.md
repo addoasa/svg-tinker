@@ -29,7 +29,7 @@
      [✖] Filters
 
 ```
-#### [✖] Re-design UI
+#### [✔] Re-design UI
 #### [✖] Enable support for applying CSS attributes. Things such as fill, stroke, stroke-width and colors (Any bit of color is hard coded at the moment)
 #### [✖] Enable a shape heirachy that can dynamically be changed
 #### [✖] Enable user to live code SVG code. (This will require error handling in case the user inserts improper code)
