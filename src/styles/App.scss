@@ -5,10 +5,7 @@
   // Removing all transitions results in better browser performance
   // transition: none !important;
 }
-body{
-  // background-color: rgb(255, 255, 255);
-  // background-image: linear-gradient(rgb(255, 255, 255), rgba(0,0,0,0.05));
-}
+
 .main-layout{
   // border:dotted purple 4pt;
   display:flex; 
@@ -18,18 +15,12 @@ body{
   animation: slidein 1s;
   justify-content: space-evenly;
   width:auto;
-  /* margin:0 auto; */
 }
-
 
 .display-and-code-block{
   display:block;
 }
 
-
-// @media(){
-  
-// }
 @keyframes slidein{
   0%{
     opacity:0;

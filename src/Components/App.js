@@ -39,7 +39,7 @@ class App extends React.Component{
         {/* ------------------------------------------------------------- */}
         {/* Push the ui to the left if the side nav bar is extended */}
         {/* ------------------------------------------------------------- */}
-        <main className ="main-layout" style={this.props.uiState.isSideNavExtended ? {"margin-left":"21vw"}:{"margin-left":"12vw"}}>
+        <main className ="main-layout" style={this.props.uiState.isSideNavExtended && this.state.windowWidth > 900 ? {"margin-left":"21vw"}:{"margin-left":"12vw"}}>
           <Tools />
           {/* ----------------------------------------------------------- */}
           {/* If the screen width is below 1010px breakpoint, set the workspace 

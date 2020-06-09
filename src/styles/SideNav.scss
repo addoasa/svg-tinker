@@ -79,6 +79,7 @@
   position:fixed;
   background-color: #181818;
   transition:0.3s;
+  z-index: 99;
 }
 .extended-sidenavbar{
   display:flex;
@@ -90,6 +91,7 @@
   top:3vh;
   background-color: #181818;
   transition:0.3s;
+  z-index: 99;
 }
 
 
@@ -204,9 +206,20 @@
     }
   }
   .extended-sidenavbar{
-    width:26vw
-    
+    display:block;
+    min-width:100vw;
+    max-width: 100vw;
+    max-height:auto;
+    min-height:auto;
+    width:100vw;  
+    height: 50vh;
+
+
   }
+
+  // .logo{
+  //   display:none;
+  // }
 
   .settings-nav{
     margin-top: 0;

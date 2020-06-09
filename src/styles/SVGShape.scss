@@ -205,6 +205,7 @@
   }
 
   input{
+    margin-top: 0.5em;
     width:15em;
     height: 5px;
     margin-left: 10px;
@@ -285,14 +286,7 @@
     border: none;
     border-radius: 3px;
   }
-  // input::-ms-fill-lower {
-  //   background: green;
-  //   border-radius: 10px;
-  // }
-  // input::-ms-fill-upper {
-  //   background: red;
-  //   border-radius: 10px;
-  // }
+
   input::-ms-thumb {
     border: 0.5pt rgba(0,0,0,0.7) solid;
     height: 16px;

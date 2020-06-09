@@ -31,8 +31,7 @@ class SideNav extends React.Component{
 	//-----------------------------------------
 
 	extendSideNav(event){
-		const logoGear = document.querySelector(".logo-image");
-		logoGear.classList.add(".logo-image-quickspin");
+		
 		const selectedSideNavItem = event.currentTarget.id;
 		console.log(event.target.id, "cboy"); 
 		
@@ -51,12 +50,14 @@ class SideNav extends React.Component{
 	//-----------------------------------------
 
 	spinFast(event){
-		document.querySelector(".logo-image").id = "logo-image-quickspin";
-		setTimeout(()=>{
-			console.log("beads");
-			document.querySelector(".logo-image").id = "";
-		},1);
-		
+		if(this.props.windowWidth > 900){
+			document.querySelector(".logo-image").id = "logo-image-quickspin";
+			setTimeout(()=>{
+				console.log("beads");
+				document.querySelector(".logo-image").id = "";
+			},1);
+		}
+			
 		
 	}
 	render(){
@@ -77,16 +78,24 @@ class SideNav extends React.Component{
 				{/* <nav className="side-navbar" onMouseLeave={this.minimizeSideNav} style={this.props.uiState.isSideNavExtended ? {"width":"20vw","display":"flex"} : {"display":"block"} }> */}
 				<nav id={this.props.windowWidth < 900 ? "side-navbar-horizontal" : "side-navbar-vertical"} className={this.props.uiState.isSideNavExtended ? "extended-sidenavbar" : "side-navbar" } onMouseLeave={this.minimizeSideNav}>
 					<div className={this.props.windowWidth < 900 ? "side-navbar-items-horizontal" : "side-navbar-items-vertical"} >
-
-						<div className="nav-item" >
-							<div className = "nav-logo-container" >
-								<div className ="logo">
-									<img className = "logo-text" alt="This is the text part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222275/svgtinker/logotext.png" />
-									<img className = "logo-image" onClick={this.spinFast} alt="This is the rotating gear logo mark that is part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222094/svgtinker/gear.png" />
+						
+						{/* ---------------------------------------------------------- */}
+						
+						{/* Hide the gear logo if the screen width is less than 900px */}
+						{this.props.windowWidth > 900 
+							?
+							<div className="nav-item" >
+								<div className = "nav-logo-container" >
+									<div className ="logo">
+										<img className = "logo-text" alt="This is the text part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222275/svgtinker/logotext.png" />
+										<img className = "logo-image" onClick={this.spinFast} alt="This is the rotating gear logo mark that is part of the SVG Tinker logo." src="https://res.cloudinary.com/ddz7dotz5/image/upload/v1580222094/svgtinker/gear.png" />
+									</div>
 								</div>
 							</div>
-						</div>
-						{/* <hr></hr> */}
+							: 
+							<></>}
+
+						{/* ---------------------------------------------------------- */}
 
 						<div className="nav-item">
 							<div className="nav-item-content" id="new project" onClick={this.extendSideNav}>
@@ -96,7 +105,8 @@ class SideNav extends React.Component{
 								{/* <p className = "nav-item-text" >New Project </p> */}
 							</div>
 						</div>
-						{/* <hr></hr> */}
+
+						{/* ---------------------------------------------------------- */}
 
 						<div className="nav-item" >
 							<div className="nav-item-content" id="save/export" onClick={this.extendSideNav} >
@@ -106,7 +116,8 @@ class SideNav extends React.Component{
 								{/* <p className = "nav-item-text" >Save/ Export</p> */}
 							</div>
 						</div>
-						{/* <hr></hr> */}
+
+						{/* ---------------------------------------------------------- */}
 
 						<div className="nav-item" >
 							<div className="nav-item-content" id="load/import" onClick={this.extendSideNav}>
@@ -116,7 +127,8 @@ class SideNav extends React.Component{
 								{/* <p className = "nav-item-text" >Load/ Import </p> */}
 							</div>
 						</div>
-						{/* <hr></hr> */}
+						
+						{/* ---------------------------------------------------------- */}
 
 						<div className="nav-item">
 							<div className="nav-item-content" id="add shapes" onClick={this.extendSideNav}>
@@ -126,7 +138,8 @@ class SideNav extends React.Component{
 								{/* <p className = "nav-item-text" >Add Shape</p> */}
 							</div>
 						</div>
-						{/* <hr></hr> */}
+						
+						{/* ---------------------------------------------------------- */}
 
 						<div className="nav-item" >
 							<div className="nav-item-content" id="transform" onClick={this.extendSideNav}>
@@ -136,7 +149,8 @@ class SideNav extends React.Component{
 								{/* <p className = "nav-item-text" >Transform </p> */}
 							</div>
 						</div>
-						{/* <hr></hr> */}
+						
+						{/* ---------------------------------------------------------- */}
 
 						<div className="nav-item settings-nav"  >
 							<div className="nav-item-content" id="settings menu" onClick={this.extendSideNav}>
@@ -148,7 +162,11 @@ class SideNav extends React.Component{
 								{/* <p className = "nav-item-text" >Settings</p> */}
 							</div>
 						</div>
+
+						{/* ---------------------------------------------------------- */}
+
 					</div>
+					{/* If user clicks a nav item, display the <MenuList /> with the appropriate content */}
 					{this.props.uiState.isSideNavExtended ? <MenuList currentSideNavMenuType={this.props.uiState.currentSideNavMenuType} spinFast={this.spinFast}/> : <></>}
 				</nav>
 			</>
