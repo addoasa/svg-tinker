@@ -62,19 +62,30 @@ function pathReducer(state=initialState, action){
 		//return the new state
 
 	// --------------------------------------------------------- 
-     
-	case types.REMOVE_SVG:
-		// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
-		activePathSVGs.splice(action.payload.indexToDelete, 1); // Remove one item from activeSVG array with the index specified in the payload
-		// console.log({ activePathSVGs });
-		// console.log(action.payload.classId, "payload");
-		return {
-			...state,
-			activePathSVGs,
-		};
+	// using removeFromMaster() instead of removeSVG()
+	// I don't have a solution to remove the correct shape from both the (path,circle,ellipse etc)array AND the master array simultaneously.
+	// tried: Allowing the master array to know where its shapes are comming from(so that deleting from master array could delete from the SVG's origin array)
+	// also tried: Allowing the shapes from the origin arrays(path, circle,etc) to know where they are in the master array(by index) so that the master array could "listen" for when an svg is deleted from an origin array
+	// problem: after deleting a shape simultaneously from masterarray AND children arrays the index references in the master array become incorrect from that point on
+	// so for now the origin arrays(path,circle ,etc) arrays will no longer use this action until a solution that can fix the issue of index order being wrong after removing an svg is found 
+	// The origin arrays will act as templates for building svgs and the masterarray will be the only significant array used for rendering/deleting/adding/altering
+	// --------------------------------------------------------- 
+	 
+	// case types.REMOVE_SVG:
+	// 	// The payload of this action is the class id of a shape. The class_id is acting like an index for this array of SVG objects in state. This ensures that I am only deleting the shape I want 
+	// 	activePathSVGs.splice(action.payload.indexToDelete, 1); // Remove one item from activeSVG array with the index specified in the payload
+	// 	// console.log({ activePathSVGs });
+	// 	// console.log(action.payload.classId, "payload");
+	// 	return {
+	// 		...state,
+	// 		activePathSVGs,
+	// 	};
     
 	// // --------------------------------------------------------------------------    
 	// // ADDING AND REMOVING PATH VERTICES
+	// // --------------------------------------------------------------------------    
+	// // --------------------------------------------------------------------------    
+	// // These actions have been moved to the masterReducer to be handled. This will be cleaned up.
 	// // --------------------------------------------------------------------------    
 
 	// case types.ADD_VERTICES: 
