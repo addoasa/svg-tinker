@@ -4,9 +4,9 @@ import * as types from "../actionTypesVariableNames/actionTypeVariables";
 const initialState = {
 	activeCircleSVGs: [ 
 		{
-      xAxis:100,
-      yAxis:100,
-      radius:50,
+			xAxis:100,
+			yAxis:100,
+			radius:50,
 		}
 	]
 };
@@ -24,9 +24,9 @@ function circleReducer(state=initialState, action){
   case types.ADD_CIRCLE: 
   
 		const newCircle = {
-      xAxis:100,
-      yAxis:100,
-      radius:50,
+			xAxis:100,
+			yAxis:100,
+			radius:50,
 		};
 			// ...push this new SVG object into clone of array of SVG objects
 		activeCircleSVGs.push(newCircle);
@@ -51,6 +51,9 @@ function circleReducer(state=initialState, action){
 	
 
 	// --------------------------------------------------------------------------    
+	// *NOTE* DUE TO REFACTORING, ALL ACTIONS BELOW ARE NO LONGER BEING USED. 
+	//  THE USE_SLIDER ACTION IN THE MASTER REDUCER IS BEING USED INSTEAD   
+	// -------------------------------------------------------------------------- 
 	//SETTING RANGES OF CIRCLE cx, cy and r VALUES
 	// Use the class_id from the payload to find the index of the circle in the
 	// activeCircleSVGs array. 

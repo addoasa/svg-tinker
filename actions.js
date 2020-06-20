@@ -52,22 +52,25 @@ export const addCircle = (indexInMaster)=>({
 	type:types.ADD_CIRCLE,
 	payload: indexInMaster,
 });
+
+// *ACTIONS BELOW ARE REPLACED BY 'USE_SLIDER' IN MASTER REDUCER*
+
 // export const removeCircle = (circle, classId)=>({
 // 	type:types.REMOVE_CIRCLE,
 // 	payload: {circle, classId},
 // });
-export const setCircleX = (xValue, classId)=>({
-	type:types.SET_CIRCLE_X,
-	payload: {xValue , classId},
-});
-export const setCircleY = (yValue, classId)=>({
-	type:types.SET_CIRCLE_Y,
-	payload: {yValue,classId},
-});
-export const setRadius = (radiusValue, classId)=>({
-	type:types.SET_CIRCLE_RADIUS,
-	payload: {radiusValue,classId},
-});
+// export const setCircleX = (xValue, classId)=>({
+// 	type:types.SET_CIRCLE_X,
+// 	payload: {xValue , classId},
+// });
+// export const setCircleY = (yValue, classId)=>({
+// 	type:types.SET_CIRCLE_Y,
+// 	payload: {yValue,classId},
+// });
+// export const setRadius = (radiusValue, classId)=>({
+// 	type:types.SET_CIRCLE_RADIUS,
+// 	payload: {radiusValue,classId},
+// });
 
 // ------------------
 // ELLIPSES ACTIONS
@@ -78,22 +81,25 @@ export const addEllipse = (indexInMaster)=>({
 	payload: indexInMaster,
 });
 
-export const setEllipseX = (xValue, classId)=>({
-	type:types.SET_ELLIPSE_X,
-	payload: {xValue , classId},
-});
-export const setEllipseY = (yValue, classId)=>({
-	type:types.SET_ELLIPSE_Y,
-	payload: {yValue,classId},
-});
-export const setEllipseHeight = (rHeight, classId)=>({
-	type:types.SET_ELLIPSE_HEIGHT,
-	payload: {rHeight,classId},
-});
-export const setEllipseWidth = (rWidth, classId)=>({
-	type:types.SET_ELLIPSE_WIDTH,
-	payload: {rWidth,classId},
-});
+// *ACTIONS BELOW ARE REPLACED BY 'USE_SLIDER' IN MASTER REDUCER*
+
+
+// export const setEllipseX = (xValue, classId)=>({
+// 	type:types.SET_ELLIPSE_X,
+// 	payload: {xValue , classId},
+// });
+// export const setEllipseY = (yValue, classId)=>({
+// 	type:types.SET_ELLIPSE_Y,
+// 	payload: {yValue,classId},
+// });
+// export const setEllipseHeight = (rHeight, classId)=>({
+// 	type:types.SET_ELLIPSE_HEIGHT,
+// 	payload: {rHeight,classId},
+// });
+// export const setEllipseWidth = (rWidth, classId)=>({
+// 	type:types.SET_ELLIPSE_WIDTH,
+// 	payload: {rWidth,classId},
+// });
 
 // ------------------
 // RECTANGLE ACTIONS
@@ -104,25 +110,28 @@ export const addRectangle = (indexInMaster)=>({
 	payload: indexInMaster,
 });
 
-export const setRectangleX = (xValue, classId)=>({
-	type:types.SET_ELLIPSE_X,
-	payload: {xValue , classId},
-});
+// *ACTIONS BELOW ARE REPLACED BY 'USE_SLIDER' IN MASTER REDUCER*
 
-export const setRectangleY = (yValue, classId)=>({
-	type:types.SET_ELLIPSE_Y,
-	payload: {yValue,classId},
-});
 
-export const setRectangleHeight = (rHeight, classId)=>({
-	type:types.SET_ELLIPSE_HEIGHT,
-	payload: {rHeight,classId},
-});
+// export const setRectangleX = (xValue, classId)=>({
+// 	type:types.SET_ELLIPSE_X,
+// 	payload: {xValue , classId},
+// });
 
-export const setRectangleWidth = (rWidth, classId)=>({
-	type:types.SET_ELLIPSE_WIDTH,
-	payload: {rWidth,classId},
-});
+// export const setRectangleY = (yValue, classId)=>({
+// 	type:types.SET_ELLIPSE_Y,
+// 	payload: {yValue,classId},
+// });
+
+// export const setRectangleHeight = (rHeight, classId)=>({
+// 	type:types.SET_ELLIPSE_HEIGHT,
+// 	payload: {rHeight,classId},
+// });
+
+// export const setRectangleWidth = (rWidth, classId)=>({
+// 	type:types.SET_ELLIPSE_WIDTH,
+// 	payload: {rWidth,classId},
+// });
 
 
 // ------------------
@@ -134,20 +143,23 @@ export const addText = (indexInMaster)=>({
 	payload: indexInMaster,
 });
 
-export const setTextX = (x, classId)=>({
-	type:types.SET_TEXT_X,
-	payload: {x , classId},
-});
+// *ACTIONS BELOW ARE REPLACED BY 'USE_SLIDER' IN MASTER REDUCER*
 
-export const setTextY = (y, classId)=>({
-	type:types.SET_TEXT_Y,
-	payload: {y,classId},
-});
 
-export const setText = (text, classId)=>({
-	type:types.SET_TEXT,
-	payload: {text,classId},
-});
+// export const setTextX = (x, classId)=>({
+// 	type:types.SET_TEXT_X,
+// 	payload: {x , classId},
+// });
+
+// export const setTextY = (y, classId)=>({
+// 	type:types.SET_TEXT_Y,
+// 	payload: {y,classId},
+// });
+
+// export const setText = (text, classId)=>({
+// 	type:types.SET_TEXT,
+// 	payload: {text,classId},
+// });
 
 
 // ------------------
@@ -159,25 +171,27 @@ export const addLine = (indexInMaster)=>({
 	payload: indexInMaster,
 });
 
-export const setLineX1 = (x1, classId)=>({
-	type:types.SET_LINE_X1,
-	payload: {x1 , classId},
-});
+// *ACTIONS BELOW ARE REPLACED BY 'USE_SLIDER' IN MASTER REDUCER*
 
-export const setLineY1 = (y1, classId)=>({
-	type:types.SET_LINE_Y1,
-	payload: {y1,classId},
-});
+// export const setLineX1 = (x1, classId)=>({
+// 	type:types.SET_LINE_X1,
+// 	payload: {x1 , classId},
+// });
 
-export const setLineX2 = (x2, classId)=>({
-	type:types.SET_LINE_X2,
-	payload: {x2 , classId},
-});
+// export const setLineY1 = (y1, classId)=>({
+// 	type:types.SET_LINE_Y1,
+// 	payload: {y1,classId},
+// });
 
-export const setLineY2 = (y2, classId)=>({
-	type:types.SET_LINE_Y2,
-	payload: {y2,classId},
-});
+// export const setLineX2 = (x2, classId)=>({
+// 	type:types.SET_LINE_X2,
+// 	payload: {x2 , classId},
+// });
+
+// export const setLineY2 = (y2, classId)=>({
+// 	type:types.SET_LINE_Y2,
+// 	payload: {y2,classId},
+// });
 
 
 // ------------------

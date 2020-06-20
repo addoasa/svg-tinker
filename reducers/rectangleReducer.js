@@ -10,12 +10,12 @@ import * as types from "../actionTypesVariableNames/actionTypeVariables";
 const initialState = {
 	activeRectangleSVGs: [ 
 		{
-      x:100,
-      y:100,
-      rx:0,
-      ry:0,
-      width:50,
-      height:100,
+			x:100,
+			y:100,
+			rx:0,
+			ry:0,
+			width:50,
+			height:100,
 		}
 	]
 };
@@ -33,12 +33,12 @@ function rectangleReducer(state=initialState, action){
   case types.ADD_RECTANGLE: 
   
 		const newRectangle = {
-      x:100,
-      y:100,
-      rx:0,
-      ry:0,
-      width:50,
-      height:100,
+			x:100,
+			y:100,
+			rx:0,
+			ry:0,
+			width:50,
+			height:100,
 		};
 			// ...push this new SVG object into clone of array of SVG objects
 		activeRectangleSVGs.push(newRectangle);
@@ -53,7 +53,10 @@ function rectangleReducer(state=initialState, action){
      
 
 
-	// --------------------------------------------------------------------------    
+	// --------------------------------------------------------------------------  
+	// *NOTE* DUE TO REFACTORING, ALL ACTIONS BELOW ARE NO LONGER BEING USED. 
+	//  THE USE_SLIDER ACTION IN THE MASTER REDUCER IS BEING USED INSTEAD   
+	// --------------------------------------------------------------------------   
 	//SETTING RANGES OF RECTANGLE cx, cy and r VALUES
 	// Use the class_id from the payload to find the index of the circle in the
 	// activeRectangleSVGs array. 

@@ -34,7 +34,7 @@ describe("Testing the path Reducer", ()=>{
 		// Passing no params to the reducer should return defaultState
 		it("A reducer takes in 2 parameters=> The initial state and the actions sent to it from the client. Reducer should return default state when given undefined input",()=>{
 			expect(pathReducer(undefined,{ type:undefined })).toEqual(defaultState);
-    });
+    	});
     
 	});
 

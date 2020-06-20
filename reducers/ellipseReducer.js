@@ -3,10 +3,10 @@ import * as types from "../actionTypesVariableNames/actionTypeVariables";
 const initialState = {
 	activeEllipseSVGs: [ 
 		{
-      xAxis:100,
-      yAxis:100,
-      rWidth:50,
-      rHeight:100
+			xAxis:100,
+			yAxis:100,
+			rWidth:50,
+			rHeight:100
 		}
 	]
 };
@@ -24,10 +24,10 @@ function ellipseReducer(state=initialState, action){
   case types.ADD_ELLIPSE: 
   
 		const newEllipse = {
-      xAxis:100,
-      yAxis:100,
-      rWidth:50,
-      rHeight:100,
+			xAxis:100,
+			yAxis:100,
+			rWidth:50,
+			rHeight:100,
 		};
 			// ...push this new SVG object into clone of array of SVG objects
 		activeEllipseSVGs.push(newEllipse);
@@ -42,54 +42,57 @@ function ellipseReducer(state=initialState, action){
      
 
 
-	// --------------------------------------------------------------------------    
-	//SETTING RANGES OF ELLIPSE cx, cy and r VALUES
+	// -------------------------------------------------------------------------- 
+	// *NOTE* DUE TO REFACTORING, ALL ACTIONS BELOW ARE NO LONGER BEING USED. 
+	//  THE USE_SLIDER ACTION IN THE MASTER REDUCER IS BEING USED INSTEAD   
+	// -------------------------------------------------------------------------- 
+	// SETTING RANGES OF ELLIPSE cx, cy and r VALUES
 	// Use the class_id from the payload to find the index of the circle in the
 	// activeEllipseSVGs array. 
 	// With that information we can now manipulate the x, y and radius values 
 	// --------------------------------------------------------------------------    
 
-	case types.SET_ELLIPSE_X:
+	// case types.SET_ELLIPSE_X:
 
-		activeEllipseSVGs[action.payload.classId].xAxis = action.payload.xValue;
+	// 	activeEllipseSVGs[action.payload.classId].xAxis = action.payload.xValue;
 
-		return {
-			...state,
-			activeEllipseSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeEllipseSVGs,
+	// 	};
 
-	// ---------------------------------------------------------    
+	// // ---------------------------------------------------------    
  
-	case types.SET_ELLIPSE_Y:
+	// case types.SET_ELLIPSE_Y:
 
-		activeEllipseSVGs[action.payload.classId].yAxis = action.payload.yValue;
+	// 	activeEllipseSVGs[action.payload.classId].yAxis = action.payload.yValue;
 
-		return {
-			...state,
-			activeEllipseSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeEllipseSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_ELLIPSE_HEIGHT:
+	// case types.SET_ELLIPSE_HEIGHT:
 
-		activeEllipseSVGs[action.payload.classId].rHeight = action.payload.rHeight;
+	// 	activeEllipseSVGs[action.payload.classId].rHeight = action.payload.rHeight;
 
-		return{
-			...state,
-			activeEllipseSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeEllipseSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_ELLIPSE_WIDTH:
+	// case types.SET_ELLIPSE_WIDTH:
 
-		activeEllipseSVGs[action.payload.classId].rHeight = action.payload.rWidth;
-
-		return{
-			...state,
-			activeEllipseSVGs,
-		};
+	// 	activeEllipseSVGs[action.payload.classId].rHeight = action.payload.rWidth;
+	// 	console.log("this is needed")
+	// 	return{
+	// 		...state,
+	// 		activeEllipseSVGs,
+	// 	};
 
 	// ---------------------------------------------------------      
 

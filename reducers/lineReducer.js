@@ -8,10 +8,10 @@ import * as types from "../actionTypesVariableNames/actionTypeVariables";
 const initialState = {
 	activeLineSVGs: [ 
 		{
-      x1:100,
-      y1:100,
-      x2:50,
-      y2:100
+			x1:100,
+			y1:100,
+			x2:50,
+			y2:100
 		}
 	]
 };
@@ -29,10 +29,10 @@ function lineReducer(state=initialState, action){
   case types.ADD_LINE: 
   
 		const newLine = {
-      x1:100,
-      y1:100,
-      x2:50,
-      y2:100
+			x1:100,
+			y1:100,
+			x2:50,
+			y2:100
 		};
 			// ...push this new SVG object into clone of array of SVG objects
 		activeLineSVGs.push(newLine);
@@ -48,53 +48,56 @@ function lineReducer(state=initialState, action){
 
 
 	// --------------------------------------------------------------------------    
+	// *NOTE* DUE TO REFACTORING, ALL ACTIONS BELOW ARE NO LONGER BEING USED. 
+	//  THE USE_SLIDER ACTION IN THE MASTER REDUCER IS BEING USED INSTEAD   
+	// -------------------------------------------------------------------------- 
 	//SETTING RANGES OF LINE cx, cy and r VALUES
 	// Use the class_id from the payload to find the index of the circle in the
 	// activeLineSVGs array. 
 	// With that information we can now manipulate the x, y and radius values 
 	// --------------------------------------------------------------------------    
 
-	case types.SET_LINE_X1:
+	// case types.SET_LINE_X1:
 
-		activeLineSVGs[action.payload.classId].x1 = action.payload.x1;
+	// 	activeLineSVGs[action.payload.classId].x1 = action.payload.x1;
 
-		return {
-			...state,
-			activeLineSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeLineSVGs,
+	// 	};
 
-	// ---------------------------------------------------------    
+	// // ---------------------------------------------------------    
  
-	case types.SET_LINE_Y1:
+	// case types.SET_LINE_Y1:
 
-		activeLineSVGs[action.payload.classId].y1 = action.payload.y1;
+	// 	activeLineSVGs[action.payload.classId].y1 = action.payload.y1;
 
-		return {
-			...state,
-			activeLineSVGs,
-		};
+	// 	return {
+	// 		...state,
+	// 		activeLineSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_LINE_X2:
+	// case types.SET_LINE_X2:
 
-		activeLineSVGs[action.payload.classId].x2 = action.payload.x2;
+	// 	activeLineSVGs[action.payload.classId].x2 = action.payload.x2;
 
-		return{
-			...state,
-			activeLineSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeLineSVGs,
+	// 	};
 
-	// ---------------------------------------------------------      
+	// // ---------------------------------------------------------      
  
-	case types.SET_LINE_Y2:
+	// case types.SET_LINE_Y2:
 
-		activeLineSVGs[action.payload.classId].y2 = action.payload.y2;
+	// 	activeLineSVGs[action.payload.classId].y2 = action.payload.y2;
 
-		return{
-			...state,
-			activeLineSVGs,
-		};
+	// 	return{
+	// 		...state,
+	// 		activeLineSVGs,
+	// 	};
 
 	// ---------------------------------------------------------      
 

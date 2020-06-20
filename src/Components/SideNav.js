@@ -33,7 +33,7 @@ class SideNav extends React.Component{
 	extendSideNav(event){
 		
 		const selectedSideNavItem = event.currentTarget.id;
-		console.log(event.target.id, "cboy"); 
+		console.log(event.target.id, "extended sidenav"); 
 		
 		if(!this.props.uiState.isSideNavExtended){
 			this.props.toggleSideNavBar();
