@@ -35,7 +35,6 @@
 @media(max-width:900px){
   .main-layout{
     margin-top: 15vh;
-    // justify-content: space-between;
 
   }
 }
@@ -44,5 +43,9 @@
     display:block;
     // justify-content: space-between;
 
+
+  }
+  *{
+    transition: none !important;
   }
 }

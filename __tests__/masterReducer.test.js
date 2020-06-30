@@ -23,15 +23,24 @@ describe("Testing Master Reducer actions", ()=>{
 			const { masterSVGArray } = masterReducer(defaultState,mockInsertIntoMasterAction);
 			expect(masterSVGArray.length).toBe(1);
 		});
+
 		it("The SVG object being added should have a key called 'svgType' of data type 'string'",()=>{
 			const { masterSVGArray } = masterReducer(defaultState,mockInsertIntoMasterAction);
 			expect(masterSVGArray[0].svgType);
 			expect(typeof masterSVGArray[0].svgType).toBe("string");
 		});
-		it("The SVG object being added should have a key called 'svgData' of data type 'object'",()=>{
+
+		xit("The 'svgType' key must have a valid value",()=>{
+			const { masterSVGArray } = masterReducer(defaultState,mockInsertIntoMasterAction);
+			const validTypes = ["PATH","CIRCLE","ELLIPSE","LINE","TEXT","RECTANGLE"]
+			expect(validTypes.includes(masterSVGArray[0].svgType));
+		});
+
+		it("The SVG object being added should also have a key called 'svgData' of data type 'object'",()=>{
 			const { masterSVGArray } = masterReducer(defaultState,mockInsertIntoMasterAction);
 			expect(masterSVGArray[0].svgData);
 			expect(typeof masterSVGArray[0].svgData).toBe("object");
+			
 		});
 	});
 

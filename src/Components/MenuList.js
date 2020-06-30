@@ -25,10 +25,13 @@ class MenuList extends React.Component{
         }
         
 		return(
+			<>
 			<div className = "extended-sidenavbar-menu">
+			{this.props.windowWidth < 900 ? <button className="close-menu-btn" onClick={this.props.minimizeSideNav}>X</button> : <></>}
 				<h2>{this.props.currentSideNavMenuType}</h2>
 				<div className ="list-of-items">{listOfItems}</div>
 			</div>
+			</>
 		);
 	}
 }

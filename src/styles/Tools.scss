@@ -38,7 +38,13 @@
   .entire-slider-container{
     margin-left: 0;
     padding-right: 2vw;
+    
+    h2{
+    padding-top: 3vh;
+
+    }
   }
+
 }
 @media(max-width:750px){
   .entire-slider-container{

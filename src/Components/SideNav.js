@@ -167,7 +167,7 @@ class SideNav extends React.Component{
 
 					</div>
 					{/* If user clicks a nav item, display the <MenuList /> with the appropriate content */}
-					{this.props.uiState.isSideNavExtended ? <MenuList currentSideNavMenuType={this.props.uiState.currentSideNavMenuType} spinFast={this.spinFast}/> : <></>}
+					{this.props.uiState.isSideNavExtended ? <MenuList currentSideNavMenuType={this.props.uiState.currentSideNavMenuType} spinFast={this.spinFast} windowWidth={this.props.windowWidth} minimizeSideNav={this.minimizeSideNav}/> : <></>}
 				</nav>
 			</>
 		);
