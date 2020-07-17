@@ -36,7 +36,7 @@ class App extends React.Component{
         <SideNav windowWidth={this.state.windowWidth}/>
         {/* <Scape /> */}
         {/* ------------------------------------------------------------- */}
-        {/* Push the ui to the left if the side nav bar is extended */}
+        {/* Push the ui to the right if the side nav bar is extended */}
         {/* ------------------------------------------------------------- */}
         <main className ="main-layout" style={this.props.uiState.isSideNavExtended && this.state.windowWidth > 900 ? {"margin-left":"21vw"}:{"margin-left":"12vw"}}>
           <Tools />
