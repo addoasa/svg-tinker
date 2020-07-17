@@ -1,6 +1,6 @@
-import masterReducer from "../reducers/masterReducer";
-import {insertIntoMaster, removeFromMaster, useSlider, addVertices, removeVertices} from "../actions";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import masterReducer from "../../reducers/masterReducer";
+import {insertIntoMaster, removeFromMaster, useSlider, addVertices, removeVertices} from "../../actions";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 describe("Testing Master Reducer actions", ()=>{
     

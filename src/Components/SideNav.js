@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/SideNav.scss";
 import MenuList from "./MenuList";
 import { toggleSideNavBar, setCurrentSideNavMenuType } from "../../actions";
 import { connect } from "react-redux";

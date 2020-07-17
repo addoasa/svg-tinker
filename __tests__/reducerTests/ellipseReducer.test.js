@@ -1,6 +1,6 @@
-import ellipseReducer from "../reducers/ellipseReducer";
-import {addEllipse} from "../actions";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import ellipseReducer from "../../reducers/ellipseReducer";
+import {addEllipse} from "../../actions";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 describe("Testing the Ellipse Reducer", ()=>{
 	let defaultState;

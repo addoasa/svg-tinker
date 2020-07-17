@@ -1,6 +1,6 @@
-import rectangleReducer from "../reducers/rectangleReducer";
-import {addRectangle} from "../actions";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import rectangleReducer from "../../reducers/rectangleReducer";
+import {addRectangle} from "../../actions";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 describe("Testing the Rectangle Reducer", ()=>{
 	let defaultState;

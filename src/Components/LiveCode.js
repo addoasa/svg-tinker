@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/LiveCode.scss";
 import { connect } from "react-redux";
 
 // import alterRange

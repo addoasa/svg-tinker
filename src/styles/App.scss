@@ -1,4 +1,14 @@
 @import 'colors';
+@import 'Header';
+@import 'LiveCode';
+@import 'MenuItem';
+@import 'MenuList';
+@import 'Scape';
+@import 'SideNav';
+@import 'SVGShape';
+@import 'Tools';
+@import 'Workspace';
+
 // @import 'importedFonts';
 *{
   margin:0;
@@ -45,7 +55,9 @@
 
 
   }
+  // remove all transitions at 750px screen size for better performance
   *{
     transition: none !important;
   }
 }
+

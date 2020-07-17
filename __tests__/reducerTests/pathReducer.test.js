@@ -1,5 +1,5 @@
-import pathReducer  from "../reducers/pathReducer";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import pathReducer  from "../../reducers/pathReducer";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 test("Initializing Jest", ()=>{
 	expect(true).toBeTruthy();

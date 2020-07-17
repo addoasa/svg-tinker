@@ -7,7 +7,6 @@ import { removeVertices } from "../../actions";
 import { removeFromMaster } from "../../actions";
 import SVGShape from "./SVGShape.js";
 import { connect } from "react-redux";
-import "../styles/Tools.scss";
 
 const mapStateToProps = store => ({
 	workspaceHeight : store.paths.workspaceHeight,

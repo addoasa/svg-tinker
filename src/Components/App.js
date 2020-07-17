@@ -5,7 +5,6 @@ import LiveCode from "./LiveCode";
 import SideNav from "./SideNav";
 import Header from "./Header";
 import { connect } from "react-redux";
-import "../styles/App.scss";
 
 const mapStateToProps = (store)=>({
   uiState:store.uiState

@@ -1,6 +1,6 @@
-import textReducer from "../reducers/textReducer";
-import {addText} from "../actions";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import textReducer from "../../reducers/textReducer";
+import {addText} from "../../actions";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 
 describe("Testing the Text Reducer", ()=>{

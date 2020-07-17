@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Scape.scss';
 //import the action you want to use
 import { addPath, addCircle, addEllipse , addRectangle, addText, addLine, insertIntoMaster } from '../../actions'
 import { connect } from 'react-redux';

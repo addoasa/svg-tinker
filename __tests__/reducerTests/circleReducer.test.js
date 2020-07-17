@@ -1,6 +1,6 @@
-import circleReducer from "../reducers/circleReducer";
-import {addCircle} from "../actions";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import circleReducer from "../../reducers/circleReducer";
+import {addCircle} from "../../actions";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 
 describe("Testing the Circle Reducer", ()=>{

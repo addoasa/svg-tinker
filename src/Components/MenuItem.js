@@ -2,7 +2,6 @@ import React from 'react';
 //import the action you want to use
 import { addPath, addCircle, addEllipse , addRectangle, addText, addLine, insertIntoMaster } from '../../actions'
 import { connect } from 'react-redux';
-import "../styles/MenuItem.scss";
 
 
 const mapStateToProps = store => ({

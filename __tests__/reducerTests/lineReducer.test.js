@@ -1,6 +1,6 @@
-import lineReducer from "../reducers/lineReducer";
-import { addLine } from "../actions";
-import * as types from "../actionTypesVariableNames/actionTypeVariables";
+import lineReducer from "../../reducers/lineReducer";
+import { addLine } from "../../actions";
+import * as types from "../../actionTypesVariableNames/actionTypeVariables";
 
 
 describe("Testing the Line Reducer", ()=>{

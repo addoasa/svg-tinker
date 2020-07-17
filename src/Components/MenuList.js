@@ -1,6 +1,5 @@
 import React from "react";
 import MenuItem from "./MenuItem";
-import "../styles/MenuList.scss";
 import { connect } from "react-redux";
 
 const mapStateToProps = (store)=>({

@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/SVGShape.scss";
 
 //------------------------------------------------------------------------------------
 // This component will be created for every SVG object in the State.
