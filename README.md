@@ -49,7 +49,7 @@ Write tests for:
      [✔] MasterReducer
      [✔] All other reducers
      [✖] UI Components should look and work as intended:
-          [✖] SideNav
+          [✔] SideNav
           [✖] SvgShape
           [✖] LiveCode
           [✖] Workspace
