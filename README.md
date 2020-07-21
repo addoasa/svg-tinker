@@ -1,6 +1,4 @@
 
-![alt text](https://svgtinkerassets.s3.amazonaws.com/svgtinkerbannerlogolargewhite2.png)
-
  :gear: A tool for creating and manipulating SVG vectors. :gear:
 ## Overview
 ![alt text](./public/assets/SVGTINKER.png)
