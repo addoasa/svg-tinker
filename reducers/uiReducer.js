@@ -4,13 +4,15 @@ const initialUIState = {
 	isSideNavExtended:false,
 	currentSideNavMenuType:"",
 	sideNavMenusAndContents:{
-		newProjectMenuList:[],
-		exportMenuList:[],
-		importMenuList:[],
+		newProjectMenuList:["New Empty Project", "New Preset Project"],
+		exportMenuList:["Quicksave","Save Project","Sync Projects","Export As"],
+		importMenuList:["Load Project", "Load Project From File", "Import Preset Shape"],
 		addShapeMenuList:["Path", "Circle", "Rectangle", "Line", "Ellipse", "Text"],
-		transformMenuList:[],
+		transformMenuList:["Translate", "Scale"],
 		settingsMenuList:[],
 	},
+	isModalActive:false,
+	currentModalType:"",
 };
 
 function uiReducer(state=initialUIState, action){

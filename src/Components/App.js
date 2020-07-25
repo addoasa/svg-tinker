@@ -29,7 +29,7 @@ class App extends React.Component{
     
   }
   render(){
-    console.log(window.outerWidth)
+    console.log(window.outerWidth);
     return(
       <div className = "start">
         <Header />
@@ -56,6 +56,10 @@ class App extends React.Component{
               <LiveCode />
             </>
           }
+          {/* ----------------------------------------------------------- */}
+          {/* If the user triggered a modal to be active, render <NavMenuModal /> */}
+          {/* ----------------------------------------------------------- */}
+
         </main>
       </div>
     )
