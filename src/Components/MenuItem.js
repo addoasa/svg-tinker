@@ -279,7 +279,7 @@ class MenuItem extends React.Component{
                     );
                 }
                 break;
-                case "Load ProjectFrom File" : {
+                case "Load Project From File" : {
                     menuItemToDisplay = (
                         <div className = "menu-item">
                             <div className="add-container-option">
