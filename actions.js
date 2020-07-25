@@ -224,3 +224,11 @@ export const setCurrentSideNavMenuType = (menuType)=>({
 	type:types.SET_CURRENT_SIDE_NAV_MENU_TYPE,
 	payload:menuType,
 });
+export const toggleModal = ()=>({
+	type:types.TOGGLE_MODAL,
+	payload:"",
+});
+export const setCurrentModalType = (modalType)=>({
+	type:types.SET_CURRENT_MODAL_TYPE,
+	payload:modalType,
+});

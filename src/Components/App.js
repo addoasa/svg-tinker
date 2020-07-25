@@ -4,6 +4,7 @@ import Tools from "./Tools";
 import LiveCode from "./LiveCode";
 import SideNav from "./SideNav";
 import Header from "./Header";
+import NavMenuModal from "./NavMenuModal";
 import { connect } from "react-redux";
 
 const mapStateToProps = (store)=>({
@@ -32,9 +33,15 @@ class App extends React.Component{
     console.log(window.outerWidth);
     return(
       <div className = "start">
+        
         <Header />
         <SideNav windowWidth={this.state.windowWidth}/>
+        {/* ----------------------------------------------------------- */}
+          {/* If the user triggered a modal to be active, render <NavMenuModal /> */}
+          {/* ----------------------------------------------------------- */}
+          {this.props.uiState.isModalActive ? <NavMenuModal /> : <></>}
         {/* <Scape /> */}
+        
         {/* ------------------------------------------------------------- */}
         {/* Push the ui to the right if the side nav bar is extended */}
         {/* ------------------------------------------------------------- */}
@@ -56,11 +63,8 @@ class App extends React.Component{
               <LiveCode />
             </>
           }
-          {/* ----------------------------------------------------------- */}
-          {/* If the user triggered a modal to be active, render <NavMenuModal /> */}
-          {/* ----------------------------------------------------------- */}
-
         </main>
+         
       </div>
     )
   }

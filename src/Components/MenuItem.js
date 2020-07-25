@@ -1,6 +1,6 @@
 import React from 'react';
 //import the action you want to use
-import { addPath, addCircle, addEllipse , addRectangle, addText, addLine, insertIntoMaster } from '../../actions'
+import { addPath, addCircle, addEllipse , addRectangle, addText, addLine, insertIntoMaster, toggleModal, setCurrentModalType } from '../../actions'
 import { connect } from 'react-redux';
 
 
@@ -11,7 +11,8 @@ const mapStateToProps = store => ({
 	activeRectangleSVGs : store.rectangles.activeRectangleSVGs,
 	activeTextSVGs : store.texts.activeTextSVGs,
 	activeLineSVGs : store.lines.activeLineSVGs,
-	masterSVGArray : store.master.masterSVGArray,
+    masterSVGArray : store.master.masterSVGArray,
+    uiState: store.uiState,
 
 });
 const mapDispatchToProps = dispatch => ({
@@ -22,6 +23,8 @@ const mapDispatchToProps = dispatch => ({
 	addText: (indexInMaster)=> dispatch(addText(indexInMaster)),
 	addLine: (indexInMaster)=> dispatch(addLine(indexInMaster)),
 	insertIntoMaster: (SVG, svgType, idInChildArray)=> dispatch(insertIntoMaster(SVG, svgType, idInChildArray)),
+	toggleModal: ()=> dispatch(toggleModal()),
+	setCurrentModalType: (modalType)=> dispatch(setCurrentModalType(modalType)),
 });
 
 
@@ -29,9 +32,17 @@ const mapDispatchToProps = dispatch => ({
 class MenuItem extends React.Component{
 	constructor(){
 		super();
-		this. handleAddingAnSVG = this. handleAddingAnSVG.bind(this);
+		this.handleAddingAnSVG = this.handleAddingAnSVG.bind(this);
+		this.openModal = this.openModal.bind(this);
 	}
   
+    openModal(event){
+        console.log(event.target.id, "fruit")
+        this.props.setCurrentModalType(event.target.id);
+        this.props.toggleModal();
+        
+    }
+
 	handleAddingAnSVG(event){
         this.props.spinFast();
 		switch(event.target.id){
@@ -125,7 +136,7 @@ class MenuItem extends React.Component{
         let menuItemToDisplay = "";
         
         //---------------------------------------------------------------------------------------------
-        // if the user clicked the add shapes button ...
+        // if the user clicked a nav menu button ...
         //---------------------------------------------------------------------------------------------
         if(this.props.currentSideNavMenuType === "new project"){
             switch(this.props.listItemToAdd){
@@ -135,7 +146,7 @@ class MenuItem extends React.Component{
                             <div className="add-container-option">
                                 {/* <i className="fa fa-plus-circle addSlider" id={`${this.props.listItemToAdd}-btn`} onClick ={this. handleAddingAnSVG}></i> */}
                                 
-                                <svg className="addSlider" id={`${this.props.listItemToAdd}-btn`} onClick ={this.handleAddingAnSVG} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
+                                <svg className="addSlider" id={this.props.listItemToAdd} onClick ={this.openModal} x="0px" y="0px" width="80%" height="80%" viewBox="0 0 150 150" enable-background="new 0 0 194.697 186.364">
                                     <circle fill="#B0AFB0" stroke="#181818" stroke-miterlimit="10" cx="66.21" cy="131.033" r="3.64"/>
                                 </svg>
                                 <hr className="menuitem-line"></hr>
@@ -486,12 +497,13 @@ class MenuItem extends React.Component{
 		}else if(this.props.currentSideNavMenuType === "settings menu"){
             console.log("Nothing here yet")
         }
+        console.log(this.props.uiState.isModalActive);
+        console.log(this.props.uiState.currentModalType);
 
         
 		return(
 			<>{menuItemToDisplay}</>
 		);    
-		// }   
 	}
 }
 

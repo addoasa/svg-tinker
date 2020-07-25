@@ -18,6 +18,9 @@ const initialUIState = {
 function uiReducer(state=initialUIState, action){
 	let isSideNavExtended = state.isSideNavExtended;
     let currentSideNavMenuType = state.currentSideNavMenuType;
+	let isModalActive = state.isModalActive;
+	let currentModalType = state.currentModalType;
+
     // Inorder to adequately clone the sideNavMenusAndContents object you stringify the object 
     //with JSON.stringify and then parse that string back into an object using JSON.parse
 	const sideNavMenusAndContents = JSON.parse(JSON.stringify(state.sideNavMenusAndContents));
@@ -44,6 +47,23 @@ function uiReducer(state=initialUIState, action){
 		return{
 			...state,
 			currentSideNavMenuType,
+		};
+	}
+
+	case types.TOGGLE_MODAL: {
+		if(!isModalActive) isModalActive = true;
+		else if(isModalActive) isModalActive = false;
+	
+		return{
+			...state,
+			isModalActive,
+		};
+	}
+	case types.SET_CURRENT_MODAL_TYPE: {
+		currentModalType = action.payload;
+		return{
+			...state,
+			currentModalType,
 		};
 	}
 	default:
